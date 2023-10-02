@@ -1,0 +1,322 @@
+---
+title: "Network Analysis results"
+output:
+  html_document:
+    df_print: paged
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+params:
+  results_dir: ""
+  centralities_file_name: ""
+  omics_file_names: ""
+  TF_file: ""
+  kinome_file: ""
+  pathways_folder: ""
+---
+
+<!-- results_dir = "C:/work/Files/Algorithms/DO_server/Results_2023-09-26_1_1_6J9D9M" -->
+<!-- centralities_file_name = "C:/work/Files/Algorithms/DO_server/Results_2023-09-26_1_1_6J9D9M/STRINGBioGRIDIntAct_centralities_values_CINNA_Total.xlsx" -->
+<!-- omics_file_names = c("DGE","DTU","PhosphoProteomics","Proteomics") -->
+<!-- TF_file = "C:/work/Files/Algorithms/DO_server/V2/Linux_test/Databases/_TF.txt" -->
+<!-- kinome_file = "C:/work/Files/Algorithms/DO_server/V2/Linux_test/Databases/kinome.txt" -->
+<!-- pathways_folder = "C:/work/Files/Algorithms/DO_server/Results_2023-09-26_1_1_6J9D9M/MONET_analysis/MONET/CPDB_Pathways" -->
+
+<!-- rmarkdown::render( -->
+<!--       input  = 'C:/work/Files/Algorithms/DO_server/V3/Linux_test/Networks_Analyisis_results_PDF_generation.Rmd' -->
+<!--     , params = list( -->
+<!--           results_dir = "C:/work/Files/Algorithms/DO_server/Results_2023-09-26_1_1_6J9D9M", -->
+<!--           centralities_file_name = "C:/work/Files/Algorithms/DO_server/Results_2023-09-26_1_1_6J9D9M/STRINGBioGRIDIntAct_centralities_values_CINNA_Total.xlsx", -->
+<!--          omics_file_names = c("DGE","DTU","PhosphoProteomics","Proteomics"), -->
+<!--          TF_file = "C:/work/Files/Algorithms/DO_server/V2/Linux_test/Databases/_TF.txt", -->
+<!--          kinome_file = "C:/work/Files/Algorithms/DO_server/V2/Linux_test/Databases/kinome.txt", -->
+<!--          pathways_folder = "C:/work/Files/Algorithms/DO_server/Results_2023-09-26_1_1_6J9D9M/MONET_analysis/MONET/CPDB_Pathways" -->
+<!--         ) -->
+<!-- ) -->
+
+```{r setup, include=FALSE}
+
+
+
+results_dir = params$results_dir
+centralities_file_name = params$centralities_file_name
+omics_file_names = params$omics_file_names
+TF_file = params$TF_file
+kinome_file = params$kinome_file
+pathways_folder = params$pathways_folder
+
+
+
+knitr::opts_chunk$set(echo = TRUE,warning = FALSE, message = FALSE, error = FALSE)
+knitr::opts_knit$set(root.dir = results_dir)
+
+```
+
+## General information. Folder structure
+
+The upregulated elements of each omics analysis for the same evaluated comparison are merged together into a joint network. From this network, we extract the central nodes based on the current-flow betweenness centrality measurement. These nodes are actually the network hubs. As the next step, we apply a network modularization algorithm called MONET, with the aim of identifying subnetworks with specific biological functions. We do not treat the different omics' upregulated elements as individual network layers. Following the extraction of the list of modules present in our network, we extract the pathways associated with each subnetwork and investigate which of the modules are linked to our top 10% most central nodes. We focused next on selecting representative modules for the comparison of interest.
+
+### The main files and folders evaluated in this document are as follow:
+
+* Table _"STRINGBioGRIDIntAct_centralities_values_CINNA_Total.xlsx"_ contains the results of centrality metrics of the elements constituting the interaction network created from all the joint omics data. Each Excel sheet contains a specific contrast;
+* In _"MONET"_ folder there are the results of the network decomposition algorithm. The txt files contain each module that was identified from the respective network ordered by the number of elements found in each cluster; 
+* In _"MONET/CPDB_patwhays"_ folder there are Excel tables with the pathways for each identified subnetwork for each contrast;
+* In _"MONET/CPDB_pathways/Images"_ there are the representations of the top three pathways for the first 5 clusters for each analyzed contrast either as a function of the pathway's FDR or based on the ratio of how many genes of the cluster were associated with the respective pathway with respect to the background;
+*  In the folder _"MONET/Centralities_modules_links"_ there are circular diagrams that show how the transcription factors of the network for a specific contrast connect with the proteins found in the top 30% of most central modes and from which cluster these belong.
+
+### Important observations:
+
+* **Robust nodes** are top central node (top 15% nodes considering the current-flow betwenness centrality) upregulated in at least 75% of all considered omics datasets
+* The terms subnetworks, clusters and modules are used interchangeably.
+* In this document, the only used centrality metric was the current-flow betwenness centrality.
+* **Important nodes** are top central node (top 10% nodes considering the current-flow betwenness centrality) upregulated in at least half of all considered omics datasets
+
+### Workflow:
+
+First, the table "STRINGBioGRIDIntAct_centralities_values_CINNA_Total.xlsx" was investigated in order to extract the most robust nodes and the most important ones for all the contrasts. Secondly, the TFs and kinases present in the top 15% nodes were highlighted for each comparison. The main pathways from the associated modules were the robust nodes and the identified TF and Kinases are highlighted as well. In addition, the top 3 pathways from the top 3 biggest subnetworks are presented (without correcting for pathways overlap!). The most robust pathways and their associated modules that they describe are presented separately. Robust pathways means that the number of associated members for these pathways exceeds 70% of the total number of subnetworks' elements. These are the pathways that would describe a specif biological process characteristic for the studied comparison.
+
+
+## Results
+
+```{r echo=FALSE}
+library(openxlsx)
+library(readr)
+library(prettyunits)
+
+
+contrasts_sheets <- getSheetNames(centralities_file_name)
+
+centralities <- list()
+robust_nodes <- list()
+important_nodes <- list()
+identified_TF <- list()
+identified_kinases <- list()
+robust_genes_pathways <- list()
+identified_TF_pathways <- list()
+identified_kinases_pathways <- list()
+Top_3_3_pathways_clusters <- list()
+Top_clusters_pathways <- list()
+
+for (i in  1:length(contrasts_sheets)){
+  aux <- read.xlsx(xlsxFile = centralities_file_name,sheet = contrasts_sheets[i])
+  aux <- aux[order(aux$Current_Flow_Betweenness_Centrality,decreasing = TRUE),]
+  ind <- which(tolower(colnames(aux)) %in% tolower(c("Symbol","Entrez.ID","Current_Flow_Betweenness_Centrality",omics_file_names)))
+  
+  centralities[[i]] <- aux[,ind]
+  
+  aux <- aux[,ind]
+  aux[,c(4:ncol(aux))] <- sapply(X = aux[,c(4:ncol(aux))],FUN = function(x){as.numeric(as.character(x))})
+  ind <- which( rowSums(aux[c(1:round(nrow(aux)/10*1.5)),4:ncol(aux)]) >= round(0.75*length(omics_file_names)) )
+  robust_nodes[[i]] <- aux[ind,c(1,2)]
+  
+  if(length(omics_file_names)>=4){
+    vals <- rowSums(aux[c(1:round(nrow(aux)/10)),4:ncol(aux)])
+    ind <- which( vals >= round(0.5*length(omics_file_names)) & vals < round(0.75*length(omics_file_names)) )
+    important_nodes[[i]] <- aux[ind,c(1,2)]
+  }
+  
+  TF_database <- read.table(TF_file,sep="\t",fill=TRUE,header=TRUE)
+  ind <- which(aux[c(1:round(nrow(aux)/10*1.5)),2] %in% TF_database$Symbol)
+  identified_TF[[i]] <- aux[ind,c(1,2)]
+  
+  Kinome <- read.table(kinome_file,sep="\t",fill=TRUE,header=TRUE)
+  ind <- which(aux[c(1:round(nrow(aux)/10*1.5)),2] %in% Kinome$Gene_name)
+  identified_kinases[[i]] <- aux[ind,c(1,2)]
+  
+  pathway_file_name <- paste0("Total_",contrasts_sheets[i])
+  pathways <- list.files(pathways_folder)
+  pathways <- pathways[grep(pathway_file_name,pathways)]
+  
+  if(length(pathways)>0){
+    
+    pathways_sheets <- getSheetNames(paste0(pathways_folder,'/',pathways))
+    pathways_clusters <- list()
+    for (j in 1:length(pathways_sheets)){
+      pathways_clusters[[j]] <- read.xlsx(xlsxFile = paste0(pathways_folder,'/',pathways),sheet = pathways_sheets[j],colNames = TRUE,rowNames = FALSE)
+    }
+    
+    robust_genes_pathways[[i]] <- data.frame()
+    for (k in 1:nrow(robust_nodes[[i]])){
+      for (jk in 1:length(pathways_clusters)){
+        path_aux_util <- pathways_clusters[[jk]]
+        path_aux_util$padj_values <- as.numeric(as.character(path_aux_util$padj_values))
+        ind <- which(path_aux_util$padj_values<0.1)
+        path_aux_util <- path_aux_util[ind,]
+        path_aux_util$padj_values <- prettyNum(path_aux_util$padj_values,digits=5)
+        aux_c1 <- path_aux_util$members_input_overlap
+        aux_c1 <- sapply(X=aux_c1,FUN = function(x) {strsplit(x,";")})
+        ind <- which(lapply(aux_c1, FUN = function(x){which(x %in% robust_nodes[[i]][k,1])})>0)
+        if(length(ind)>0){
+          robust_genes_pathways[[i]] <- rbind(robust_genes_pathways[[i]],cbind(robust_nodes[[i]][k,],jk,paste(paste0(path_aux_util$Pathway[ind[1:min(3,length(ind))]], "(FDR=",path_aux_util$padj_values[ind[1:min(3,length(ind))]], ", geneRatio=",path_aux_util$geneRatio[ind[1:min(3,length(ind))]], ")"),collapse=" or "))) 
+        }
+      }
+    }
+    if(length(robust_genes_pathways[[i]])>0){
+      colnames(robust_genes_pathways[[i]]) <- c("Entrez.ID","Symbol","Module","Pathways")
+    }
+    
+    identified_TF_pathways[[i]] <- data.frame()
+    for (k in 1:nrow(identified_TF[[i]])){
+      for (jk in 1:length(pathways_clusters)){
+        path_aux_util <- pathways_clusters[[jk]]
+        path_aux_util$padj_values <- as.numeric(as.character(path_aux_util$padj_values))
+        ind <- which(path_aux_util$padj_values<0.1)
+        path_aux_util <- path_aux_util[ind,]
+        path_aux_util$padj_values <- prettyNum(path_aux_util$padj_values,digits=5)
+        aux_c1 <- path_aux_util$members_input_overlap
+        aux_c1 <- sapply(X=aux_c1,FUN = function(x) {strsplit(x,";")})
+        ind <- which(lapply(aux_c1, FUN = function(x){which(x %in% identified_TF[[i]][k,1])})>0)
+        if(length(ind)>0){
+          identified_TF_pathways[[i]] <- rbind(identified_TF_pathways[[i]],cbind(identified_TF[[i]][k,],jk,paste(paste0(path_aux_util$Pathway[ind[1:min(3,length(ind))]], "(FDR=",path_aux_util$padj_values[ind[1:min(3,length(ind))]], ", geneRatio=",path_aux_util$geneRatio[ind[1:min(3,length(ind))]], ")"),collapse=" or "))) 
+        }
+      }
+    }
+    if(length(identified_TF_pathways[[i]])>0){
+      colnames(identified_TF_pathways[[i]]) <- c("Entrez.ID","Symbol","Module","Pathways")
+    }
+    
+    identified_kinases_pathways[[i]] <- data.frame()
+    for (k in 1:nrow(identified_kinases[[i]])){
+      for (jk in 1:length(pathways_clusters)){
+        path_aux_util <- pathways_clusters[[jk]]
+        path_aux_util$padj_values <- as.numeric(as.character(path_aux_util$padj_values))
+        ind <- which(path_aux_util$padj_values<0.1)
+        path_aux_util <- path_aux_util[ind,]
+        path_aux_util$padj_values <- prettyNum(path_aux_util$padj_values,digits=5)
+        aux_c1 <- path_aux_util$members_input_overlap
+        aux_c1 <- sapply(X=aux_c1,FUN = function(x) {strsplit(x,";")})
+        ind <- which(lapply(aux_c1, FUN = function(x){which(x %in% identified_kinases[[i]][k,1])})>0)
+        if(length(ind)>0){
+          identified_kinases_pathways[[i]] <- rbind(identified_kinases_pathways[[i]],cbind(identified_kinases[[i]][k,],jk,paste(paste0(path_aux_util$Pathway[ind[1:min(3,length(ind))]], "(FDR=",path_aux_util$padj_values[ind[1:min(3,length(ind))]], ", geneRatio=",path_aux_util$geneRatio[ind[1:min(3,length(ind))]], ")"),collapse=" or "))) 
+        }
+      }
+    }
+    if(length(identified_kinases_pathways[[i]])>0){
+      colnames(identified_kinases_pathways[[i]]) <- c("Entrez.ID","Symbol","Module","Pathways")
+    }
+    
+    Top_3_3_pathways_clusters[[i]] <- data.frame()
+    for (jk in 1:min(3,length(pathways_clusters))){
+      path_aux_util <- pathways_clusters[[jk]]
+      path_aux_util$padj_values <- as.numeric(as.character(path_aux_util$padj_values))
+      ind <- which(path_aux_util$padj_values<0.1)
+      path_aux_util <- path_aux_util[ind,]
+      path_aux_util$padj_values <- prettyNum(path_aux_util$padj_values,digits=5)
+      Top_3_3_pathways_clusters[[i]] <- rbind(Top_3_3_pathways_clusters[[i]],cbind(jk,paste(paste0(path_aux_util$Pathway[1:min(3,length(path_aux_util$Pathway))], "(FDR=",path_aux_util$padj_values[1:min(3,length(path_aux_util$Pathway))], ", geneRatio=",path_aux_util$geneRatio[1:min(3,length(path_aux_util$Pathway))], ")"),collapse=" and "))) 
+    }
+    if(length(Top_3_3_pathways_clusters[[i]])>0){
+      colnames(Top_3_3_pathways_clusters[[i]]) <- c("Module","Pathways")
+    } 
+    
+    Top_clusters_pathways[[i]] <- data.frame()
+    for (jk in 1:length(pathways_clusters)){
+      path_aux_util <- pathways_clusters[[jk]]
+      path_aux_util$padj_values <- as.numeric(as.character(path_aux_util$padj_values))
+      ind <- which(path_aux_util$padj_values<0.1)
+      path_aux_util <- path_aux_util[ind,]
+      path_aux_util$padj_values <- prettyNum(path_aux_util$padj_values,digits=5)
+      aux_eval <- path_aux_util$geneRatio
+      aux_eval <- strsplit(aux_eval,"/")
+      aux_eval <- lapply(aux_eval,FUN=function(x){as.numeric(x[1])/as.numeric(x[2])})
+      aux_eval <- unlist(aux_eval)
+      if(max(aux_eval[1:min(5,length(aux_eval))])>=0.7){
+        ind <- which(aux_eval>=0.7)
+        Top_clusters_pathways[[i]] <- rbind(Top_clusters_pathways[[i]],cbind(jk,paste(paste0(path_aux_util$Pathway[ind[1:min(3,length(ind))]], "(FDR=",path_aux_util$padj_values[ind[1:min(5,length(ind))]], ", geneRatio=",path_aux_util$geneRatio[ind[1:min(5,length(ind))]], ")"),collapse=" and ")))
+      }
+      
+    }
+    if(length(Top_clusters_pathways[[i]])>0){
+      colnames(Top_clusters_pathways[[i]]) <- c("Module","Pathways")
+    } 
+    
+    
+    
+  }
+  
+  
+}
+```
+
+```{r echo = FALSE, results = "asis"}
+
+template1 <- "\n %s. \n
+"
+
+#template1 <- "##### Most **robust nodes** (upregulated in 75%% of the omics datasets, top 15%% of nodes): %s. \n
+##### Other **important nodes** (upregulated in 50%% of the omics datasets if possible, top 15%% of nodes): %s. \n
+##### The identified **TF** in the top 15%% of vertices: %s. \n
+##### The identified **Kinases** in the top 15%% of vertices: %s. \n"
+
+
+template2 <- "\n %s - Module %s: %s. \n
+"
+template3 <- "\n Module %s: %s. \n
+"
+# template3 <- "The mentioned **TF** are associated with the following pathways: %s - Module %s: %s"
+# template4 <- "The mentioned **Kinase** are associated with the following pathways: Module %s: %s"
+# template5 <- "The top 3 patwhays for the top 3 modules (considering the number of members) are: Module %s: %s"
+# template6 <- "The most importand and robust clusters and their assocaited pathways: Module %s: %s"
+
+for (i in 1:length(contrasts_sheets)) {
+  
+  writeLines(sprintf("## Comparison group:  %s \n",contrasts_sheets[i]))
+  
+  robust_n <- paste0(robust_nodes[[i]]$Symbol,collapse = "; ")
+  if(nchar(robust_n)==0){robust_n <- "None"}
+  important_n <- paste0(important_nodes[[i]]$Symbol,collapse = "; ")
+  if(nchar(important_n)==0){important_n <- "None"}
+  TF_ident <- paste0(identified_TF[[i]]$Symbol,collapse = "; ")
+  if(nchar(TF_ident)==0){TF_ident <- "None"}
+  kinases_ident <- paste0(identified_kinases[[i]]$Symbol, collapse = "; ")
+  if(nchar(kinases_ident)==0){kinases_ident <- "None"}
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> Most __robust nodes__ (upregulated in 75%% of the omics datasets, top 15%% of nodes): </span>'))
+  cat(sprintf(template1, robust_n))
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> Other __important nodes__ (upregulated in 50%% of the omics datasets if possible, top 10%% of nodes): </span>'))
+  cat(sprintf(template1,important_n))
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> The identified __TF__ in the top 15%% of nodes: </span>'))
+  cat(sprintf(template1,TF_ident))
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> The identified __Kinases__ in the top 15%% of nodes: </span>'))
+  cat(sprintf(template1, kinases_ident))
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> The __robust nodes__ are associated with the following pathways: </span>'))
+  if(length(robust_genes_pathways[[i]]$Symbol)>0){
+    writeLines(sprintf("\n"))
+    cat(sprintf(template2,robust_genes_pathways[[i]]$Symbol, robust_genes_pathways[[i]]$Module, robust_genes_pathways[[i]]$Pathways))
+    #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, robust_genes_pathways[[i]]$Symbol, robust_genes_pathways[[i]]$Module, robust_genes_pathways[[i]]$Pathways)
+  }else{writeLines(sprintf("None \n"))}
+  
+  
+  writeLines(sprintf('##### <span style="color:#d12323">The mentioned __TF__ are associated with the following pathways: </span>'))
+  if(length(identified_TF_pathways[[i]]$Symbol)>0){
+    writeLines(sprintf("\n"))
+    cat(sprintf(template2,identified_TF_pathways[[i]]$Symbol, identified_TF_pathways[[i]]$Module, identified_TF_pathways[[i]]$Pathways))
+    #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, identified_TF_pathways[[i]]$Symbol, identified_TF_pathways[[i]]$Module, identified_TF_pathways[[i]]$Pathways)
+  }else{writeLines(sprintf("None \n"))}
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> The mentioned __Kinase__ are associated with the following pathways: </span>'))
+  if(length(identified_kinases_pathways[[i]]$Symbol)>0){
+    writeLines(sprintf("\n"))
+    cat(sprintf(template2,identified_kinases_pathways[[i]]$Symbol, identified_kinases_pathways[[i]]$Module, identified_kinases_pathways[[i]]$Pathways))
+    #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, identified_kinases_pathways[[i]]$Symbol, identified_kinases_pathways[[i]]$Module, identified_kinases_pathways[[i]]$Pathways)
+  }else{writeLines(sprintf("None \n"))}
+  
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> The top 3 patwhays for the top 3 modules (considering the number of members) are: </span>'))
+  if(length(Top_3_3_pathways_clusters[[i]]$Module)>0){
+    writeLines(sprintf("\n"))
+    cat(sprintf(template3, Top_3_3_pathways_clusters[[i]]$Module, Top_3_3_pathways_clusters[[i]]$Pathways))
+    #mapply(function(x,y){cat(sprintf(template3,x,y))}, Top_3_3_pathways_clusters[[i]]$Module, Top_3_3_pathways_clusters[[i]]$Pathways)
+  }else{writeLines(sprintf("None \n"))}
+  
+  writeLines(sprintf('##### <span style="color:#d12323"> The most importand and __robust modules__ and their assocaited pathways: </span>'))
+  if(length(Top_clusters_pathways[[i]]$Module)>0){
+    writeLines(sprintf("\n"))
+    cat(sprintf(template3, Top_clusters_pathways[[i]]$Module, Top_clusters_pathways[[i]]$Pathways))
+    #mapply(function(x,y){cat(sprintf(template3,x,y))},Top_clusters_pathways[[i]]$Module, Top_clusters_pathways[[i]]$Pathways)
+  }else{writeLines(sprintf("None \n"))}
+  
+}
+```
