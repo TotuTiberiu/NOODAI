@@ -1,3 +1,22 @@
+#The function extract the pathways associated with each module identified after the MONET decomposition.
+# 
+#     Copyright © 2023, Empa, Tiberiu Totu.
+# 
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+# 
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+# 
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#     Contact: tiberiu.totu@empa.ch
+
+
 MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databases,MONET_background_file,phenotype_names,phenotype_comparison){
   
   library(readxl)

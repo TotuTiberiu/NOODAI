@@ -1,3 +1,23 @@
+#The function creates the circular diagrams that characterize a full protein-protein interaction network.
+
+# 
+#     Copyright © 2023, Empa, Tiberiu Totu.
+# 
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+# 
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+# 
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#     Contact: tiberiu.totu@empa.ch
+
+
 Cricos_plots <- function(working_dir,edges_dir,TF_Database,file_extension){
 
 library(readr)
@@ -134,7 +154,7 @@ for (i in 1:length(centralities_modules_files)){
     aaux2 <- grid.col_aux[unique(match(unique(data_tf[,4]),unique(names(grid.col_aux))))]
     aaux2 <- aaux2[mixedsort(names(aaux2))]
     lgd_links = Legend(labels = aaux1, legend_gp = gpar(fill=aaux2),
-                       title_position = "topleft", title = "SubModules",labels_gp = gpar(fontsize=17),title_gp = gpar(fontsize = 19, fontface = "bold"))
+                       title_position = "topleft", title = "Modules",labels_gp = gpar(fontsize=17),title_gp = gpar(fontsize = 19, fontface = "bold"))
    # upViewport()
     # draw(lgd_links, x = circle_size, just = "left")
     # draw(lgd_links, x = circle_size, just = "left")

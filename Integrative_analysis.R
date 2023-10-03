@@ -1,16 +1,46 @@
+#The script that contain the main functions used by the NOODAI app. The Monet analysis is done explicitly in this script as is wrapped in an additional function.
+
+# 
+#     Copyright © 2023, Empa, Tiberiu Totu.
+# 
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+# 
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+# 
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#     Contact: tiberiu.totu@empa.ch
+
+
+
+
+
+
+#Perform the network construction based on all the omics datasets that were uploaded as well as the computation of the nodes centralities
+
 Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRING_data_file=NULL,IntAct_data_file=NULL,file_DEA_names,
                                          phenotype_names,phenotype_comparison,splicing_file_name="nnn",
                                          Use_precompiled_database,LookUp_table_file=NULL,Results_index){
   ###Network analysis
   
+  #Set the working directory as the one where the scripts are found and the results directory as the one newly created
   setwd(working_dir)
   Results_dir <- paste0(getwd(),"/Results_",Results_index)
   
+  #Load the corresponding databases if they were not provided
   if(is.null(BioGRID_data_file)){BioGRID_data_file <- paste0(working_dir,"/Databases/BIOGRID-MV-Physical-4.4.218.mitab.txt")}
   if(is.null(STRING_data_file)){STRING_data_file <- paste0(working_dir,"/Databases/9606.protein.links.full.v11.5.txt")}
   if(is.null(IntAct_data_file)){IntAct_data_file <- paste0(working_dir,"/Databases/IntAct_24022022_07Confidence.txt")}
   if(is.null(LookUp_table_file)){LookUp_table_file <- paste0(working_dir,"/Databases/Interaction_Lookup_table.txt")}
   
+  
+  #Run the network centrality computation
   source('Network_analysis_BioGRID_STRING_IntAct.R')
   
   status <- NULL
@@ -26,6 +56,7 @@ Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRI
     gc()
   }
   
+  #Save the results as a zip file in the results folder
   library(utils)
   if(file.exists(paste0(Results_dir,'/ResultsZip'))){file.remove(paste0(Results_dir,'/ResultsZip'))}
   #zip(zipfile =  paste0(Results_dir,'/ResultsZip.zip'), files = Results_dir,root = Results_dir,include_directories = FALSE)
@@ -33,14 +64,17 @@ Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRI
 }
 
 
+#Perform the MONET analysis considering the edges files for each comparison of interest
+
 MONET_analysis <- function(working_dir,edge_file_path=NULL,monet_path=NULL,Monet_method_string,tmp_bin_folder=NULL,Results_index){
   
-  
+  #Set the working directory as the one where the scripts are found and the results directory as the one newly created
   setwd(working_dir)
   Results_dir <- paste0(getwd(),"/Results_",Results_index)
   #######################################################################################################################
   #server_psw <- paste0(working_dir,"/Auxiliary/server_psw.txt")
   
+  #Select the prefered tmp folder and use the default Symbol edge files if none are provided
   if(is.null(edge_file_path)){edge_file_path <- paste0("edge_files_STRINGBioGRIDIntAct/Symbol")}
   if(is.null(tmp_bin_folder)){tmp_bin_folder <- paste0(Results_dir,"/tmp_Monet")}
   #######################################################################################################################
@@ -73,6 +107,7 @@ MONET_analysis <- function(working_dir,edge_file_path=NULL,monet_path=NULL,Monet
     stop("Edge file directory does not exist")
   }
   
+  #Save the results as a zip file in the results folder
   library(utils)
   if(file.exists(paste0(Results_dir,'/ResultsZip'))){file.remove(paste0(Results_dir,'/ResultsZip'))}
   utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir)
@@ -83,11 +118,11 @@ MONET_analysis <- function(working_dir,edge_file_path=NULL,monet_path=NULL,Monet
 
 
 
-
+#Extract the pathways associated with the identified modules for each comparison of interest.
 MONET_pathways <- function(working_dir,CPDB_databases,MONET_background_file=NULL,phenotype_names,
                            phenotype_comparison,CPDB_database_file=NULL,Results_index){
   
-  
+  #Set the working directory as the one where the scripts are found and the results directory as the one newly created
   wkd <- working_dir
   setwd(working_dir)
   
@@ -113,6 +148,7 @@ MONET_pathways <- function(working_dir,CPDB_databases,MONET_background_file=NULL
     )
   }
   
+  #Save the results as a zip file in the results folder
   library(utils)
   if(file.exists(paste0(Results_dir,'/ResultsZip'))){file.remove(paste0(Results_dir,'/ResultsZip'))}
   utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir)
@@ -123,11 +159,12 @@ MONET_pathways <- function(working_dir,CPDB_databases,MONET_background_file=NULL
 }
 
 
-
+#Create the main graphical representations and summary documents
 Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_comparison,files_edges_path=NULL,
                                  centralities_file=NULL,TF_Database=NULL,file_extension=NULL,Results_index,
                                  Kinome_database=NULL){
   
+  #Save separately the directory where the scripts are found as the working directory will change multiple times
   wkd <- working_dir
   
   if(is.null(TF_Database)){TF_Database <- paste0(working_dir,"/Databases/_TF.txt")}
@@ -203,12 +240,6 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
     )
   }
   
-  library(utils)
-  if(file.exists(paste0(Results_dir,'/ResultsZip'))){file.remove(paste0(Results_dir,'/ResultsZip'))}
-  utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir)
-  
-  gc()
-  
   setwd(wkd)
   
   if(is.null(Kinome_database)){Kinome_database <- paste0(wkd,"/Databases/kinome.txt")}
@@ -218,7 +249,7 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
   tmp_omics_names <- sapply(tmp_omics_names,"[[",1)
   
   rmarkdown::render(
-    input  = '~/Networks_Analyisis_results_PDF_generation.Rmd'
+    input  = "Networks_Analyisis_results_PDF_generation.Rmd"
     , params = list(
       results_dir = Results_dir,
       centralities_file_name = centralities_file,
@@ -229,5 +260,14 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
     ),
     output_file = paste0(Results_dir,"/Network_Analysis_results")
   )
+  
+  
+  #Save the results as a zip file in the results folder
+  library(utils)
+  if(file.exists(paste0(Results_dir,'/ResultsZip'))){file.remove(paste0(Results_dir,'/ResultsZip'))}
+  utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir)
+  
+  gc()
+  
   
 }

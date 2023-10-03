@@ -1,3 +1,22 @@
+#The function creates the representation of the top 3 pathways for the top 5 biggest subnetworks (considering the number of elements)
+
+# 
+#     Copyright © 2023, Empa, Tiberiu Totu.
+# 
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+# 
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+# 
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#     Contact: tiberiu.totu@empa.ch
+
 MONET_cluster_pathways_joint_image <- function(pathways_dir,file_extension){
 
 library(ggplot2)
@@ -79,7 +98,7 @@ g$theme <- theme_a
 g$labels$x=element_blank()
 #g$theme$axis.text.y = element_blank()
 g <- g + scale_x_discrete(labels=x1$X1, breaks=nrow(x1):1, limits=factor(1:nrow(x1))) +
-  guides(fill=guide_legend(title="SubModule"))
+  guides(fill=guide_legend(title="Module"))
 
 save_name_pdf <- paste0(pathways_dir,'/Images/',str_remove(ij,'.xlsx'),'_FDR.pdf')
 
@@ -98,7 +117,7 @@ g$theme <- theme_a
 g$labels$x=element_blank()
 #g$theme$axis.text.y = element_blank()
 g <- g + scale_x_discrete(labels=x1$X1, breaks=nrow(x1):1, limits=factor(1:nrow(x1))) +
-  guides(fill=guide_legend(title="SubModule"))
+  guides(fill=guide_legend(title="Module"))
 
 
 save_name_pdf <- paste0(pathways_dir,'/Images/',str_remove(ij,'.xlsx'),'_Ratio.pdf')
