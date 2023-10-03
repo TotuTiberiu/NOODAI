@@ -1,4 +1,4 @@
-#The script that contain the main functions used by the NOODAI app. The Monet analysis is done explicitly in this script as is wrapped in an additional function.
+#The script contains the main functions used by the NOODAI app. The Monet analysis is done explicitly in this script as is wrapped in an additional function.
 
 # 
 #     Copyright © 2023, Empa, Tiberiu Totu.
