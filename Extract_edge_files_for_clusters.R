@@ -1,7 +1,7 @@
 #The function extracts the edges that are found in each identified subnetwork after the MONET decomposition. These are used for the circular diagrams.
 
 # 
-#     Copyright © 2023, Empa, Tiberiu Totu.
+#     Copyright © 2024, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -53,10 +53,8 @@ print(getwd())
   name_index <- str_split(name_index[[1]][2],patter="[.]")
   name_index <- name_index[[1]][1]
   
-  #Remove the cluster number and weight#########################################!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   data <- data[,c(3:ncol(data))]
   
-  ####Extract only the clusters with more than 10 elements######################
   ind <- apply(data,1,function(x) length(which(x=="")))
   keep <- which(ind<=(ncol(data)-10))
   data <- data[keep,]

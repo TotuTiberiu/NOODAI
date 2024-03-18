@@ -1,7 +1,7 @@
 #The function constructs automatically the protein-protein interaction network. It requires a graphical interface!
 
 # 
-#     Copyright © 2023, Empa, Tiberiu Totu.
+#     Copyright © 2024, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -68,16 +68,13 @@ library(RCy3)
   
   Sys.sleep(5)
   
-  #Load the kinase presence flag
   ind <- match(unique(auxiliary_data$Kinase_ID),auxiliary_data$Kinase_ID)
   df <- data.frame (as.integer(auxiliary_data[ind,1]),
                     stringsAsFactors = FALSE)
   rownames(df) <- auxiliary_data[ind,2]
-  #colnames(df) <- colnames(auxiliary_data)[1]
   colnames(df) <- 'Kinase_presence_0_is_not_measured_1_is_measured_and_upreg_2_is_measured'
   loadTableData (df,table = "node",table.key.column = "shared name")
   
-  #Load the transcription factor presence flag
   ind <- match(unique(data$Substrate_gene),data$Substrate_gene)
   df <- data.frame (as.integer(data$Substrate_TF[ind]),
                     stringsAsFactors = FALSE)
@@ -85,7 +82,6 @@ library(RCy3)
   colnames(df) <- colnames(data)[which(colnames(data) %in% "Substrate_TF")]
   loadTableData (df,table = "node",table.key.column = "shared name")
   
-  #Load the database flag
   df <- data.frame (as.integer(data$Database),source=data$Kinase_gene,target=data$Substrate_gene,
                     stringsAsFactors = FALSE)
   

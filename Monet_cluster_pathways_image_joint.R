@@ -1,7 +1,7 @@
 #The function creates the representation of the top 3 pathways for the top 5 biggest subnetworks (considering the number of elements)
 
 # 
-#     Copyright © 2023, Empa, Tiberiu Totu.
+#     Copyright © 2024, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@ MONET_cluster_pathways_joint_image <- function(pathways_dir,file_extension){
 library(ggplot2)
 library(ggchicklet)
 library(openxlsx)
+library(stringr)
 
 setwd(pathways_dir)
 
@@ -30,12 +31,9 @@ theme_a <- theme(axis.title = element_text(color="black", size=22,
                                            hjust = 0.5, vjust = 1),
                  axis.line=element_line(size=1, colour="black"),
                  axis.text.x = element_text(color = "black", size = 18),
-                 #axis.text.y = element_blank(),
                  axis.text.y = element_text(color="black",size = 18),
                  plot.title =element_text(color = "black", face = 'bold.italic',size=18, hjust = 0,vjust = 1),
-                 #panel.background=element_rect(fill="whitesmoke"),
                  panel.background=element_blank(),
-                 #legend.position='none',
                  axis.line.y=element_blank(),
                  legend.title = element_text(color = "black", size = 18, face = "bold"),
                  legend.text = element_text(color = "black", size = 18),
@@ -85,24 +83,22 @@ for (mm in unq_cls){
   index <- index+1
 }
 
-
-
 x1$X1 <- as.character(x1$X1)
 x1$X1 <- factor(x1$X1,levels=unique(x1$X1))
 x1$X5 <- as.character(x1$X5)
 x1$X5 <- factor(x1$X5,levels=unique(x1$X5))
 
-g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X2, fill=X5)) + scale_fill_manual(values=c("darkgreen","darkblue","firebrick3","goldenrod3","lightsteelblue3"))+
-  geom_chicklet(radius = grid::unit(7.5, "mm"),width = 0.8)+coord_flip() + ylab("-log10(q-value)")
+
+g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X2, fill=X5)) + scale_fill_manual(values=c("#7196BE","#BD3737","#CD9B1D","#E8768F","#855C5C"))+
+ geom_chicklet(radius = grid::unit(7.5, "mm"),width = 0.8)+coord_flip() + ylab("-log10(q-value)")
 g$theme <- theme_a
 g$labels$x=element_blank()
-#g$theme$axis.text.y = element_blank()
 g <- g + scale_x_discrete(labels=x1$X1, breaks=nrow(x1):1, limits=factor(1:nrow(x1))) +
   guides(fill=guide_legend(title="Module"))
 
 save_name_pdf <- paste0(pathways_dir,'/Images/',str_remove(ij,'.xlsx'),'_FDR.pdf')
 
-pdf(file = save_name_pdf, width = (trunc(max(nchar(as.character(x1$X1)))/10)*20/3)/2, height = 23/2)
+pdf(file = save_name_pdf, width = (trunc(max(nchar(as.character(x1$X1)))/10)*20/3)/2, length(x1$X1)*1.5/2)
 print(g, newpage = FALSE)
 dev.off()
 
@@ -111,17 +107,18 @@ x1$X1 <- factor(x1$X1,levels=unique(x1$X1))
 x1$X5 <- as.character(x1$X5)
 x1$X5 <- factor(x1$X5,levels=unique(x1$X5))
 
-g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X4, fill=X5)) + scale_fill_manual(values=c("darkgreen","darkblue","firebrick3","goldenrod3","lightsteelblue3"))+
-  geom_chicklet(radius = grid::unit(7.5, "mm"),width = 0.8)+coord_flip() + ylab("Pathway Hits/Cluster Members")
+
+g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X4, fill=X5)) + scale_fill_manual(values=c("#7196BE","#BD3737","#CD9B1D","#E8768F","#855C5C"))+
+geom_chicklet(radius = grid::unit(7.5, "mm"),width = 0.8)+coord_flip() + ylab("Pathway Hits/Cluster Members")
 g$theme <- theme_a
 g$labels$x=element_blank()
-#g$theme$axis.text.y = element_blank()
+
 g <- g + scale_x_discrete(labels=x1$X1, breaks=nrow(x1):1, limits=factor(1:nrow(x1))) +
   guides(fill=guide_legend(title="Module"))
 
 
 save_name_pdf <- paste0(pathways_dir,'/Images/',str_remove(ij,'.xlsx'),'_Ratio.pdf')
-pdf(file = save_name_pdf, width = (trunc(max(nchar(as.character(x1$X1)))/10)*20/3)/2, height = 23/2)
+pdf(file = save_name_pdf, width = (trunc(max(nchar(as.character(x1$X1)))/10)*20/3)/2, length(x1$X1)*1.5/2)
 print(g, newpage = FALSE)
 dev.off()
 

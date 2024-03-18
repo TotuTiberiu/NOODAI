@@ -1,6 +1,6 @@
 #The function extract the pathways associated with each module identified after the MONET decomposition.
 # 
-#     Copyright © 2023, Empa, Tiberiu Totu.
+#     Copyright © 2024, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 #     Contact: tiberiu.totu@empa.ch
 
 
-MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databases,MONET_background_file,phenotype_names,phenotype_comparison){
+MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databases,MONET_background_file,phenotype_names,phenotype_comparison,BioMart_Dataset){
   
   library(readxl)
   library(biomaRt)
@@ -27,13 +27,10 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
   library(AnnotationDbi)
   library(msigdbr)
   library(rbioapi)
-  #library(KEGGREST)
   library(clusterProfiler)
-  #library(ReactomePA)
-  
-  ###Set the working directory where the txt files are found###############################################################################!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
   setwd(working_dir)
-  #biomartCacheClear()
   n_cores <- detectCores()
   n_cores_used <- floor(n_cores/2)
   cluster_1 <- makeCluster(n_cores_used,type = "PSOCK")
@@ -43,9 +40,7 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
   clusterEvalQ(cluster_1,library(AnnotationDbi))
   clusterEvalQ(cluster_1,library(msigdbr))
   clusterEvalQ(cluster_1,library(rbioapi))
-  #clusterEvalQ(cluster_1,library(KEGGREST))
   clusterEvalQ(cluster_1,library(clusterProfiler))
-  #clusterEvalQ(cluster_1,library(ReactomePA))
   clusterEvalQ(cluster_1,library(stringr))
   
   options(timeout = max(1000, getOption("timeout")))
@@ -53,7 +48,7 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
   set.seed(21)
   
   cpdb_db <- read.table(CPDB_database_file,fill=TRUE,sep="\t",header=TRUE)
-  cpdb_db <- cpdb_db[which(cpdb_db$source %in% CPDB_databases),]
+  cpdb_db <- cpdb_db[which(tolower(cpdb_db$source) %in% tolower(CPDB_databases)),]
   cpdb_db_aux <- data.frame(matrix(nrow=1, ncol=4))
   colnames(cpdb_db_aux) <- colnames(cpdb_db)
   
@@ -72,13 +67,28 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
   length_files <- length(files_monet)
   print(head(length_files))
   nx_per_worker <- floor(length_files/n_cores_used)
+  if(nx_per_worker==0){nx_per_worker<-1}
   steps <- seq(1,length_files,nx_per_worker)
   att <- 0
   while(att <= 5 ){
     att <- att + 1
     try({
+      tryCatch(
+    {
       mart <- useMart('ENSEMBL_MART_ENSEMBL')
-      mart <- useDataset('hsapiens_gene_ensembl', mart)
+      mart <- useDataset(BioMart_Dataset, mart)
+    },
+    error = function(e){
+      tryCatch(
+        {
+          mart <- useMart('ENSEMBL_MART_ENSEMBL',host='https://asia.ensembl.org')
+          mart <- useDataset(BioMart_Dataset, mart)
+        },
+        error = function(e){
+      mart <- useMart('ENSEMBL_MART_ENSEMBL',host='https://useast.ensembl.org')
+      mart <- useDataset(BioMart_Dataset, mart)
+    })
+})
     }
     )
   }
@@ -89,16 +99,18 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
     if (files_index <= (length_files - nx_per_worker+1)) {files_index <- seq(files_index, (files_index+nx_per_worker-1),by=1)}else{files_index <- seq(files_index,length_files ,by=1)}
     file_universe_entrez <- MONET_background_file
     
-    dir.create(paste(getwd(),"/CPDB_Pathways",sep=""))
-    results_dir <- paste(getwd(),"/CPDB_Pathways",sep="")
+    dir.create(paste(getwd(),"/Signaling_Pathways",sep=""))
+    results_dir <- paste(getwd(),"/Signaling_Pathways",sep="")
     
     phenotype_comparison_aux = t(as.data.frame(strsplit(phenotype_comparison, split="vs")))
     rownames(phenotype_comparison_aux) <- phenotype_comparison
     
     for (i in files_index){
       
-      data <- read.table(files_monet[i],sep="\t",header = FALSE, fill = TRUE)
+      data <- read.table(files_monet[i],sep="\t",header = FALSE, fill = TRUE,col.names = paste0("V", seq_len(max(count.fields(files_monet[i])))))
       
+	  data_resave <- data
+	  
       name_index <- str_replace_all(files_monet[i],"__","amx")
       name_index <- str_split(name_index,patter="_")
       name_index <- str_split(name_index[[1]][2],patter="[.]")
@@ -110,17 +122,20 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
       ind <- which(is.na(universe_entrez$EntrezID))
       if(length(ind)>0){universe_entrez <- universe_entrez[-ind,]}
       
-      #Remove the cluster number and weight#########################################!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       data <- data[,c(3:ncol(data))]
       
-      ####Extract only the clusters with more than 10 elements######################
       ind <- apply(data,1,function(x) length(which(x=="")))
       keep <- which(ind<=(ncol(data)-10))
       if(length(keep)==0){next}
       data <- data[keep,]
+	  
+	  data_resave <- data_resave[order(ind),]
+	  data_resave[,1] <- seq_len(nrow(data_resave))
+	  file.remove(files_monet[i])
+	  write.table(data_resave,files_monet[i],row.names = FALSE,col.names = FALSE,quote = FALSE,sep="\t")
       
       ss <- str_split(files_monet[i],patter="[.]")
-      save_name_CPDB = paste(results_dir,"/",ss[[1]][1],"_CPDB.xlsx",sep="")
+      save_name_CPDB = paste(results_dir,"/",ss[[1]][1],"_Signaling.xlsx",sep="")
       if (file.exists(save_name_CPDB)){file.remove(save_name_CPDB)}
       
       for (j in 1:nrow(data)){
@@ -128,10 +143,7 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
         aux <- data[j,]
         ind <- which(aux=="")
         if (length(ind)>0){ aux <- aux[-ind] }
-        
-        # try({
-        #   biomartCacheClear()
-        # })
+
         
         aux_converted <- getBM(filters = "external_gene_name",
                                attributes = c("external_gene_name", "entrezgene_id","uniprot_gn_id"),
@@ -139,13 +151,12 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
         
         KeggReactome_ora_results <- c()
         KeggReactome_ora_results <- enricher(
-          gene = aux_converted$entrezgene_id, # A vector of your genes of interest
-          pvalueCutoff = 0.1, # Can choose a FDR cutoff,
+          gene = aux_converted$entrezgene_id, 
+          pvalueCutoff = 0.1,
           qvalueCutoff = 0.05,
-          pAdjustMethod = "BH", # Method to be used for multiple testing correction
-          universe = universe_entrez$EntrezID, # A vector containing your background set genes
-          # The pathway information should be a data frame with a term name or
-          # identifier and the gene identifiers
+          pAdjustMethod = "BH",
+          universe = universe_entrez$EntrezID,
+
           TERM2GENE = dplyr::select(
             cpdb_db,
             pathway,
@@ -178,7 +189,7 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
     }
   }
   
-  dir.create('CPDB_Pathways')
+  dir.create('Signaling_Pathways')
   
   clusterExport(cluster_1, "mart",envir=environment())
   clusterExport(cluster_1, "nx_per_worker",envir=environment())

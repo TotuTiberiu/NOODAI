@@ -1,7 +1,7 @@
 #The function extracts the centrality score for the elements from each module after the MONET decomposition. These are used for the circular diagrams.
 
 # 
-#     Copyright © 2023, Empa, Tiberiu Totu.
+#     Copyright © 2024, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -36,16 +36,13 @@ for (i in 1:length(sheets)){
   
   centralities <- read_excel(centralities_file,sheet = sheets[i])
   centralities$Current_Flow_Betweenness_Centrality <- as.numeric(as.character(centralities$Current_Flow_Betweenness_Centrality))
+  centralities$Current_Flow_Betweenness_Centrality <- centralities$Current_Flow_Betweenness_Centrality + c(1:length(centralities$Current_Flow_Betweenness_Centrality))/length(centralities$Current_Flow_Betweenness_Centrality)
   
   centralities <- centralities[match(sort(centralities$Current_Flow_Betweenness_Centrality,decreasing = TRUE),centralities$Current_Flow_Betweenness_Centrality),match(c("Current_Flow_Betweenness_Centrality","Symbol"),colnames(centralities))]
   
   m_ind <- grep(sheets[i], module_files)
   
   modules <- read.table(module_files[m_ind],header = FALSE,fill = TRUE,sep="\t")
-  
-  # is <- apply(modules,function(x) {length(x)-length(which(x %in% ""))},MARGIN=1)
-  # is <- which(is>=12)
-  # modules <- modules[is,]
   
   centralities_moduels <- data.frame(matrix(nrow=nrow(centralities),ncol=4))
   

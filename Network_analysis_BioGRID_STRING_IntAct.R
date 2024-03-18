@@ -1,6 +1,6 @@
 #The function constructs a protein-protein interaction network from the uploaded omics data for each comparison of interest. In addition it computes the main centrality scores for each node, saves the edge files.
 # 
-#     Copyright © 2023, Empa, Tiberiu Totu.
+#     Copyright © 2024, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 
 
 
-Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRING_data_file=NULL,IntAct_data_file=NULL,file_DEA_names,phenotype_names,phenotype_comparison,splicing_file_name,Use_precompiled_database,LookUp_table_file=NULL){
+Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRING_data_file=NULL,IntAct_data_file=NULL,file_DEA_names,phenotype_names,phenotype_comparison,splicing_file_name,Use_precompiled_database,LookUp_table_file=NULL, BioMart_Dataset){
   
   splicing_file_index <- grep(splicing_file_name,file_DEA_names)
   
@@ -30,10 +30,7 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
   if(length(splicing_file_index)>1){stop("Please provide the name of the DTU file. It should be unique.")}
   
   library(readxl)
-  #library(msigdbr)
-  #library(AnnotationDbi)
   library(biomaRt)
-  #library(org.Hs.eg.db)
   library(centiserve)
   library(CINNA)
   library(igraph)
@@ -43,7 +40,6 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
   
   n_cores <- detectCores()
   n_cores_used <- floor(n_cores/2)
-  #n_cores_used <- 3
   cluster_1 <- makeCluster(n_cores_used,type = "PSOCK")
   clusterEvalQ(cluster_1, library(centiserve))
   clusterEvalQ(cluster_1,library(CINNA))
@@ -58,12 +54,12 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
   
   setwd(working_dir)
   dir.create(Results_dir)
-  edge_file_folder <- paste0(Results_dir,"/edge_files_STRINGBioGRIDIntAct")
+  edge_file_folder <- paste0(Results_dir,"/edge_files_PPINetworks")
   dir.create(edge_file_folder)
   dir.create(paste0(edge_file_folder,'/Uniprot'))
   dir.create(paste0(edge_file_folder,'/Symbol'))
   dir.create(paste0(edge_file_folder,'/PCA_validation'))
-  
+  dir.create(paste0(edge_file_folder,'/NotMapped_Symbol'))
   #Functions######################################################################
   
   get_symbol_idMART <- function(names,mart){
@@ -167,6 +163,15 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
     }else {return(names)}
   }
   
+  get_protein_idMARTAUX <- function(names,mart){
+    if(length(names)>0){
+      aux2 <- getBM(filters = "uniprot_gn_id",
+                    attributes = c("entrezgene_id", "uniprot_gn_id"),
+                    values = as.character(names), mart = mart,useCache = FALSE)
+      return(aux2$uniprot_gn_id)
+    }else {return(names)}
+  }
+  
   get_protein_idMART1 <- function(names,mart){
     if(length(names)>0){
       aux2 <- getBM(filters = "external_gene_name",
@@ -222,9 +227,14 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
           }
         }
         
+        aux_edges_ini <- aux_decomposed
         aux_decomposed <- aux_decomposed[[ind]]
-        #isolated = which(degree(aux)==2)
-        #aux <- delete.vertices(aux,isolated)
+        aux_edges_removes <- c()
+        for (inm in 1:length(aux_edges_ini)){
+          if(inm!=ind){
+          aux_edges_removes <- rbind(aux_edges_removes,as_edgelist(aux_edges_ini[[inm]]))
+          }
+        }
         
         #Write edge tables
         aux_decomposed_edges <- as_edgelist(aux_decomposed)
@@ -238,6 +248,13 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
         save_name1 <- paste(edge_file_folder,'/Symbol/',save_name,'_',phenotype_comparison[i],'.txt',sep='')
         file.remove(save_name1)
         write.table(aux_symbol,file=save_name1,row.names=FALSE,col.names=FALSE,sep = '\t', quote = FALSE)
+        
+        aux_symbol_removes <- get_symbol_idMART(aux_edges_removes,mart)
+        aux_symbol_removes <- cbind(aux_symbol_removes,rep(1,length(aux_symbol_removes[,1])))
+        save_name1 <- paste(edge_file_folder,'/NotMapped_Symbol/',save_name,'_',phenotype_comparison[i],'_NotIncluded.txt',sep='')
+        file.remove(save_name1)
+        write.table(aux_symbol_removes,file=save_name1,row.names=FALSE,col.names=FALSE,sep = '\t', quote = FALSE)
+        
         #######
         
         cent_m <- proper_centralities(aux_decomposed)
@@ -259,7 +276,6 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
         }
         steps <- seq(1,length(cent_m),nx_per_worker)
         centralities_values_CINNA <- parSapply(cluster_1, steps, fsx)
-        #centralities_values_CINNA <- c(centralities_values_CINNA)
         aax <- list()
         for (ik in 1:length(centralities_values_CINNA)){
           aax <- c(aax,centralities_values_CINNA[[ik]])
@@ -288,7 +304,6 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
         
         
         centralities_values_CINNA1 <- do.call(data.frame,centralities_values_CINNA1)
-        #colnames(centralities_values_CINNA1) <- cent_m
         
         specific_metric <- tbl_graph(edges = as.data.frame(aux_decomposed_edges), directed = FALSE)
         specific_metric <- specific_metric %>% activate(nodes) %>% mutate(importance_current = centrality_betweenness_current()) %>% mutate(importance_katz = centrality_katz()) #%>% mutate(importance_random = centrality_random_walk())
@@ -323,10 +338,10 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
         
         centralities_values_CINNA1 <- centralities_values_CINNA1[order(centralities_values_CINNA1$Current_Flow_Betweenness_Centrality,decreasing=TRUE),]
         ncaux <- ncol(centralities_values_CINNA1)
-        centralities_values_CINNA1 <- centralities_values_CINNA1[,c(ncaux,ncaux-2,ncaux-1,1:(ncaux-3))]
+        centralities_values_CINNA1 <- centralities_values_CINNA1[,c(ncaux,ncaux-2,1:(ncaux-3),ncaux-1)]
         centralities_values_CINNA1 <- cbind(rownames(centralities_values_CINNA1),centralities_values_CINNA1)
         colnames(centralities_values_CINNA1)[1] <- "Entrez ID"
-        save_name1 <- paste(Results_dir,'/STRINGBioGRIDIntAct_centralities_values_CINNA_',save_name,'.xlsx',sep='')
+        save_name1 <- paste(Results_dir,'/PPINetworks_centralities_values_CINNA_',save_name,'.xlsx',sep='')
         xlsx::write.xlsx(centralities_values_CINNA1,file=save_name1,sheetName = phenotype_comparison[i],col.names=TRUE,row.names=FALSE,append = TRUE)
       }
     }
@@ -367,20 +382,28 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
   #END Functions part#############################################################
   
   #Read the databases files#######################################################
-  # 
-  # cent_m <- c("Closeness.centrality..Latora.","Dangalchev.Closeness.Centrality","Decay.Centrality","Residual.Closeness.Centrality",
-  #             "Semi.Local.Centrality","Barycenter.Centrality","Diffusion.Degree","eigenvector.centralities","Markov.Centrality",
-  #             "Wiener.Index.Centrality","Average.Distance","Radiality.Centrality","Geodesic.K.Path.Centrality","Current.Flow.Closeness.Centrality",
-  #             "Degree.Centrality","Leverage.Centrality","Centroid.value","Laplacian.Centrality","Topological.Coefficient","ClusterRank",
-  #             "subgraph.centrality.scores","Eccentricity.Centrality","Information.Centrality","Flow.Betweenness.Centrality","Shortest.Paths.Betweenness.Centrality","Entropy.Centrality")
+
+  tryCatch(
+    {
+      mart <- useMart('ENSEMBL_MART_ENSEMBL')
+      mart <- useDataset(BioMart_Dataset, mart)
+    },
+    error = function(e){
+      tryCatch(
+        {
+          mart <- useMart('ENSEMBL_MART_ENSEMBL',host='https://asia.ensembl.org')
+          mart <- useDataset(BioMart_Dataset, mart)
+        },
+        error = function(e){
+      mart <- useMart('ENSEMBL_MART_ENSEMBL',host='https://useast.ensembl.org')
+      mart <- useDataset(BioMart_Dataset, mart)
+    })
+})
+      
+   
   
-  # cent_m <- c("Closeness centrality (Latora)","eigenvector centralities","Markov Centrality","Shortest-Paths Betweenness Centrality",
-  #             "Degree Centrality","Entropy Centrality","Laplacian Centrality","Topological Coefficient","Information Centrality",
-  #             "subgraph centrality scores")
   
-  mart <- useMart('ENSEMBL_MART_ENSEMBL')
-  mart <- useDataset('hsapiens_gene_ensembl', mart)
-  
+ 
   if(Use_precompiled_database==0){
   
   BioGRID_data <- read.table(BioGRID_data_file,sep="\t",header = TRUE,fill=TRUE)
@@ -459,6 +482,20 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
     file_DEA[[i]] <- list()
   }
   
+  file_DEA_names_short <- file_DEA_names
+  file_DEA_names_short <- str_split(file_DEA_names,"\\.")
+  file_DEA_names_short <- sapply(file_DEA_names_short,"[[",1)
+  if(grep('/',file_DEA_names_short[1])==1){
+    file_DEA_names_short <- str_split(file_DEA_names_short,"/")
+    file_DEA_names_short <- sapply(file_DEA_names_short,"[[",min(lengths(file_DEA_names_short)))
+  }
+  
+  mapping_error <- list(list())
+  for (i in 1:length(file_DEA_names)){
+    mapping_error[[i]] <- list()
+    names(mapping_error)[[i]] <- file_DEA_names_short[i]
+  }
+  
   for (j in 1:length(file_DEA_names)){
     for (i in 1:length(phenotype_comparison)){
       
@@ -466,12 +503,22 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
       #Get the corresponding entrez ids from the uniprot ones#######################
       if(length(aux)>0){
         file_DEA[[j]][[i]] <- as.character(unique(get_protein_idMART(aux$Protein,mart)))
-      }else{
+        addMap <- as.character(unique(get_protein_idMARTAUX(aux$Protein,mart)))
+        mapping_error[[j]][[i]] <- aux$Protein[-which(aux$Protein %in% addMap)]
+        names(mapping_error[[j]])[[i]] <- phenotype_comparison[i]
+        }else{
         file_DEA[[j]][[i]] <- NA
+        mapping_error[[j]][[i]] <- NA
+        names(mapping_error[[j]])[[i]] <- phenotype_comparison[i]
       }
       
     }
   }
+  
+  for (i in 1:length(mapping_error)){
+    openxlsx::write.xlsx(mapping_error[[i]],file = paste0(edge_file_folder,"/FailedToMap_", names(mapping_error)[[i]],".xlsx"),overwrite = TRUE)
+  }
+  
   ################################################################################
   
   #Construct data frames from the lists###########################################
@@ -498,21 +545,13 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
   #Centrality extraction#########################################################
   
   
-  file_DEA_names_short <- file_DEA_names
-  file_DEA_names_short <- str_split(file_DEA_names,"\\.")
-  file_DEA_names_short <- sapply(file_DEA_names_short,"[[",1)
-  if(grep('/',file_DEA_names_short[1])==1){
-  file_DEA_names_short <- str_split(file_DEA_names_short,"/")
-  file_DEA_names_short <- sapply(file_DEA_names_short,"[[",min(lengths(file_DEA_names_short)))
-  }
-  
   
   for (j in 1:length(file_DEA_names)){
-    file.remove(paste(Results_dir,'/STRINGBioGRIDIntAct_centralities_values_CINNA_',file_DEA_names_short[j],'.xlsx',sep=''))
+    file.remove(paste(Results_dir,'/PPINetworks_centralities_values_CINNA_',file_DEA_names_short[j],'.xlsx',sep=''))
   }
   
     file.remove(paste(Results_dir,'/Background_total.xlsx',sep=''))
-    file.remove(paste(Results_dir,'/STRINGBioGRIDIntAct_centralities_values_CINNA_Total.xlsx',sep=''))
+    file.remove(paste(Results_dir,'/PPINetworks_centralities_values_CINNA_Total.xlsx',sep=''))
   
   for (i in 1:length(phenotype_comparison)){
     
