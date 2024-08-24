@@ -1,0 +1,13 @@
+BiomaRT	taxid	Name
+btaurus_gene_ensembl	9913	Bos taurus
+celegans_gene_ensembl	6239	Caenorhabditis elegans
+clfamiliaris_gene_ensembl	9615	Canis familiaris
+drerio_gene_ensembl	7955	Danio rerio
+dmelanogaster_gene_ensembl	7227	Drosophila melanogaster
+ggallus_gene_ensembl	9031	Gallus gallus
+mmusculus_gene_ensembl	10090	Mus musculus
+rnorvegicus_gene_ensembl	10116	Rattus norvegicus
+scerevisiae_gene_ensembl	4932	Saccharomyces cerevisiae
+xtropicalis_gene_ensembl	8364	Xenopus tropicalis
+sscrofa_gene_ensembl	9823	Sus scrofa
+hsapiens_gene_ensembl	9606	Homo sapiens

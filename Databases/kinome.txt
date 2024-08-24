@@ -1,519 +1,2348 @@
-Uniprot	Gene_name	Family	Family_simple	Subfamily	Primary Reference: http://www.uniprot.org/docs/pkinfam.txt	Primary reference: original Uniprot annotation (as of 160708)	Secondary reference: original Manning annotation (as of 160708)
-O95835	LATS1	AGC Ser/Thr protein kinase family	AGC	Manning: NDR	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:NDR:LATS	"
-O15021	MAST4	AGC Ser/Thr protein kinase family	AGC	Manning: MAST	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:MAST:MAST	"
-O14578	CRIK	AGC Ser/Thr protein kinase family	AGC	Manning: DMPK	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:DMPK:CRIK	"
-Q9NRM7	LATS2	AGC Ser/Thr protein kinase family	AGC	Manning: NDR	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:NDR:LATS	"
-O60307	MAST3	AGC Ser/Thr protein kinase family	AGC	Manning: MAST	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:MAST:MAST	"
-Q6P0Q8	MAST2	AGC Ser/Thr protein kinase family	AGC	Manning: MAST	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:MAST:MAST	"
-Q9Y2H1	NDR2	AGC Ser/Thr protein kinase family	AGC	Manning: MAST	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:MAST:MAST	"
-Q96GX5	MASTL	AGC Ser/Thr protein kinase family	AGC	Manning: MAST	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:MAST:MASTL	"
-Q15208	NDR1	AGC Ser/Thr protein kinase family	AGC	Manning: NDR	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:NDR:NDR	"
-Q9Y2H9	MAST1	AGC Ser/Thr protein kinase family	AGC	Manning: MAST	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	AGC:MAST:MAST 
-O75116	ROCK	AGC Ser/Thr protein kinase family	AGC	Manning: DMPK	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:DMPK:ROCK	"
-Q13464	ROCK1	AGC Ser/Thr protein kinase family	AGC	Manning: DMPK	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:DMPK:ROCK	"
-O00141	SGK1	AGC Ser/Thr protein kinase family	AGC	Manning: SGK	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:SGK	"
-Q96BR1	SGK3	AGC Ser/Thr protein kinase family	AGC	Manning: SGK	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:SGK	"
-Q9HBY8	SGK2	AGC Ser/Thr protein kinase family	AGC	Manning: SGK	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family	"AGC:SGK	"
-O43930	PRKY	AGC Ser/Thr protein kinase family	AGC	cAMP subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; cAMP subfamily	"AGC:PKA	"
-P17612	PKACa	AGC Ser/Thr protein kinase family	AGC	cAMP subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; cAMP subfamily	"AGC:PKA	"
-P22612	PRKACG	AGC Ser/Thr protein kinase family	AGC	cAMP subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; cAMP subfamily	AGC : PKA
-P22694	PRKACB	AGC Ser/Thr protein kinase family	AGC	cAMP subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; cAMP subfamily	AGC : PKA
-P51817	PRKX	AGC Ser/Thr protein kinase family	AGC	cAMP subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; cAMP subfamily	"AGC:PKA	"
-Q13237	PRKG2	AGC Ser/Thr protein kinase family	AGC	cGMP subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; cGMP subfamily	AGC : PKG
-Q13976	PRKG1	AGC Ser/Thr protein kinase family	AGC	cGMP subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; cGMP subfamily	AGC : PKG
-Q09013	DMPK	AGC Ser/Thr protein kinase family	AGC	DMPK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; DMPK subfamily	AGC : DMPK : GEK
-Q5VT25	CDC42BPA	AGC Ser/Thr protein kinase family	AGC	DMPK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; DMPK subfamily	AGC : DMPK : GEK
-Q6DT37	DMPK2	AGC Ser/Thr protein kinase family	AGC	DMPK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; DMPK subfamily	"AGC:DMPK:GEK	"
-Q9Y5S2	CDC42BPB	AGC Ser/Thr protein kinase family	AGC	DMPK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; DMPK subfamily	AGC : DMPK : GEK
-P25098	BARK1	AGC Ser/Thr protein kinase family	AGC	GPRK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; GPRK subfamily	"AGC:GRK:BARK	"
-P32298	GPRK4	AGC Ser/Thr protein kinase family	AGC	GPRK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; GPRK subfamily	"AGC:GRK:GRK	"
-P34947	GPRK5	AGC Ser/Thr protein kinase family	AGC	GPRK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; GPRK subfamily	"AGC:GRK:GRK	"
-P35626	BARK2	AGC Ser/Thr protein kinase family	AGC	GPRK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; GPRK subfamily	"AGC:GRK:BARK	"
-P43250	GPRK6	AGC Ser/Thr protein kinase family	AGC	GPRK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; GPRK subfamily	"AGC:GRK:GRK	"
-Q15835	RHOK	AGC Ser/Thr protein kinase family	AGC	GPRK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; GPRK subfamily	"AGC:GRK:GRK	"
-Q8WTQ7	GPRK7	AGC Ser/Thr protein kinase family	AGC	GPRK subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; GPRK subfamily	"AGC:GRK:GRK	"
-O15530	PDK1	AGC Ser/Thr protein kinase family	AGC	PDPK1 subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PDPK1 subfamily	AGC : PDK1
-Q6A1A2	PDPK2P	AGC Ser/Thr protein kinase family	AGC	PDPK1 subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PDPK1 subfamily	not found 
-P05129	PKCg	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	"AGC:PKC:PKCa	"
-P05771	PKCb	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	"AGC:PKC:PKCa	"
-P17252	PKCa	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	"AGC:PKC:PKCa	"
-P24723	PRKCH	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	AGC : PKC : PKCh
-P41743	PRKCI	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	AGC : PKC : PKCi
-Q02156	PRKCE	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	AGC : PKC : PKCh
-Q04759	PRKCQ	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	AGC : PKC : PKCd
-Q05513	PRKCZ	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	AGC : PKC : PKCi
-Q05655	PRKCD	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	AGC : PKC : PKCd
-Q16512	PAK2	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	"STE:STE20:PAKA	"
-Q16513	PKN2	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	"AGC:PKN	"
-Q6P5Z2	PKN3	AGC Ser/Thr protein kinase family	AGC	PKC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; PKC subfamily	"AGC:PKN	"
-P31749	AKT1	AGC Ser/Thr protein kinase family	AGC	RAC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; RAC subfamily	"AGC:Akt	"
-P31751	AKT2	AGC Ser/Thr protein kinase family	AGC	RAC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; RAC subfamily	"AGC:Akt	"
-Q9Y243	AKT3	AGC Ser/Thr protein kinase family	AGC	RAC subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; RAC subfamily	"AGC:NDR:NDR	"
-O75582	MSK1	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	"AGC:RSK:MSK	"
-O75676	MSK2	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	"AGC:RSK:MSK	"
-P23443	RPS6KB1	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	AGC : RSK : RSKp70
-P51812	RSK2	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	"AGC:RSK:RSKp90	"
-Q15349	RSK3	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	"AGC:RSK:RSKp90	"
-Q15418	RSK1	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	"AGC:RSK:RSKp90	"
-Q9UBS0	RPS6KB2	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	AGC : RSK : RSKp70
-Q9UK32	RSK4	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	AGC	Protein kinase superfamily; AGC Ser/Thr protein kinase family; S6 kinase subfamily	"AGC:RSK:RSKp90	"
-Q3MIX3	ADCK5	Atypical	Atypical	Atypical ADCK protein kinase family	Atypical	Protein kinase superfamily; ADCK protein kinase family	"Atypical:ABC1:ABC1-D	"
-Q7Z695	ADCK2	Atypical	Atypical	Atypical ADCK protein kinase family	Atypical	Protein kinase superfamily; ADCK protein kinase family	"Atypical:ABC1:ABC1-C	"
-Q86TW2	ADCK1	Atypical	Atypical	Atypical ADCK protein kinase family	Atypical	Protein kinase superfamily; ADCK protein kinase family	"Atypical:ABC1:ABC1-B	"
-Q8NI60	ADCK3	Atypical	Atypical	Atypical ADCK protein kinase family	Atypical	Protein kinase superfamily; ADCK protein kinase family	"Atypical:ABC1:ABC1-A	"
-Q96D53	ADCK4	Atypical	Atypical	Atypical ADCK protein kinase family	Atypical	Protein kinase superfamily; ADCK protein kinase family	"Atypical:ABC1:ABC1-A	"
-O00418	eEF2K	Atypical	Atypical	Atypical Alpha-type protein kinase family/ALPK subfamily	Atypical	Protein kinase superfamily; Alpha-type protein kinase family	"Atypical:Alpha:eEF2K	"
-Q86TB3	ALPK2	Atypical	Atypical	Atypical Alpha-type protein kinase family/ALPK subfamily	Atypical	Protein kinase superfamily; Alpha-type protein kinase family; ALPK subfamily	Atypical : Alpha : Alpha-Unclassified
-Q96L96	ALP3K	Atypical	Atypical	Atypical Alpha-type protein kinase family/ALPK subfamily	Atypical	Protein kinase superfamily; Alpha-type protein kinase family; ALPK subfamily	Atypical : Alpha : Alpha-Unclassified
-Q96QP1	ALPK1	Atypical	Atypical	Atypical Alpha-type protein kinase family/ALPK subfamily	Atypical	Protein kinase superfamily; Alpha-type protein kinase family; ALPK subfamily	Atypical : Alpha : Alpha-Unclassified
-Q96QT4	ChaK1	Atypical	Atypical	Atypical Alpha-type protein kinase family/ALPK subfamily	Atypical	Protein kinase superfamily; Alpha-type protein kinase family; ALPK subfamily; Transient receptor (TC 1.A.4) family; LTrpC subfamily; TRPM7 sub-subfamily	"Atypical:Alpha:ChaK	"
-Q9BX84	ChaK2	Atypical	Atypical	Atypical Alpha-type protein kinase family/ALPK subfamily	Atypical	Protein kinase superfamily; Alpha-type protein kinase family; ALPK subfamily; Transient receptor (TC 1.A.4) family; LTrpC subfamily; TRPM6 sub-subfamily	"Atypical:Alpha:ChaK	"
-Q14296	FASTK	Atypical	Atypical	Atypical FAST protein kinase family	Atypical	FAST protein kinase family	"Atypical:FAST	"
-O14874	BCKDK	Atypical	Atypical	Atypical PDK/BCKDK protein kinase family	Atypical	PDK/BCKDK protein kinase family	"Atypical:PDHK:BCKDK	"
-Q15118	PDHK1	Atypical	Atypical	Atypical PDK/BCKDK protein kinase family	Atypical	PDK/BCKDK protein kinase family	"Atypical:PDHK:PDHK	"
-Q15119	PDHK2	Atypical	Atypical	Atypical PDK/BCKDK protein kinase family	Atypical	PDK/BCKDK protein kinase family	"Atypical:PDHK:PDHK	"
-Q15120	PDHK3	Atypical	Atypical	Atypical PDK/BCKDK protein kinase family	Atypical	PDK/BCKDK protein kinase family	"Atypical:PDHK:PDHK	"
-Q16654	PDHK4	Atypical	Atypical	Atypical PDK/BCKDK protein kinase family	Atypical	PDK/BCKDK protein kinase family	"Atypical:PDHK:PDHK	"
-P42345	FRAP	Atypical	Atypical	Atypical PI3/PI4-kinase family	Atypical	PI3/PI4-kinase family	"Atypical:PIKK:FRAP	"
-P48736	PIK3CG	Atypical	Atypical	Atypical PI3/PI4-kinase family	Atypical	PI3/PI4-kinase family	not found
-P78527	PRKDC	Atypical	Atypical	Atypical PI3/PI4-kinase family	Atypical	PI3/PI4-kinase family	Atypical : PIKK : DNAPK
-Q13315	ATM	Atypical	Atypical	Atypical PI3/PI4-kinase family	Atypical	PI3/PI4-kinase family; ATM subfamily	"Atypical:PIKK:ATM	"
-Q13535	ATR	Atypical	Atypical	Atypical PI3/PI4-kinase family	Atypical	PI3/PI4-kinase family; ATM subfamily	"Atypical:PIKK:ATR	"
-Q96Q15	SMG1	Atypical	Atypical	Atypical PI3/PI4-kinase family	Atypical	PI3/PI4-kinase family	"Atypical:PIKK:SMG1	"
-O14730	RIOK3	Atypical	Atypical	Atypical RIO-type Ser/Thr kinase family	Atypical	Protein kinase superfamily; RIO-type Ser/Thr kinase family	"Atypical:RIO:RIO3	"
-Q9BRS2	RIOK1	Atypical	Atypical	Atypical RIO-type Ser/Thr kinase family	Atypical	Protein kinase superfamily; RIO-type Ser/Thr kinase family	"Atypical:RIO:RIO1	"
-Q9BVS4	RIOK2	Atypical	Atypical	Atypical RIO-type Ser/Thr kinase family	Atypical	Protein kinase superfamily; RIO-type Ser/Thr kinase family	"Atypical:RIO:RIO2	"
-P42336	PIK3CA	Atypical	Atypical	/	Atypical	PI3/PI4-kinase family	not found
-P49137	MAPKAPK2	CAMK Ser/Thr protein kinase family	CAMK	Manning: MAPKAPK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MAPKAPK:MK2	"
-Q16644	MAPKAPK3	CAMK Ser/Thr protein kinase family	CAMK	Manning: MAPKAPK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MAPKAPK:MK2	"
-Q8IW41	MAPKAPK5	CAMK Ser/Thr protein kinase family	CAMK	Manning: MAPKAPK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MAPKAPK:MK5	"
-Q9BUB5	MNK1	CAMK Ser/Thr protein kinase family	CAMK	Manning: MAPKAPK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MAPKAPK:MNK	"
-Q9HBH9	MNK2	CAMK Ser/Thr protein kinase family	CAMK	Manning: MAPKAPK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MAPKAPK:MNK	"
-Q8IY84	NIM1	CAMK Ser/Thr protein kinase family	CAMK	Manning: CAMKL	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:CAMKL:NIM1	"
-Q96RG2	PASK	CAMK Ser/Thr protein kinase family	CAMK	Manning: CAMKL	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:CAMKL:PASK	"
-Q9NRH2	SNRK	CAMK Ser/Thr protein kinase family	CAMK	Manning: CAMKL	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:CAMKL:SNRK	"
-O60229	Trad	CAMK Ser/Thr protein kinase family	CAMK	Manning: Trio	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:Trio	"
-O75962	Trio	CAMK Ser/Thr protein kinase family	CAMK	Manning: Trio	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:Trio	"
-P11801	PSKH1	CAMK Ser/Thr protein kinase family	CAMK	Manning: PSK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:PSK	"
-P15735	PHKg2	CAMK Ser/Thr protein kinase family	CAMK	Manning: PHK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:PHK	"
-Q15746	MYLK	CAMK Ser/Thr protein kinase family	CAMK	Manning: MLCK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	CAMK : MLCK
-Q15772	SPEG	CAMK Ser/Thr protein kinase family	CAMK	Manning: Trio	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:Trio	"
-Q16816	PHKg1	CAMK Ser/Thr protein kinase family	CAMK	Manning: PHK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:PHK	"
-Q32MK0	MYLK3	CAMK Ser/Thr protein kinase family	CAMK	Manning: MLCK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MLCK	"
-Q5VST9	Obscn	CAMK Ser/Thr protein kinase family	CAMK	Manning: Trio	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:Trio	"
-Q6SA08	TSSK4	CAMK Ser/Thr protein kinase family	CAMK	Manning: TSSK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:TSSK	"
-Q86YV6	SgK085	CAMK Ser/Thr protein kinase family	CAMK	Manning: MLCK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MLCK	"
-Q8N2I9	SgK495	CAMK Ser/Thr protein kinase family	CAMK	Manning: SgK495	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:SgK495	"
-Q8NCB2	CAMKV	CAMK Ser/Thr protein kinase family	CAMK	/	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	CAMK : CAMK-Unique
-Q8WZ42	TTN	CAMK Ser/Thr protein kinase family	CAMK	Manning: MLCK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:MLCK	"
-Q96PF2	TSSK2	CAMK Ser/Thr protein kinase family	CAMK	Manning: TSSK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:TSSK	"
-Q96PN8	TSSK3	CAMK Ser/Thr protein kinase family	CAMK	Manning: TSSK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:TSSK	"
-Q96QS6	PSKH2	CAMK Ser/Thr protein kinase family	CAMK	Manning: PSK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:PSK	"
-Q9BXA6	SSTK	CAMK Ser/Thr protein kinase family	CAMK	Manning: TSSK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:TSSK	"
-Q9BXA7	TSSK1	CAMK Ser/Thr protein kinase family	CAMK	Manning: TSSK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	"CAMK:TSSK	"
-Q9H1R3	MYLK2	CAMK Ser/Thr protein kinase family	CAMK	Manning: MLCK	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family	CAMK : MLCK
-P57059	SIK	CAMK Ser/Thr protein kinase family	CAMK	AMPK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; AMPK subfamily	"CAMK:CAMKL:QIK	"
-O15075	DCLK1	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:DCAMKL	"
-Q13554	CaMK2b	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:CAMK2	"
-Q13555	CaMK2g	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:CAMK2	"
-Q13557	CaMK2d	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:CAMK2	"
-Q14012	CAMK1	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	CAMK : CAMK1
-Q16566	CaMK4	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:CAMK1	"
-Q6P2M8	PNCK	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	CAMK : CAMK1
-Q8IU85	CaMK1d	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:CAMK1	"
-Q8N568	DCLK2	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:DCAMKL	"
-Q96NX5	CaMK1g	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:CAMK1	"
-Q9BYT3	STK33	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:STK33	"
-Q9C098	DCLK3	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"CAMK:DCAMKL	"
-Q9UQM7	CaMK2a	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily	"AGC:Akt	"
-O14936	CASK	CAMK Ser/Thr protein kinase family	CAMK	CaMK subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CaMK subfamily; MAGUK family	"CAMK:CASK	"
-O96017	CHK2	CAMK Ser/Thr protein kinase family	CAMK	CHK2 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; CHK2 subfamily	"CAMK:RAD53	"
-O43293	DAPK3	CAMK Ser/Thr protein kinase family	CAMK	DAP kinase subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; DAP kinase subfamily	"CAMK:DAPK:DAPK	"
-O94768	DRAK2	CAMK Ser/Thr protein kinase family	CAMK	DAP kinase subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; DAP kinase subfamily	"CAMK:DAPK:DRAK	"
-P53355	DAPK1	CAMK Ser/Thr protein kinase family	CAMK	DAP kinase subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; DAP kinase subfamily	"CAMK:DAPK:DAPK	"
-Q9UEE5	DRAK1	CAMK Ser/Thr protein kinase family	CAMK	DAP kinase subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; DAP kinase subfamily	"CAMK:DAPK:DRAK	"
-Q9UIK4	DAPK2	CAMK Ser/Thr protein kinase family	CAMK	DAP kinase subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; DAP kinase subfamily	"CAMK:DAPK:DAPK	"
-Q15831	LKB1	CAMK Ser/Thr protein kinase family	CAMK	LKB1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; LKB1 subfamily	"CAMK:CAMKL:LKB	"
-O14757	CHK1	CAMK Ser/Thr protein kinase family	CAMK	NIM1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; NIM1 subfamily	"CAMK:CAMKL:CHK1	"
-P11309	PIM1	CAMK Ser/Thr protein kinase family	CAMK	PIM subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; PIM subfamily	"CAMK:PIM	"
-Q86V86	PIM3	CAMK Ser/Thr protein kinase family	CAMK	PIM subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; PIM subfamily	"CAMK:PIM	"
-Q9P1W9	PIM2	CAMK Ser/Thr protein kinase family	CAMK	PIM subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; PIM subfamily	"CAMK:PIM	"
-O94806	PRKD3	CAMK Ser/Thr protein kinase family	CAMK	PKD subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; PKD subfamily	CAMK : PKD
-Q15139	PRKD1	CAMK Ser/Thr protein kinase family	CAMK	PKD subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; PKD subfamily	CAMK : PKD
-Q9BZL6	PRKD2	CAMK Ser/Thr protein kinase family	CAMK	PKD subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; PKD subfamily	CAMK : PKD
-O60285	NuaK1	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:NuaK	"
-P27448	MARK3	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:MARK	"
-P54646	PRKAA2	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	CAMK : CAMKL : AMPK
-P57058	HUNK	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:HUNK	"
-Q13131	PRKAA1	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	CAMK : CAMKL : AMPK
-Q14680	MELK	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:MELK	"
-Q7KZI7	MARK2	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:MARK	"
-Q8IWQ3	BRSK2	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:BRSK	"
-Q8TDC3	BRSK1	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:BRSK	"
-Q96L34	MARK4	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:MARK	"
-Q9H093	NuaK2	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:NuaK	"
-Q9H0K1	QIK	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:QIK	"
-Q9P0L2	MARK1	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"CAMK:CAMKL:MARK	"
-Q9Y2K2	QSK	CAMK Ser/Thr protein kinase family	CAMK	SNF1 subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; SNF1 subfamily	"STE:STE11:MEKK2	"
-Q92519	Trb2	CAMK Ser/Thr protein kinase family	CAMK	Tribbles subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; Tribbles subfamily	"CAMK:Trbl	"
-Q96RU7	Trb3	CAMK Ser/Thr protein kinase family	CAMK	Tribbles subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; Tribbles subfamily	"CAMK:Trbl	"
-Q96RU8	Trb1	CAMK Ser/Thr protein kinase family	CAMK	Tribbles subfamily	CAMK	Protein kinase superfamily; CAMK Ser/Thr protein kinase family; Tribbles subfamily	"CAMK:Trbl	"
-P48729	CSNK1A1	CK1 Ser/Thr protein kinase family	CK	Casein kinase I subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; Casein kinase I subfamily	CK1 : CK1 : CK1-A
-P48730	CSNK1D	CK1 Ser/Thr protein kinase family	CK	Casein kinase I subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; Casein kinase I subfamily	CK1 : CK1 : CK1-D
-P49674	CSNK1E	CK1 Ser/Thr protein kinase family	CK	Casein kinase I subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; Casein kinase I subfamily	CK1 : CK1 : CK1-D
-P78368	CK1g2	CK1 Ser/Thr protein kinase family	CK	Casein kinase I subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; Casein kinase I subfamily	"CK1:CK1:CK1-G	"
-Q8N752	CSNK1A1L	CK1 Ser/Thr protein kinase family	CK	Casein kinase I subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; Casein kinase I subfamily	CK1 : CK1 : CK1-A
-Q9HCP0	CSNK1G1	CK1 Ser/Thr protein kinase family	CK	Casein kinase I subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; Casein kinase I subfamily	CK1 : CK1 : CK1-G
-Q9Y6M4	CSNK1G3	CK1 Ser/Thr protein kinase family	CK	Casein kinase I subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; Casein kinase I subfamily	CK1 : CK1 : CK1-G
-Q5TCY1	TTBK1	CK1 Ser/Thr protein kinase family	CK	Manning: TTBK	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family	"CK1:TTBK	"
-Q6IQ55	TTBK2	CK1 Ser/Thr protein kinase family	CK	Manning: TTBK	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family	"CK1:TTBK	"
-Q86Y07	VRK2	CK1 Ser/Thr protein kinase family	CK	VRK subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; VRK subfamily	"CK1:VRK	"
-Q8IV63	VRK3	CK1 Ser/Thr protein kinase family	CK	VRK subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; VRK subfamily	"CK1:VRK	"
-Q99986	VRK1	CK1 Ser/Thr protein kinase family	CK	VRK subfamily	CK1	Protein kinase superfamily; CK1 Ser/Thr protein kinase family; VRK subfamily	"CK1:VRK	"
-Q13523	PRPF4B	CMGC Ser/Thr protein kinase family	CMGC	Manning: DYRK	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family	CMGC : DYRK : PRP4
-P78362	SRPK2	CMGC Ser/Thr protein kinase family	CMGC	Manning: SRPK	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family	"CMGC:SRPK	"
-Q96SB4	SRPK1	CMGC Ser/Thr protein kinase family	CMGC	Manning: SRPK	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family	"CMGC:SRPK	"
-Q9UPE1	MSSK1	CMGC Ser/Thr protein kinase family	CMGC	Manning: SRPK	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family	"CMGC:SRPK	"
-O76039	CDKL5	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDKL	"
-O94921	CDK14	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	CMGC:CDK:PFTAIRE
-P06493	CDC2	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDC2	"
-P11802	CDK4	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK4	"
-P20794	MAK	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:RCK:MAK	"
-P21127	CDK11b	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK11	"
-P24941	CDK2	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK2	"
-P49336	CDK8	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK8	"
-P50613	CDK7	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK7	"
-P50750	CDK9	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK9	"
-Q00526	CDK3	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK2	"
-Q00532	CDKL1	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDKL	"
-Q00534	CDK6	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK4	"
-Q00535	CDK5	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK5	"
-Q00536	PCTAIRE1	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:PCTAIRE	"
-Q00537	PCTAIRE2	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:PCTAIRE	"
-Q07002	PCTAIRE3	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:PCTAIRE	"
-Q14004	CHED	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CRK7	"
-Q15131	CDK10	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK10	"
-Q5MAI5	CDKL4	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDKL	"
-Q8IVW4	CDKL3	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDKL	"
-Q8IZL9	CCRK	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CCRK	"
-Q92772	CDKL2	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDKL	"
-Q96Q40	CDK15	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	not found
-Q9BWU1	CDK19	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK8	"
-Q9NYV4	CRK7	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CRK7	"
-Q9UPZ9	ICK	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:RCK:MAK	"
-Q9UQ07	MOK	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:RCK:MOK	"
-Q9UQ88	CDK11a	CMGC Ser/Thr protein kinase family	CMGC	CDC2/CDKX subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; CDC2/CDKX subfamily	"CMGC:CDK:CDK11	"
-P49840	GSK3A	CMGC Ser/Thr protein kinase family	CMGC	GSK-3 subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; GSK-3 subfamily	"CMGC:GSK	"
-P49841	GSK3B	CMGC Ser/Thr protein kinase family	CMGC	GSK-3 subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; GSK-3 subfamily	"CMGC:GSK	"
-Q86Z02	HIPK1	CMGC Ser/Thr protein kinase family	CMGC	HIPK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; HIPK subfamily	"CMGC:DYRK:HIPK	"
-Q8NE63	HIPK4	CMGC Ser/Thr protein kinase family	CMGC	HIPK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; HIPK subfamily	"CMGC:DYRK:HIPK	"
-Q9H2X6	HIPK2	CMGC Ser/Thr protein kinase family	CMGC	HIPK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; HIPK subfamily	"CMGC:DYRK:HIPK	"
-Q9H422	HIPK3	CMGC Ser/Thr protein kinase family	CMGC	HIPK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; HIPK subfamily	"CMGC:DYRK:HIPK	"
-P49759	CLK1	CMGC Ser/Thr protein kinase family	CMGC	Lammer subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; Lammer subfamily	"CMGC:CLK	"
-P49760	CLK2	CMGC Ser/Thr protein kinase family	CMGC	Lammer subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; Lammer subfamily	"CMGC:CLK	"
-P49761	CLK3	CMGC Ser/Thr protein kinase family	CMGC	Lammer subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; Lammer subfamily	"CMGC:CLK	"
-Q9HAZ1	CLK4	CMGC Ser/Thr protein kinase family	CMGC	Lammer subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; Lammer subfamily	"CMGC:CLK	"
-O15264	MAPK13	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	CMGC : MAPK : p38
-P27361	Erk1	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:ERK1	"
-P28482	Erk2	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:ERK1	"
-P31152	Erk4	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:ERK3	"
-P45983	JNK1	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:JNK	"
-P45984	JNK2	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:JNK	"
-P53778	MAPK12	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	CMGC : MAPK : p38
-P53779	JNK3	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:JNK	"
-Q13164	Erk5	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:ERK5	"
-Q15759	MAPK11	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	CMGC : MAPK : p38
-Q16539	MAPK14	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	CMGC : MAPK : p38
-Q16659	Erk3	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:ERK3	"
-Q8TD08	Erk7	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:ERK7	"
-Q9UBE8	NLK	CMGC Ser/Thr protein kinase family	CMGC	MAP kinase subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MAP kinase subfamily	"CMGC:MAPK:nmo	"
-O43781	DYRK3	CMGC Ser/Thr protein kinase family	CMGC	MNB/DYRK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MNB/DYRK subfamily	"CMGC:DYRK:DYRK2	"
-Q13627	DYRK1A	CMGC Ser/Thr protein kinase family	CMGC	MNB/DYRK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MNB/DYRK subfamily	"CMGC:DYRK:DYRK1	"
-Q92630	DYRK2	CMGC Ser/Thr protein kinase family	CMGC	MNB/DYRK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MNB/DYRK subfamily	"CMGC:DYRK:DYRK2	"
-Q9NR20	DYRK4	CMGC Ser/Thr protein kinase family	CMGC	MNB/DYRK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MNB/DYRK subfamily	"CMGC:DYRK:DYRK2	"
-Q9Y463	DYRK1B	CMGC Ser/Thr protein kinase family	CMGC	MNB/DYRK subfamily	CMGC	Protein kinase superfamily; CMGC Ser/Thr protein kinase family; MNB/DYRK subfamily	CMGC:DYRK:DYRK1
-P51955	NEK2	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK2	"
-P51956	NEK3	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK1	"
-P51957	NEK4	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK4	"
-Q6P3R8	NEK5	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK1	"
-Q6ZWH5	NEK10	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK10	"
-Q86SG6	NEK8	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK8	"
-Q8NG66	NEK11	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK11	"
-Q8TD19	NEK9	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK9	"
-Q8TDX7	NEK7	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK6	"
-Q96PY6	NEK1	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK1	"
-Q9HC98	NEK6	NEK Ser/Thr protein kinase family	NEK	NIMA subfamily	NEK	Protein kinase superfamily; NEK Ser/Thr protein kinase family; NIMA subfamily	"Other:NEK:NEK6	"
-P11274	BCR	Atypical	Atypical	Atypical BCR	not found	not found	"Atypical:BCR	"
-P42338	PIK3CB	other	other	other	not found	PI3/PI4-kinase family	not found
-O43741	PRKAB2	Do not consider for classification	Do not consider for classification	Do not consider for classification	not found	In Uniprot; family membership attributed based on sequence similarity	Entry not found
-P54619	PRKAG1	Do not consider for classification	Do not consider for classification	Do not consider for classification	not found	In Uniprot; family membership attributed based on sequence similarity	Entry not found
-Q12792	TWF1	Do not consider for classification	Do not consider for classification	Do not consider for classification	not found	Actin-binding proteins ADF family; Twinfilin subfamily	not found
-P49842	G11	Atypical	Atypical	Atypical STK19 subfamily	not found 	STK19 family	"Atypical:G11	"
-Q9UGI9	PRKAG3	Do not consider for classification	Do not consider for classification	Do not consider for classification	not found 	In Uniprot; family membership attributed based on sequence similarity	not found 
-Q9UGJ0	PRKAG2	Do not consider for classification	Do not consider for classification	Do not consider for classification	not found 	In Uniprot; family membership attributed based on sequence similarity	not found 
-Q9UJY1	HSPB8	Do not consider for classification	Do not consider for classification	Do not consider for classification	not found 	Small heat shock protein (HSP20) family	not found
-Q96S38	RPS6KC1	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; S6 kinase subfamily	AGC : RSKL
-Q9Y6S9	RPS6KL1	AGC Ser/Thr protein kinase family	AGC	S6 kinase subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; S6 kinase subfamily	AGC : RSKL
-Q2M2I8	AAK1	other	other	Manning: NAK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:NAK:BIKE	"
-Q9NSY1	BIKE	other	other	Manning: NAK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:NAK:BIKE	"
-Q8N5S9	CaMKK1	other	other	Manning: CAMKK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:CAMKK:CAMKK-Meta	"
-Q96RR4	CaMKK2	other	other	Manning: CAMKK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:CAMKK:CAMKK-Meta	"
-Q9NRP7	STK36	other	other	Manning: ULK	other	Protein kinase superfamily; Ser/Thr protein kinase family	Other : ULK : Fused
-O14976	GAK	other	other	Manning: NAK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:NAK:GAK	"
-O75716	MPSK1	other	other	Manning: NAK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:NAK:MPSK	"
-O75460	IRE1	other	other	Manning: IRE	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:IRE	"
-P00540	MOS	other	other	Manning: MOS	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:MOS	"
-P33981	TTK	other	other	Manning: TTK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:TTK	"
-Q05823	RNAseL	other	other	/	other	Protein kinase superfamily	"Other:Other-Unique	"
-Q504Y2	SgK493	other	other	Manning: SgK493	other	Protein kinase superfamily	"Other:SgK493	"
-Q52WX2	SBK1	other	other	Manning: NKF1	other	Protein kinase superfamily; Ser/Thr protein kinase family	Other : NKF1
-Q6P3W7	SCYL2	other	other	Manning: SCY1	other	Protein kinase superfamily	"Other:SCY1	"
-Q6XUX3	DSTYK	other	other	Manning: Dusty	other	Protein kinase superfamily; Ser/Thr protein kinase family	Other:Dusty
-Q76MJ5	IRE2	other	other	Manning: IRE	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:IRE	"
-Q7Z7A4	PXK	other	other	Manning: Slob	other	Protein kinase superfamily	Other : Slob
-Q86UE8	TLK2	other	other	Manning: TLK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:TLK	"
-Q86UX6	YANK3	other	other	/	other	Protein kinase superfamily; Ser/Thr protein kinase family	"AGC:YANK	"
-Q86YV5	SgK223	other	other	Manning: NKF3	other	Protein kinase superfamily	"Other:NKF3	"
-Q8IWB6	TEX14	other	other	Manning: NKF5	other	Protein kinase superfamily	Other : NKF5
-Q8IZE3	SCYL3	other	other	Manning: SCY1	other	Protein kinase superfamily	"Other:SCY1	"
-Q8N165	PDIK1L	other	other	Manning: NKF4	other	Protein kinase superfamily; Ser/Thr protein kinase family	Other : NKF4
-Q8NB16	MLKL	other	other	/	other	Protein kinase superfamily	"TKL:TKL-Unique	"
-Q8TAS1	KIS	other	other	Manning: KIS	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:KIS	"
-Q8TDR2	STK35	other	other	Manning: NKF4	other	Protein kinase superfamily; Ser/Thr protein kinase family	Other : NKF4
-Q8TEA7	TBCK	other	other	Manning: TBCK	other	Protein kinase superfamily	"Other:TBCK	"
-Q8WU08	YANK1	other	other	/	other	Protein kinase superfamily; Ser/Thr protein kinase family	"AGC:YANK	"
-Q96KG9	SCYL1	other	other	Manning: SCY1	other	Protein kinase superfamily	"Other:SCY1	"
-Q96LW2	SGK494	other	other	/	other	Protein kinase superfamily; Ser/Thr protein kinase family	AGC : RSKR
-Q99570	PIK3R4	other	other	Manning: VPS15	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:VPS15	"
-Q9BXM7	PINK1	other	other	Manning: NKF2	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:NKF2	"
-Q9BXU1	SgK396	other	other	/	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:Other-Unique	"
-Q9H792	PEAK1	other	other	Manning: NKF3	other	Protein kinase superfamily	"Other:NKF3	"
-Q9NSY0	NRBP2	other	other	Manning: NRBP	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:NRBP	"
-Q9NY57	YANK2	other	other	/	other	Protein kinase superfamily; Ser/Thr protein kinase family	"AGC:YANK	"
-Q9UHY1	NRBP1	other	other	Manning: NRBP	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:NRBP	"
-Q9UKI8	TLK1	other	other	Manning: TLK	other	Protein kinase superfamily; Ser/Thr protein kinase family	"Other:TLK	"
-O75385	ULK1	other	other	APG1/unc-51/ULK1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; APG1/unc-51/ULK1 subfamily	"Other:ULK:ULK	"
-Q6PHR2	ULK3	other	other	APG1/unc-51/ULK1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; APG1/unc-51/ULK1 subfamily	"Other:ULK:ULK	"
-Q8IYT8	ULK2	other	other	APG1/unc-51/ULK1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; APG1/unc-51/ULK1 subfamily	"Other:ULK:ULK	"
-Q96C45	ULK4	other	other	APG1/unc-51/ULK1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; APG1/unc-51/ULK1 subfamily	"Other:ULK:ULK	"
-O14965	AurA	other	other	Aurora subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; Aurora subfamily	"Other: Aur	"
-Q96GD4	AURKB	other	other	Aurora subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; Aurora subfamily	Other : Aur
-Q9UQB9	AURKC	other	other	Aurora subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; Aurora subfamily	Other : Aur
-O43683	BUB1	other	other	BUB1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; BUB1 subfamily	"Other:BUB	"
-O60566	BUBR1	other	other	BUB1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; BUB1 subfamily	"Other:BUB	"
-Q96S44	PRPK	other	other	BUD32 family	other	Protein kinase superfamily; BUD32 family	"Other:Bud32	"
-O00444	PLK4	other	other	CDC5/Polo subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CDC5/Polo subfamily	"Other:PLK:SAK	"
-P53350	PLK1	other	other	CDC5/Polo subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CDC5/Polo subfamily	"Other:PLK:PLK1	"
-Q496M5	PLK5	other	other	CDC5/Polo subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CDC5/Polo subfamily	Other : PLK : PLK2
-Q9H4B4	PLK3	other	other	CDC5/Polo subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CDC5/Polo subfamily	"Other:PLK:PLK2	"
-Q9NYY3	PLK2	other	other	CDC5/Polo subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CDC5/Polo subfamily	"Other:PLK:PLK2	"
-O00311	CDC7	other	other	CDC7 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CDC7 subfamily	"Other:CDC7	"
-P19784	CK2a2	other	other	CK2 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CK2 subfamily	"CMGC:CK2	"
-P68400	CK2a1	other	other	CK2 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CK2 subfamily	"CMGC:CK2	"
-Q8NEV1	CSNK2A3	other	other	CK2 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; CK2 subfamily	not found 
-P19525	PKR	other	other	GCN2 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; GCN2 subfamily	"Other:PEK:PKR	"
-Q9BQI3	HRI	other	other	GCN2 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; GCN2 subfamily	"Other:PEK:HRI	"
-Q9NZJ5	PEK	other	other	GCN2 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; GCN2 subfamily	"Other:PEK:PEK	"
-Q9P2K8	GCN2	other	other	GCN2 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; GCN2 subfamily	"Other:PEK:GCN2	"
-Q8TF76	GSG2	other	other	Haspin subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; Haspin subfamily	Other : Haspin
-O14920	IKKb	other	other	I-kappa-B kinase subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; I-kappa-B kinase subfamily	"Other:IKK	"
-O15111	IKKa	other	other	I-kappa-B kinase subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; I-kappa-B kinase subfamily	"Other:IKK	"
-Q14164	IKKe	other	other	I-kappa-B kinase subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; I-kappa-B kinase subfamily	"Other:IKK	"
-Q9UHD2	TBK1	other	other	I-kappa-B kinase subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; I-kappa-B kinase subfamily	"Other:IKK	"
-Q58A45	PAN3	other	other	PAN3 family	other	Protein kinase superfamily; PAN3 family	"Other:PAN3	"
-P0C263	SgK069	other	other	STKL subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; STKL subfamily	"Other:NKF1	"
-P0C264	SgK110	other	other	STKL subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; STKL subfamily	"Other:NKF1	"
-Q8NE28	SgK071	other	other	STKL subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; STKL subfamily	"Other:SgK071	"
-Q9H5K3	SgK196	other	other	STKL subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; STKL subfamily	"Other:Other-Unique	"
-P0C1S8	Wee1B	other	other	WEE1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; WEE1 subfamily	"Other:WEE:WEE1	"
-P30291	Wee1	other	other	WEE1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; WEE1 subfamily	"Other:WEE:WEE1	"
-Q99640	PKMYT1	other	other	WEE1 subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; WEE1 subfamily	Other : WEE : Myt1
-Q96J92	Wnk4	other	other	WNK subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; WNK subfamily	"Other:WNK	"
-Q9BYP7	Wnk3	other	other	WNK subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; WNK subfamily	"Other:WNK	"
-Q9H4A3	Wnk1	other	other	WNK subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; WNK subfamily	"Other:WNK	"
-Q9Y3S1	Wnk2	other	other	WNK subfamily	other	Protein kinase superfamily; Ser/Thr protein kinase family; WNK subfamily	"CMGC:DYRK:DYRK1	"
-P16066	NPR1	Adenylyl cyclase class-4/guanylyl cyclase family	RGC	Manning: RGC	RGC	Adenylyl cyclase class-4/guanylyl cyclase family	RGC : RGC
-P20594	NPR2	Adenylyl cyclase class-4/guanylyl cyclase family	RGC	Manning: RGC	RGC	Adenylyl cyclase class-4/guanylyl cyclase family	RGC : RGC
-P25092	GUCY2C	Adenylyl cyclase class-4/guanylyl cyclase family	RGC	Manning: RGC	RGC	Adenylyl cyclase class-4/guanylyl cyclase family	RGC : RGC
-P51841	GUCY2F	Adenylyl cyclase class-4/guanylyl cyclase family	RGC	Manning: RGC	RGC	Adenylyl cyclase class-4/guanylyl cyclase family	RGC : RGC
-Q02846	GUCY2D	Adenylyl cyclase class-4/guanylyl cyclase family	RGC	Manning: RGC	RGC	Adenylyl cyclase class-4/guanylyl cyclase family	RGC : RGC
-Q8NEV4	MYO3A	STE Ser/Thr protein kinase family	STE	Manning: STE20	STE	TRAFAC class myosin-kinesin ATPase superfamily; Myosin family; Protein kinase superfamily; STE Ser/Thr protein kinase family	"STE:STE20:NinaC	"
-Q8WXR4	MYO3B	STE Ser/Thr protein kinase family	STE	Manning: STE20	STE	TRAFAC class myosin-kinesin ATPase superfamily; Myosin family; Protein kinase superfamily; STE Ser/Thr protein kinase family	"STE:STE20:NinaC	"
-O43283	LZK	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"TKL:MLK:LZK	"
-O43318	TAK1	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"TKL:MLK:TAK1	"
-O95382	MAP3K6	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"STE:STE11:ASK	"
-P41279	MAP3K8	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	STE : STE-Unique
-P80192	MLK1	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"TKL:MLK:MLK	"
-Q02779	MLK2	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"TKL:MLK:MLK	"
-Q12852	MAP3K12	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	TKL : MLK : LZK
-Q13233	MAP3K1	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"STE:STE11:MEKK1	"
-Q16584	MLK3	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"TKL:MLK:MLK	"
-Q5TCX8	MLK4	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	TKL : MLK : MLK
-Q6ZN16	MAP3K15	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	STE : STE11 : ASK
-Q99558	NIK	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"STE:STE-Unique	"
-Q99683	MAP3K5	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"STE:STE11:ASK	"
-Q99759	MAP3K3	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"STE:STE11:MEKK2	"
-Q9NYL2	ZAK	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"TKL:MLK:ZAK	"
-Q9Y2U5	MAP3K2	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"Other:WNK	"
-Q9Y6R4	MAP3K4	STE Ser/Thr protein kinase family	STE	MAP kinase kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	"STE:STE11:MEKK4	"
-O14733	MAP2K7	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"STE:STE7:MEK7	"
-P36507	MAP2K2	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"STE:STE7:MEK1	"
-P45985	MAP2K4	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"STE:STE7:MEK4	"
-P46734	MAP2K3	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"STE:STE7:MEK3	"
-P52564	MAP2K6	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"STE:STE7:MEK3	"
-Q02750	MAP2K1	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"STE:STE7:MEK1	"
-Q13163	MAP2K5	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"STE:STE7:MEK5	"
-Q96KB5	PBK	STE Ser/Thr protein kinase family	STE	MAP kinase kinase subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; MAP kinase kinase subfamily	"Other:TOPK	"
-O00506	STK25	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE:STE20:YSK
-O75914	PAK4	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:PAKB	"
-O94804	SLK	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:SLK	"
-O95747	OXSR1	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : FRAY
-O95819	MAP4K4	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:MSN	"
-O96013	PAK5	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:PAKB	"
-Q12851	MAP4K2	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : KHS
-Q13043	STK4	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : MST
-Q13153	PAK1	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:PAKA	"
-Q13177	PAK3	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:PAKA	"
-Q13188	STK3	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : MST
-Q56UN5	MAP3K19	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE11:MEKK15	"
-Q7L7X3	TAOK1	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : TAO
-Q7RTN6	STRADA	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:STLK	"
-Q7Z2Y5	NRK	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:MSN	"
-Q8IVH8	MAP4K3	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : KHS
-Q8N4C8	MINK1	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:MSN	"
-Q92918	HPK1	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:KHS	"
-Q9C0K7	STRADB	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:STLK	"
-Q9H2G2	STLK5	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:STLK	"
-Q9H2K8	TAOK3	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : TAO
-Q9NQU5	LOK	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:SLK	"
-Q9P286	PAK6	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:PAKB	"
-Q9P289	STK26	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : YSK
-Q9UEW8	STK39	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : FRAY
-Q9UKE5	TNIK	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	"STE:STE20:MSN	"
-Q9UL54	TAOK2	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : TAO
-Q9Y4K4	MAP4K5	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : KHS
-Q9Y6E0	STK24	STE Ser/Thr protein kinase family	STE	STE20 subfamily	STE	Protein kinase superfamily; STE Ser/Thr protein kinase family; STE20 subfamily	STE : STE20 : YSK
-Q13418	ILK	TKL Ser/Thr protein kinase family	TKL	Manning: MLK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:MLK:ILK	"
-Q6VAB6	KSR2	TKL Ser/Thr protein kinase family	TKL	Manning: RAF	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:RAF:KSR	"
-Q8IVT5	KSR1	TKL Ser/Thr protein kinase family	TKL	Manning: RAF	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:RAF:KSR	"
-P53667	LIMK1	TKL Ser/Thr protein kinase family	TKL	Manning: LISK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:LISK:LIMK	"
-P53671	LIMK2	TKL Ser/Thr protein kinase family	TKL	Manning: LISK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:LISK:LIMK	"
-Q15569	TESK1	TKL Ser/Thr protein kinase family	TKL	Manning: LISK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:LISK:TESK	"
-Q96S53	TESK2	TKL Ser/Thr protein kinase family	TKL	Manning: LISK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:LISK:TESK	"
-O43353	RIPK2	TKL Ser/Thr protein kinase family	TKL	Manning: RIPK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:RIPK	"
-P57078	ANKRD3	TKL Ser/Thr protein kinase family	TKL	Manning: RIPK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:RIPK	"
-Q13546	RIPK1	TKL Ser/Thr protein kinase family	TKL	Manning: RIPK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:RIPK	"
-Q5S007	LRRK2	TKL Ser/Thr protein kinase family	TKL	Manning: LRRK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:LRRK	"
-Q8NFD2	SgK288	TKL Ser/Thr protein kinase family	TKL	Manning: RIPK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:RIPK	"
-Q9Y572	RIPK3	TKL Ser/Thr protein kinase family	TKL	Manning: RIPK	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family	"TKL:RIPK	"
-Q59H18	TNNI3K	TKL Ser/Thr protein kinase family	TKL	MAP kinase kinase kinase subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; MAP kinase kinase kinase subfamily	TKL : MLK : HH498
-O43187	IRAK2	TKL Ser/Thr protein kinase family	TKL	Pelle subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; Pelle subfamily	"TKL:IRAK	"
-P51617	IRAK1	TKL Ser/Thr protein kinase family	TKL	Pelle subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; Pelle subfamily	"TKL:IRAK	"
-Q9NWZ3	IRAK4	TKL Ser/Thr protein kinase family	TKL	Pelle subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; Pelle subfamily	"TKL:IRAK	"
-Q9Y616	IRAK3	TKL Ser/Thr protein kinase family	TKL	Pelle subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; Pelle subfamily	TKL : IRAK
-P04049	RAF1	TKL Ser/Thr protein kinase family	TKL	RAF subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; RAF subfamily	"TKL:RAF:RAF	"
-P10398	ARAF	TKL Ser/Thr protein kinase family	TKL	RAF subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; RAF subfamily	"TKL:RAF:RAF	"
-P15056	BRAF	TKL Ser/Thr protein kinase family	TKL	RAF subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; RAF subfamily	"TKL:RAF:RAF	"
-Q38SD2	LRRK1	TKL Ser/Thr protein kinase family	TKL	ROCO subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; ROCO subfamily	"TKL:LRRK	"
-O00238	BMPR1B	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR1	"
-P27037	ACVR2A	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	TKL : STKR : STKR2
-P36894	BMPR1A	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR1	"
-P36896	ALK4	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR1	"
-P36897	TGFbR1	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR1	"
-P37023	ALK1	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR1	"
-P37173	TGFbR2	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR2	"
-Q04771	ACVR1	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	TKL : STKR : STKR1
-Q13705	ACVR2B	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	TKL : STKR : STKR2
-Q13873	BMPR2	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR2	"
-Q16671	MISR2	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR2	"
-Q8NER5	ALK7	TKL Ser/Thr protein kinase family	TKL	TGFB receptor subfamily	TKL	Protein kinase superfamily; TKL Ser/Thr protein kinase family; TGFB receptor subfamily	"TKL:STKR:STKR1	"
-O15146	MUSK	Tyr protein kinase family	Tyr	Manning: Musk	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Musk	"
-P07949	RET	Tyr protein kinase family	Tyr	Manning: Ret	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Ret	"
-P08581	MET	Tyr protein kinase family	Tyr	Manning: Met	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Met	"
-P34925	RYK	Tyr protein kinase family	Tyr	Manning: Ryk	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Ryk	"
-Q04912	RON	Tyr protein kinase family	Tyr	Manning: Met	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Met	"
-Q07912	TNK2	Tyr protein kinase family	Tyr	Manning: Ack	Tyr	Protein kinase superfamily; Tyr protein kinase family	TK : Ack
-Q13470	TNK1	Tyr protein kinase family	Tyr	Manning: Ack	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Ack	"
-Q6J9G0	STYK1	Tyr protein kinase family	Tyr	/	Tyr	Protein kinase superfamily; Tyr protein kinase family	TK : TK-Unique
-Q6ZMQ8	LMR1	Tyr protein kinase family	Tyr	Manning: Lmr	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Lmr	"
-Q8IWU2	LMR2	Tyr protein kinase family	Tyr	Manning: Lmr	Tyr	Protein kinase superfamily; Tyr protein kinase family	"TK:Lmr	"
-Q96Q04	LMTK3	Tyr protein kinase family	Tyr	Manning: Lmr	Tyr	Protein kinase superfamily; Tyr protein kinase family	TK : Lmr
-P00519	ABL1	Tyr protein kinase family	Tyr	ABL subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; ABL subfamily	"TK:Abl	"
-P42684	ABL2	Tyr protein kinase family	Tyr	ABL subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; ABL subfamily	"TK:Abl	"
-P30530	AXL	Tyr protein kinase family	Tyr	AXL/UFO subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; AXL/UFO subfamily	"TK:Axl	"
-Q06418	TYRO3	Tyr protein kinase family	Tyr	AXL/UFO subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; AXL/UFO subfamily	"TK:Axl	"
-Q12866	MERTK	Tyr protein kinase family	Tyr	AXL/UFO subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; AXL/UFO subfamily	"TK:Axl	"
-Q13882	BRK	Tyr protein kinase family	Tyr	BRK/PTK6/SIK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; BRK/PTK6/SIK subfamily	"TK:Src:SRM	"
-P07333	FMS	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:PDGFR	"
-P09619	PDGFRb	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:PDGFR	"
-P10721	KIT	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:PDGFR	"
-P16234	PDGFRa	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:PDGFR	"
-P17948	FLT1	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:VEGFR	"
-P35916	FLT4	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:VEGFR	"
-P35968	KDR	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:VEGFR	"
-P36888	FLT3	Tyr protein kinase family	Tyr	CSF-1/PDGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSF-1/PDGF receptor subfamily	"TK:PDGFR	"
-P41240	CSK	Tyr protein kinase family	Tyr	CSK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSK subfamily	"TK:Csk	"
-P42679	CTK	Tyr protein kinase family	Tyr	CSK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; CSK subfamily	"TK:Csk	"
-P00533	EGFR	Tyr protein kinase family	Tyr	EGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; EGF receptor subfamily	"TK:EGFR	"
-P04626	ErbB2	Tyr protein kinase family	Tyr	EGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; EGF receptor subfamily	"TK:EGFR	"
-P21860	ErbB3	Tyr protein kinase family	Tyr	EGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; EGF receptor subfamily	"TK:EGFR	"
-Q15303	ErbB4	Tyr protein kinase family	Tyr	EGF receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; EGF receptor subfamily	"TK:EGFR	"
-O15197	EphB6	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P21709	EphA1	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P29317	EphA2	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P29320	EphA3	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P29322	EphA8	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P29323	EphB2	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P54753	EphB3	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P54756	EphA5	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P54760	EphB4	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P54762	EphB1	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-P54764	EphA4	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-Q15375	EphA7	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-Q5JZY3	EphA10	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-Q9UF33	EphA6	Tyr protein kinase family	Tyr	Ephrin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Ephrin receptor subfamily	"TK:Eph	"
-Q05397	FAK	Tyr protein kinase family	Tyr	FAK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; FAK subfamily	"TK:FAK	"
-Q14289	PYK2	Tyr protein kinase family	Tyr	FAK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; FAK subfamily	"TK:FAK	"
-P07332	FES	Tyr protein kinase family	Tyr	Fes/fps subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Fes/fps subfamily	"TK:Fer	"
-P16591	FER	Tyr protein kinase family	Tyr	Fes/fps subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Fes/fps subfamily	"TK:Fer	"
-P11362	FGFR1	Tyr protein kinase family	Tyr	Fibroblast growth factor receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Fibroblast growth factor receptor subfamily	"TK:FGFR	"
-P21802	FGFR2	Tyr protein kinase family	Tyr	Fibroblast growth factor receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Fibroblast growth factor receptor subfamily	"TK:FGFR	"
-P22455	FGFR4	Tyr protein kinase family	Tyr	Fibroblast growth factor receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Fibroblast growth factor receptor subfamily	"TK:FGFR	"
-P22607	FGFR3	Tyr protein kinase family	Tyr	Fibroblast growth factor receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Fibroblast growth factor receptor subfamily	"TK:FGFR	"
-P04629	TRKA	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:Trk	"
-P06213	INSR	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:InsR	"
-P08069	IGF1R	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:InsR	"
-P08922	ROS	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:Sev	"
-P14616	IRR	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:InsR	"
-P29376	LTK	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:ALK	"
-Q08345	DDR1	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:DDR	"
-Q13308	CCK4	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:CCK4	"
-Q16288	TRKC	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:Trk	"
-Q16620	TRKB	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:Trk	"
-Q16832	DDR2	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:DDR	"
-Q9UM73	ALK	Tyr protein kinase family	Tyr	Insulin receptor subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Insulin receptor subfamily	"TK:ALK	"
-O60674	JAK2	Tyr protein kinase family	Tyr	JAK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; JAK subfamily	"TK:Jak	"
-P23458	JAK1	Tyr protein kinase family	Tyr	JAK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; JAK subfamily	"TK:Jak	"
-P29597	TYK2	Tyr protein kinase family	Tyr	JAK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; JAK subfamily	"TK:Jak	"
-P52333	JAK3	Tyr protein kinase family	Tyr	JAK subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; JAK subfamily	"TK:Jak	"
-Q01973	ROR1	Tyr protein kinase family	Tyr	ROR subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; ROR subfamily	"TK:Ror	"
-Q01974	ROR2	Tyr protein kinase family	Tyr	ROR subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; ROR subfamily	"TK:Ror	"
-P06239	LCK	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcB	"
-P06241	FYN	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcA	"
-P07947	YES	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcA	"
-P07948	LYN	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcB	"
-P08631	HCK	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcB	"
-P09769	FGR	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcA	"
-P12931	SRC	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcA	"
-P42685	FRK	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:Frk	"
-P51451	BLK	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	"TK:Src:SrcB	"
-Q9H3Y6	SRMS	Tyr protein kinase family	Tyr	SRC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SRC subfamily	TK : Src : SRM
-P43403	ZAP70	Tyr protein kinase family	Tyr	SYK/ZAP-70 subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SYK/ZAP-70 subfamily	"TK:Syk	"
-P43405	SYK	Tyr protein kinase family	Tyr	SYK/ZAP-70 subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; SYK/ZAP-70 subfamily	"TK:Syk	"
-P42680	TEC	Tyr protein kinase family	Tyr	TEC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; TEC subfamily	"TK:Tec	"
-P42681	TXK	Tyr protein kinase family	Tyr	TEC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; TEC subfamily	"TK:Tec	"
-P51813	BMX	Tyr protein kinase family	Tyr	TEC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; TEC subfamily	"TK:Tec	"
-Q06187	BTK	Tyr protein kinase family	Tyr	TEC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; TEC subfamily	"TK:Tec	"
-Q08881	ITK	Tyr protein kinase family	Tyr	TEC subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; TEC subfamily	"TK:Tec	"
-P35590	TIE1	Tyr protein kinase family	Tyr	Tie subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Tie subfamily	"TK:Tie	"
-Q02763	TIE2	Tyr protein kinase family	Tyr	Tie subfamily	Tyr	Protein kinase superfamily; Tyr protein kinase family; Tie subfamily	"TK:Tie	"
+Uniprot	Gene_name	Species
+A0A078BQP2	gcy-25	Caenorhabditis elegans
+A0A0B4J2F2	SIK1B	Homo sapiens
+A0A0G2K344	Pik3ca	Rattus norvegicus
+A0A0K3AV08	mlk-1	Caenorhabditis elegans
+A0A0R4ITC5	trrap	Danio rerio
+A0A0U1RPR8	Gucy2d	Mus musculus
+A0A8I3S724	AURKA	Canis lupus familiaris
+A0A8I5ZNK2	Oxsr1	Rattus norvegicus
+A0AUV4	Gm7168	Mus musculus
+A0JM20	tyro3	Xenopus tropicalis
+A0JNB0	FYN	Bos taurus
+A0JPE1	dipk1b	Xenopus tropicalis
+A1A4I4	PKN1	Bos taurus
+A1A5H8	yes1	Danio rerio
+A1A5Q6	Smok	Rattus norvegicus
+A1L1C7	pan3	Xenopus tropicalis
+A1Y2K1	FYN	Sus scrofa
+A1Z7T0	Pkn	Drosophila melanogaster
+A1Z9X0	aPKC	Drosophila melanogaster
+A2A3N6	PIPSL	Homo sapiens
+A2AAJ9	Obscn	Mus musculus
+A2AQW0	Map3k15	Mus musculus
+A2ASS6	Ttn	Mus musculus
+A2BD05	NEK6	Sus scrofa
+A2CG49	Kalrn	Mus musculus
+A2KF29	Smoktcr	Mus musculus
+A2RU49	HYKK	Homo sapiens
+A2VDU3	MAP3K7	Bos taurus
+A2VDV2	STK38	Bos taurus
+A2VDZ4	PLK4	Bos taurus
+A3QJU3	coq8b	Danio rerio
+A4IFM7	MYLK2	Bos taurus
+A4IGM9	aurkb	Xenopus tropicalis
+A4IID4	pi4kb	Xenopus tropicalis
+A4IIW7	cdk14	Xenopus tropicalis
+A4L9P5	Hipk1	Rattus norvegicus
+A4PES0	WEE2	Sus scrofa
+A4QNA8	wee2	Xenopus tropicalis
+A4QPH2	PI4KAP2	Homo sapiens
+A4VCL2	CG31145	Drosophila melanogaster
+A5GFW1	AURKA	Sus scrofa
+A5PJU6	HYKK	Bos taurus
+A5PKJ4	MAPK7	Bos taurus
+A6QLH6	SCYL1	Bos taurus
+A7E3S4	RAF1	Bos taurus
+A7E3X2	CSNK1G1	Bos taurus
+A7MB74	SGK1	Bos taurus
+A7MBB4	MAP3K13	Bos taurus
+A7MBL8	pkn2	Danio rerio
+A7MCT6	Etnk2	Mus musculus
+A8C984	mylk3	Danio rerio
+A8DYP0	Unc-89	Drosophila melanogaster
+A8KBH6	prkcb	Xenopus tropicalis
+A8WFT6	hykk	Danio rerio
+A8WIP6	cdk20	Danio rerio
+B0G126	pip5k3	Dictyostelium discoideum
+B0LT89	Stk24	Rattus norvegicus
+B1H2T2	dipk2a	Xenopus tropicalis
+B1H3E1	nlk.2	Xenopus tropicalis
+B1Q257	odr-1	Caenorhabditis elegans
+B1WAR9	mastl	Xenopus tropicalis
+B1WAS2	hunk	Xenopus tropicalis
+B1WBU5	Sbk2	Rattus norvegicus
+B2DD29	Brsk1	Rattus norvegicus
+B2GUY1	Plk4	Rattus norvegicus
+B3DL84	plk4	Xenopus tropicalis
+B3DMA2	Acad11	Rattus norvegicus
+B3WFY8	dyf-5	Caenorhabditis elegans
+B5DE93	cdk12	Xenopus tropicalis
+B5DFG1	Pink1	Rattus norvegicus
+B8Y466	SRPK3	Sus scrofa
+C0HKC8	Smok3a	Mus musculus
+C0HKC9	Smok3b	Mus musculus
+C5J7W8	smg1	Danio rerio
+D0Z5N4	gcn-2	Caenorhabditis elegans
+D3ZBE5	Nek7	Rattus norvegicus
+D3ZG83	Map3k10	Rattus norvegicus
+D3ZGQ5	Nek8	Rattus norvegicus
+D3ZHP7	Ulk3	Rattus norvegicus
+D3ZMK9	Prag1	Rattus norvegicus
+D3ZML2	Brsk2	Rattus norvegicus
+D3ZRW8	Etnk2	Rattus norvegicus
+D3ZSI8	Pip5k1a	Rattus norvegicus
+D3ZSZ3	Nlk	Rattus norvegicus
+D4A280	Pak5	Rattus norvegicus
+D4A7V9	Eif2ak4	Rattus norvegicus
+D4AE59	Stk11	Rattus norvegicus
+E1BB50	CDK12	Bos taurus
+E1BB52	CDK13	Bos taurus
+E1BFR5	MASTL	Bos taurus
+E1BK52	STK10	Bos taurus
+E1BMN8	NLK	Bos taurus
+E1BTE1	WEE2	Gallus gallus
+E1C2I2	MASTL	Gallus gallus
+E2QWQ2	NLK	Canis lupus familiaris
+E2RJI4	MASTL	Canis lupus familiaris
+E2RSS3	WEE2	Canis lupus familiaris
+E7EAU8	gcy-9	Caenorhabditis elegans
+E9PSL7	Cit	Rattus norvegicus
+E9PT87	Mylk3	Rattus norvegicus
+E9PTG8	Stk10	Rattus norvegicus
+E9Q3L2	Pi4ka	Mus musculus
+E9Q3S4	Map3k19	Mus musculus
+F1LM93	Yes1	Rattus norvegicus
+F1LP90	Mink1	Rattus norvegicus
+F1M0Z1	Trio	Rattus norvegicus
+F1M5M3	Tex14	Rattus norvegicus
+F1M7Y5	Prkci	Rattus norvegicus
+F1MH24	AAK1	Bos taurus
+F1MJR8	TEX14	Bos taurus
+F1N9Y5	SYK	Gallus gallus
+F1NBT0	STK10	Gallus gallus
+F1QGZ6	melk	Danio rerio
+F1QU13	alpk2	Danio rerio
+F1QVU0	ltk	Danio rerio
+F1RDG9	fynb	Danio rerio
+F1SPM8	AAK1	Sus scrofa
+F8W3R9	alk	Danio rerio
+G3V9H8	Ret	Rattus norvegicus
+G4SLH0	ttn-1	Caenorhabditis elegans
+G5EBL2	mes-1	Caenorhabditis elegans
+G5EBT1	sma-5	Caenorhabditis elegans
+G5EBZ8	ark-1	Caenorhabditis elegans
+G5ECH7	cdk-5	Caenorhabditis elegans
+G5ECJ6	csk-1	Caenorhabditis elegans
+G5ECN5	strd-1	Caenorhabditis elegans
+G5ECP4	pik-1	Caenorhabditis elegans
+G5ECQ3	sel-5	Caenorhabditis elegans
+G5ED65	ver-1	Caenorhabditis elegans
+G5EDA5	ksr-2	Caenorhabditis elegans
+G5EDB2	madd-3	Caenorhabditis elegans
+G5EDF7	sek-1	Caenorhabditis elegans
+G5EDT6	jkk-1	Caenorhabditis elegans
+G5EDY0	piki-1	Caenorhabditis elegans
+G5EE56	src-1	Caenorhabditis elegans
+G5EED4	nipi-3	Caenorhabditis elegans
+G5EEE9	gcy-23	Caenorhabditis elegans
+G5EEN4	gck-3	Caenorhabditis elegans
+G5EFD2	ksr-1	Caenorhabditis elegans
+G5EFM9	nekl-3	Caenorhabditis elegans
+G5EFQ0	gcy-18	Caenorhabditis elegans
+G5EFU0	pak-2	Caenorhabditis elegans
+G5EFV5	cdk-7	Caenorhabditis elegans
+G5EGK5	cam-1	Caenorhabditis elegans
+G5EGQ3	max-2	Caenorhabditis elegans
+G5EGT9	lin-18	Caenorhabditis elegans
+H2KZU7	svh-2	Caenorhabditis elegans
+H2KZW3	zak-1	Caenorhabditis elegans
+H2L002	gcy-7	Caenorhabditis elegans
+H2L099	gck-1	Caenorhabditis elegans
+M3TYT0	ROCK2	Sus scrofa
+M9PGC5	Wnk	Drosophila melanogaster
+N1NVB7	gcy-6	Caenorhabditis elegans
+O00141	SGK1	Homo sapiens
+O00238	BMPR1B	Homo sapiens
+O00311	CDC7	Homo sapiens
+O00329	PIK3CD	Homo sapiens
+O00418	EEF2K	Homo sapiens
+O00443	PIK3C2A	Homo sapiens
+O00444	PLK4	Homo sapiens
+O00506	STK25	Homo sapiens
+O00750	PIK3C2B	Homo sapiens
+O01427	air-2	Caenorhabditis elegans
+O01510	smg-1	Caenorhabditis elegans
+O01583	mrck-1	Caenorhabditis elegans
+O01700	dlk-1	Caenorhabditis elegans
+O01761	unc-89	Caenorhabditis elegans
+O01775	nekl-2	Caenorhabditis elegans
+O01798	spe-8	Caenorhabditis elegans
+O01991	efk-1	Caenorhabditis elegans
+O02697	PIK3CG	Sus scrofa
+O02740	GUCY2F	Bos taurus
+O02810	PI4KB	Bos taurus
+O02811	PI4KA	Bos taurus
+O02812	MAPK14	Canis lupus familiaris
+O08561	Pi4kb	Rattus norvegicus
+O08605	Mknk1	Mus musculus
+O08644	Ephb6	Mus musculus
+O08648	Map3k4	Mus musculus
+O08662	Pi4ka	Rattus norvegicus
+O08678	Mark1	Rattus norvegicus
+O08679	Mark2	Rattus norvegicus
+O08680	Epha3	Rattus norvegicus
+O08775	Kdr	Rattus norvegicus
+O08796	Eef2k	Mus musculus
+O08815	Slk	Rattus norvegicus
+O08874	Pkn2	Rattus norvegicus
+O08875	Dclk1	Rattus norvegicus
+O08901	Bub1	Mus musculus
+O08911	Mapk12	Mus musculus
+O09110	Map2k3	Mus musculus
+O09127	Epha8	Mus musculus
+O12990	jak1	Danio rerio
+O13010	PIP4K2A	Sus scrofa
+O13146	epha3	Danio rerio
+O13147	ephb3	Danio rerio
+O13148	epha4a	Danio rerio
+O14578	CIT	Homo sapiens
+O14730	RIOK3	Homo sapiens
+O14733	MAP2K7	Homo sapiens
+O14757	CHEK1	Homo sapiens
+O14920	IKBKB	Homo sapiens
+O14936	CASK	Homo sapiens
+O14965	AURKA	Homo sapiens
+O14976	GAK	Homo sapiens
+O14986	PIP5K1B	Homo sapiens
+O15021	MAST4	Homo sapiens
+O15075	DCLK1	Homo sapiens
+O15111	CHUK	Homo sapiens
+O15146	MUSK	Homo sapiens
+O15197	EPHB6	Homo sapiens
+O15264	MAPK13	Homo sapiens
+O15530	PDPK1	Homo sapiens
+O16262	nipi-4	Caenorhabditis elegans
+O16544	gcy-19	Caenorhabditis elegans
+O16715	gcy-21	Caenorhabditis elegans
+O18209	wee-1.3	Caenorhabditis elegans
+O18735	ERBB2	Canis lupus familiaris
+O19004	ARAF	Sus scrofa
+O19064	JAK2	Sus scrofa
+O19175	CSNK1A1	Sus scrofa
+O19179	GUCY2D	Canis lupus familiaris
+O35099	Map3k5	Mus musculus
+O35280	Chek1	Mus musculus
+O35346	Ptk2	Rattus norvegicus
+O35491	Clk2	Mus musculus
+O35492	Clk3	Mus musculus
+O35493	Clk4	Mus musculus
+O35495	Cdk14	Mus musculus
+O35607	Bmpr2	Mus musculus
+O35831	Cdk17	Rattus norvegicus
+O35832	Cdk18	Rattus norvegicus
+O35904	Pik3cd	Mus musculus
+O35942	Nek2	Mus musculus
+O42376	mapk12	Danio rerio
+O42422	EPHA7	Gallus gallus
+O43187	IRAK2	Homo sapiens
+O43283	MAP3K13	Homo sapiens
+O43293	DAPK3	Homo sapiens
+O43318	MAP3K7	Homo sapiens
+O43353	RIPK2	Homo sapiens
+O43683	BUB1	Homo sapiens
+O43781	DYRK3	Homo sapiens
+O43930	PRKY	Homo sapiens
+O43948	PK4	Plasmodium falciparum
+O44408	kgb-1	Caenorhabditis elegans
+O44514	pmk-3	Caenorhabditis elegans
+O44959	riok-1	Caenorhabditis elegans
+O44997	dapk-1	Caenorhabditis elegans
+O45539	src-2	Caenorhabditis elegans
+O45797	wts-1	Caenorhabditis elegans
+O45818	dkf-2	Caenorhabditis elegans
+O46680	TGFBR1	Bos taurus
+O54748	Stk3	Rattus norvegicus
+O54781	Srpk2	Mus musculus
+O54783	Chkb	Rattus norvegicus
+O54784	Dapk3	Mus musculus
+O54785	Limk2	Mus musculus
+O54804	Chka	Mus musculus
+O54833	Csnk2a2	Mus musculus
+O54863	Tssk2	Mus musculus
+O54874	Cdc42bpa	Rattus norvegicus
+O54949	Nlk	Mus musculus
+O54967	Tnk2	Mus musculus
+O54988	Slk	Mus musculus
+O54992	Mapkapk5	Mus musculus
+O55047	Tlk2	Mus musculus
+O55098	Stk10	Mus musculus
+O55099	Aurkb	Rattus norvegicus
+O55173	Pdpk1	Rattus norvegicus
+O55222	Ilk	Mus musculus
+O55229	Chkb	Mus musculus
+O60229	KALRN	Homo sapiens
+O60285	NUAK1	Homo sapiens
+O60307	MAST3	Homo sapiens
+O60331	PIP5K1C	Homo sapiens
+O60674	JAK2	Homo sapiens
+O61122	svkA	Dictyostelium discoideum
+O61125	krsA	Dictyostelium discoideum
+O61267	lok	Drosophila melanogaster
+O61443	p38b	Drosophila melanogaster
+O61460	vab-1	Caenorhabditis elegans
+O61661	grp	Drosophila melanogaster
+O61847	cdk-2	Caenorhabditis elegans
+O62026	gcy-29	Caenorhabditis elegans
+O62179	gcy-20	Caenorhabditis elegans
+O62305	unc-43	Caenorhabditis elegans
+O62618	p38a	Drosophila melanogaster
+O70126	Aurkb	Mus musculus
+O70146	Tesk1	Mus musculus
+O70150	Pnck	Rattus norvegicus
+O70161	Pip5k1c	Mus musculus
+O70167	Pik3c2g	Mus musculus
+O70172	Pip4k2a	Mus musculus
+O70173	Pik3c2g	Rattus norvegicus
+O70291	Grk4	Mus musculus
+O70293	Grk6	Mus musculus
+O70405	Ulk1	Mus musculus
+O70444	Pim3	Rattus norvegicus
+O70551	Srpk1	Mus musculus
+O70589	Cask	Mus musculus
+O73791	tek	Danio rerio
+O73792	tie1	Danio rerio
+O73875	ephb4a	Danio rerio
+O73878	ephb4b	Danio rerio
+O75063	FAM20B	Homo sapiens
+O75116	ROCK2	Homo sapiens
+O75385	ULK1	Homo sapiens
+O75460	ERN1	Homo sapiens
+O75582	RPS6KA5	Homo sapiens
+O75676	RPS6KA4	Homo sapiens
+O75716	STK16	Homo sapiens
+O75747	PIK3C2G	Homo sapiens
+O75914	PAK3	Homo sapiens
+O75962	TRIO	Homo sapiens
+O76039	CDKL5	Homo sapiens
+O76324	dco	Drosophila melanogaster
+O76360	egl-4	Caenorhabditis elegans
+O76411	scd-2	Caenorhabditis elegans
+O88351	Ikbkb	Mus musculus
+O88370	Pip4k2c	Rattus norvegicus
+O88377	Pip4k2b	Rattus norvegicus
+O88445	Aurkc	Mus musculus
+O88506	Stk39	Rattus norvegicus
+O88643	Pak1	Mus musculus
+O88664	Taok1	Rattus norvegicus
+O88697	Stk16	Mus musculus
+O88763	Pik3c3	Rattus norvegicus
+O88764	Dapk3	Rattus norvegicus
+O88831	Camkk2	Rattus norvegicus
+O88850	Hipk3	Rattus norvegicus
+O88866	Hunk	Mus musculus
+O88904	Hipk1	Mus musculus
+O94768	STK17B	Homo sapiens
+O94804	STK10	Homo sapiens
+O94806	PRKD3	Homo sapiens
+O94921	CDK14	Homo sapiens
+O95382	MAP3K6	Homo sapiens
+O95747	OXSR1	Homo sapiens
+O95819	MAP4K4	Homo sapiens
+O95835	LATS1	Homo sapiens
+O96013	PAK4	Homo sapiens
+O96017	CHEK2	Homo sapiens
+O96838	fab1	Drosophila melanogaster
+O97143	SAK	Drosophila melanogaster
+O97799	KIT	Canis lupus familiaris
+P00516	PRKG1	Bos taurus
+P00517	PRKACA	Bos taurus
+P00519	ABL1	Homo sapiens
+P00520	Abl1	Mus musculus
+P00522	Abl	Drosophila melanogaster
+P00523	SRC	Gallus gallus
+P00528	Src64B	Drosophila melanogaster
+P00533	EGFR	Homo sapiens
+P00536	Mos	Mus musculus
+P00539	Mos	Rattus norvegicus
+P00540	MOS	Homo sapiens
+P03949	abl-1	Caenorhabditis elegans
+P04049	RAF1	Homo sapiens
+P04409	PRKCA	Bos taurus
+P04412	Egfr	Drosophila melanogaster
+P04626	ERBB2	Homo sapiens
+P04627	Araf	Mus musculus
+P04629	NTRK1	Homo sapiens
+P05126	PRKCB	Bos taurus
+P05128	PRKCG	Bos taurus
+P05129	PRKCG	Homo sapiens
+P05130	Pkc53E	Drosophila melanogaster
+P05131	PRKACB	Bos taurus
+P05132	Prkaca	Mus musculus
+P05383	PRKACB	Sus scrofa
+P05480	Src	Mus musculus
+P05532	Kit	Mus musculus
+P05622	Pdgfrb	Mus musculus
+P05625	RAF1	Gallus gallus
+P05696	Prkca	Rattus norvegicus
+P05771	PRKCB	Homo sapiens
+P06213	INSR	Homo sapiens
+P06239	LCK	Homo sapiens
+P06240	Lck	Mus musculus
+P06241	FYN	Homo sapiens
+P06493	CDK1	Homo sapiens
+P06494	Erbb2	Rattus norvegicus
+P06803	Pim1	Mus musculus
+P07332	FES	Homo sapiens
+P07333	CSF1R	Homo sapiens
+P07934	Phkg1	Mus musculus
+P07947	YES1	Homo sapiens
+P07948	LYN	Homo sapiens
+P07949	RET	Homo sapiens
+P08069	IGF1R	Homo sapiens
+P08103	Hck	Mus musculus
+P08181	CkIIalpha	Drosophila melanogaster
+P08413	Camk2b	Rattus norvegicus
+P08414	Camk4	Mus musculus
+P08581	MET	Homo sapiens
+P08630	Btk	Drosophila melanogaster
+P08631	HCK	Homo sapiens
+P08922	ROS1	Homo sapiens
+P08923	Ltk	Mus musculus
+P08941	ROS1	Gallus gallus
+P09208	InR	Drosophila melanogaster
+P09215	Prkcd	Rattus norvegicus
+P09216	Prkce	Rattus norvegicus
+P09217	Prkcz	Rattus norvegicus
+P09324	YES1	Gallus gallus
+P09581	Csf1r	Mus musculus
+P09619	PDGFRB	Homo sapiens
+P09759	Ephb1	Rattus norvegicus
+P09760	Fer	Rattus norvegicus
+P09769	FGR	Homo sapiens
+P0C0K7	Ephb6	Rattus norvegicus
+P0C0R5	Pik3r4	Rattus norvegicus
+P0C1S8	WEE2	Homo sapiens
+P0C1X8	Aak1	Rattus norvegicus
+P0C263	SBK2	Homo sapiens
+P0C264	SBK3	Homo sapiens
+P0C5K0	Sbk3	Mus musculus
+P0C5K1	Sbk2	Mus musculus
+P0C605	Prkg1	Mus musculus
+P0C865	Mapk7	Rattus norvegicus
+P0C8E4	Map3k7	Rattus norvegicus
+P0CD62	DDB_G0286997	Dictyostelium discoideum
+P0CD65	pan3	Dictyostelium discoideum
+P0DV84	ALK	Canis lupus familiaris
+P10398	ARAF	Homo sapiens
+P10676	ninaC	Drosophila melanogaster
+P10721	KIT	Homo sapiens
+P10741	MOS	Gallus gallus
+P11275	Camk2a	Rattus norvegicus
+P11309	PIM1	Homo sapiens
+P11345	Raf1	Rattus norvegicus
+P11346	Raf	Drosophila melanogaster
+P11362	FGFR1	Homo sapiens
+P11440	Cdk1	Mus musculus
+P11730	Camk2g	Rattus norvegicus
+P11798	Camk2a	Mus musculus
+P11799	Mylk	Gallus gallus
+P11801	PSKH1	Homo sapiens
+P11802	CDK4	Homo sapiens
+P12370	Pka-C1	Drosophila melanogaster
+P12931	SRC	Homo sapiens
+P13234	Camk4	Rattus norvegicus
+P13286	Phkg1	Rattus norvegicus
+P13368	sev	Drosophila melanogaster
+P13677	inaC	Drosophila melanogaster
+P13678	Pkc98E	Drosophila melanogaster
+P13863	CDK1	Gallus gallus
+P14056	Araf	Rattus norvegicus
+P14234	Fgr	Mus musculus
+P14616	INSRR	Homo sapiens
+P15056	BRAF	Homo sapiens
+P15127	Insr	Rattus norvegicus
+P15208	Insr	Mus musculus
+P15209	Ntrk2	Mus musculus
+P15735	PHKG2	Homo sapiens
+P15791	Camk2d	Rattus norvegicus
+P16054	Prkce	Mus musculus
+P16056	Met	Mus musculus
+P16066	NPR1	Homo sapiens
+P16067	Npr2	Rattus norvegicus
+P16092	Fgfr1	Mus musculus
+P16234	PDGFRA	Homo sapiens
+P16277	Blk	Mus musculus
+P16591	FER	Homo sapiens
+P16879	Fes	Mus musculus
+P16911	Pka-C2	Drosophila melanogaster
+P16912	Pka-C3	Drosophila melanogaster
+P17105	Itpka	Rattus norvegicus
+P17252	PRKCA	Homo sapiens
+P17612	PRKACA	Homo sapiens
+P17948	FLT1	Homo sapiens
+P18106	FER	Drosophila melanogaster
+P18160	splA	Dictyostelium discoideum
+P18161	splB	Dictyostelium discoideum
+P18265	Gsk3a	Rattus norvegicus
+P18266	Gsk3b	Rattus norvegicus
+P18293	Npr1	Mus musculus
+P18334	kin-3	Caenorhabditis elegans
+P18431	sgg	Drosophila melanogaster
+P18460	FGFR3	Gallus gallus
+P18461	FGFR2	Gallus gallus
+P18475	tor	Drosophila melanogaster
+P18652	RPS6KA	Gallus gallus
+P18653	Rps6ka1	Mus musculus
+P18654	Rps6ka3	Mus musculus
+P18910	Npr1	Rattus norvegicus
+P19139	Csnk2a1	Rattus norvegicus
+P19525	EIF2AK2	Homo sapiens
+P19784	CSNK2A2	Homo sapiens
+P20427	CSNK2A2	Bos taurus
+P20444	Prkca	Mus musculus
+P20594	NPR2	Homo sapiens
+P20689	Mylk2	Rattus norvegicus
+P20786	Pdgfra	Rattus norvegicus
+P20792	daf-1	Caenorhabditis elegans
+P20793	Mak	Rattus norvegicus
+P20794	MAK	Homo sapiens
+P21127	CDK11B	Homo sapiens
+P21137	kin-1	Caenorhabditis elegans
+P21146	GRK2	Bos taurus
+P21708	Mapk3	Rattus norvegicus
+P21709	EPHA1	Homo sapiens
+P21802	FGFR2	Homo sapiens
+P21803	Fgfr2	Mus musculus
+P21804	FGFR1	Gallus gallus
+P21860	ERBB3	Homo sapiens
+P21868	CSNK2A1	Gallus gallus
+P21869	NA	Gallus gallus
+P22455	FGFR4	Homo sapiens
+P22518	Clk1	Mus musculus
+P22607	FGFR3	Homo sapiens
+P22612	PRKACG	Homo sapiens
+P22694	PRKACB	Homo sapiens
+P23298	Prkch	Mus musculus
+P23443	RPS6KB1	Homo sapiens
+P23458	JAK1	Homo sapiens
+P23572	Cdk1	Drosophila melanogaster
+P23573	Cdk2	Drosophila melanogaster
+P23647	fu	Drosophila melanogaster
+P23677	ITPKA	Homo sapiens
+P23897	Gucy2c	Rattus norvegicus
+P24062	Igf1r	Rattus norvegicus
+P24348	let-23	Caenorhabditis elegans
+P24604	Tec	Mus musculus
+P24723	PRKCH	Homo sapiens
+P24786	NTRK3	Sus scrofa
+P24788	Cdk11b	Mus musculus
+P24941	CDK2	Homo sapiens
+P25092	GUCY2C	Homo sapiens
+P25098	GRK2	Homo sapiens
+P25323	mlkA	Dictyostelium discoideum
+P25911	Lyn	Mus musculus
+P26618	Pdgfra	Mus musculus
+P26794	Pim1	Rattus norvegicus
+P26817	Grk2	Rattus norvegicus
+P26818	GRK3	Bos taurus
+P26819	Grk3	Rattus norvegicus
+P27037	ACVR2A	Homo sapiens
+P27038	Acvr2a	Mus musculus
+P27040	Acvr2b	Mus musculus
+P27361	MAPK3	Homo sapiens
+P27448	MARK3	Homo sapiens
+P27704	Mapk6	Rattus norvegicus
+P27791	Prkaca	Rattus norvegicus
+P27987	ITPKB	Homo sapiens
+P28028	Braf	Mus musculus
+P28178	pkgB	Dictyostelium discoideum
+P28327	GRK1	Bos taurus
+P28482	MAPK1	Homo sapiens
+P28652	Camk2b	Mus musculus
+P28693	EPHB2	Gallus gallus
+P28867	Prkcd	Mus musculus
+P29317	EPHA2	Homo sapiens
+P29318	EPHA3	Gallus gallus
+P29319	Epha3	Mus musculus
+P29320	EPHA3	Homo sapiens
+P29321	Epha8	Rattus norvegicus
+P29322	EPHA8	Homo sapiens
+P29323	EPHB2	Homo sapiens
+P29376	LTK	Homo sapiens
+P29597	TYK2	Homo sapiens
+P30285	Cdk4	Mus musculus
+P30291	WEE1	Homo sapiens
+P30530	AXL	Homo sapiens
+P31152	MAPK4	Homo sapiens
+P31325	Phkg2	Rattus norvegicus
+P31749	AKT1	Homo sapiens
+P31750	Akt1	Mus musculus
+P31751	AKT2	Homo sapiens
+P31938	Map2k1	Mus musculus
+P32023	for	Drosophila melanogaster
+P32298	GRK4	Homo sapiens
+P32577	Csk	Rattus norvegicus
+P32742	ikke-1	Caenorhabditis elegans
+P32865	Gprk1	Drosophila melanogaster
+P32866	Gprk2	Drosophila melanogaster
+P32871	PIK3CA	Bos taurus
+P33981	TTK	Homo sapiens
+P34099	pkaC	Dictyostelium discoideum
+P34100	pkaD	Dictyostelium discoideum
+P34101	fhkC	Dictyostelium discoideum
+P34102	pkgC	Dictyostelium discoideum
+P34103	pkgD	Dictyostelium discoideum
+P34112	cdk1	Dictyostelium discoideum
+P34117	cdk5	Dictyostelium discoideum
+P34152	Ptk2	Mus musculus
+P34314	tlk-1	Caenorhabditis elegans
+P34331	plk-1	Caenorhabditis elegans
+P34516	K06H7.8	Caenorhabditis elegans
+P34556	cdk-1	Caenorhabditis elegans
+P34633	ZK507.1	Caenorhabditis elegans
+P34635	ZK507.3	Caenorhabditis elegans
+P34649	riok-3	Caenorhabditis elegans
+P34653	panl-3	Caenorhabditis elegans
+P34722	tpa-1	Caenorhabditis elegans
+P34885	pkc-1	Caenorhabditis elegans
+P34891	kin-15	Caenorhabditis elegans
+P34892	kin-16	Caenorhabditis elegans
+P34925	RYK	Homo sapiens
+P34947	GRK5	Homo sapiens
+P35426	Cdk4	Rattus norvegicus
+P35465	Pak1	Rattus norvegicus
+P35507	CSNK1B	Bos taurus
+P35508	CSNK1D	Bos taurus
+P35509	CSNK1G3	Bos taurus
+P35546	Ret	Mus musculus
+P35590	TIE1	Homo sapiens
+P35626	GRK3	Homo sapiens
+P35739	Ntrk1	Rattus norvegicus
+P35761	Ttk	Mus musculus
+P35790	CHKA	Homo sapiens
+P35916	FLT4	Homo sapiens
+P35917	Flt4	Mus musculus
+P35918	Kdr	Mus musculus
+P35968	KDR	Homo sapiens
+P35969	Flt1	Mus musculus
+P35991	Btk	Mus musculus
+P36506	Map2k2	Rattus norvegicus
+P36507	MAP2K2	Homo sapiens
+P36887	PRKACA	Sus scrofa
+P36888	FLT3	Homo sapiens
+P36894	BMPR1A	Homo sapiens
+P36895	Bmpr1a	Mus musculus
+P36896	ACVR1B	Homo sapiens
+P36897	TGFBR1	Homo sapiens
+P36898	Bmpr1b	Mus musculus
+P37023	ACVRL1	Homo sapiens
+P37172	Acvr1	Mus musculus
+P37173	TGFBR2	Homo sapiens
+P38438	Tgfbr2	Rattus norvegicus
+P38444	Acvr2a	Rattus norvegicus
+P38445	Acvr2b	Rattus norvegicus
+P39688	Fyn	Mus musculus
+P39745	mpk-1	Caenorhabditis elegans
+P39951	Cdk1	Rattus norvegicus
+P40417	rl	Drosophila melanogaster
+P41239	CSK	Gallus gallus
+P41240	CSK	Homo sapiens
+P41241	Csk	Mus musculus
+P41242	Matk	Mus musculus
+P41243	Matk	Rattus norvegicus
+P41279	MAP3K8	Homo sapiens
+P41743	PRKCI	Homo sapiens
+P41949	D1044.1	Caenorhabditis elegans
+P42168	kin-19	Caenorhabditis elegans
+P42169	C03C10.2	Caenorhabditis elegans
+P42335	Itpkb	Rattus norvegicus
+P42336	PIK3CA	Homo sapiens
+P42337	Pik3ca	Mus musculus
+P42338	PIK3CB	Homo sapiens
+P42345	MTOR	Homo sapiens
+P42346	Mtor	Rattus norvegicus
+P42356	PI4KA	Homo sapiens
+P42525	erkA	Dictyostelium discoideum
+P42527	mhkA	Dictyostelium discoideum
+P42679	MATK	Homo sapiens
+P42680	TEC	Homo sapiens
+P42681	TXK	Homo sapiens
+P42682	Txk	Mus musculus
+P42683	LCK	Gallus gallus
+P42684	ABL2	Homo sapiens
+P42685	FRK	Homo sapiens
+P43249	GRK5	Bos taurus
+P43250	GRK6	Homo sapiens
+P43403	ZAP70	Homo sapiens
+P43404	Zap70	Mus musculus
+P43405	SYK	Homo sapiens
+P43481	KIT	Bos taurus
+P45894	aak-1	Caenorhabditis elegans
+P45983	MAPK8	Homo sapiens
+P45984	MAPK9	Homo sapiens
+P45985	MAP2K4	Homo sapiens
+P46196	MAPK1	Bos taurus
+P46197	NPR2	Bos taurus
+P46549	kin-18	Caenorhabditis elegans
+P46551	cdk-12	Caenorhabditis elegans
+P46558	ckb-1	Caenorhabditis elegans
+P46559	ckb-2	Caenorhabditis elegans
+P46560	ckb-3	Caenorhabditis elegans
+P46734	MAP2K3	Homo sapiens
+P46892	Cdk11b	Rattus norvegicus
+P47196	Akt1	Rattus norvegicus
+P47197	Akt2	Rattus norvegicus
+P47809	Map2k4	Mus musculus
+P47810	Wee1	Mus musculus
+P47811	Mapk14	Mus musculus
+P48025	Syk	Mus musculus
+P48426	PIP4K2A	Homo sapiens
+P48609	Cdk5	Drosophila melanogaster
+P48729	CSNK1A1	Homo sapiens
+P48730	CSNK1D	Homo sapiens
+P48734	CDK1	Bos taurus
+P48736	PIK3CG	Homo sapiens
+P49025	Cit	Mus musculus
+P49071	MAPk-Ak2	Drosophila melanogaster
+P49137	MAPKAPK2	Homo sapiens
+P49138	Mapkapk2	Mus musculus
+P49185	Mapk8	Rattus norvegicus
+P49186	Mapk9	Rattus norvegicus
+P49187	Mapk10	Rattus norvegicus
+P49336	CDK8	Homo sapiens
+P49615	Cdk5	Mus musculus
+P49657	mnb	Drosophila melanogaster
+P49674	CSNK1E	Homo sapiens
+P49759	CLK1	Homo sapiens
+P49760	CLK2	Homo sapiens
+P49761	CLK3	Homo sapiens
+P49762	Doa	Drosophila melanogaster
+P49840	GSK3A	Homo sapiens
+P49841	GSK3B	Homo sapiens
+P50118	MOS	Sus scrofa
+P50488	daf-4	Caenorhabditis elegans
+P50545	Hck	Rattus norvegicus
+P50613	CDK7	Homo sapiens
+P50750	CDK9	Homo sapiens
+P51136	gskA	Dictyostelium discoideum
+P51451	BLK	Homo sapiens
+P51617	IRAK1	Homo sapiens
+P51812	RPS6KA3	Homo sapiens
+P51813	BMX	Homo sapiens
+P51817	PRKX	Homo sapiens
+P51839	Gucy2d	Rattus norvegicus
+P51840	Gucy2e	Rattus norvegicus
+P51841	GUCY2F	Homo sapiens
+P51842	Gucy2f	Rattus norvegicus
+P51952	Cdk7	Rattus norvegicus
+P51954	Nek1	Mus musculus
+P51955	NEK2	Homo sapiens
+P51956	NEK3	Homo sapiens
+P51957	NEK4	Homo sapiens
+P52304	polo	Drosophila melanogaster
+P52332	Jak1	Mus musculus
+P52333	JAK3	Homo sapiens
+P52564	MAP2K6	Homo sapiens
+P52785	Gucy2e	Mus musculus
+P53349	Map3k1	Mus musculus
+P53350	PLK1	Homo sapiens
+P53351	Plk2	Mus musculus
+P53355	DAPK1	Homo sapiens
+P53666	LIMK2	Gallus gallus
+P53667	LIMK1	Homo sapiens
+P53668	Limk1	Mus musculus
+P53669	Limk1	Rattus norvegicus
+P53670	Limk2	Rattus norvegicus
+P53671	LIMK2	Homo sapiens
+P53767	Flt1	Rattus norvegicus
+P53778	MAPK12	Homo sapiens
+P53779	MAPK10	Homo sapiens
+P54265	Dmpk	Mus musculus
+P54350	Wee1	Drosophila melanogaster
+P54352	eas	Drosophila melanogaster
+P54367	CkIalpha	Drosophila melanogaster
+P54644	pkbA	Dictyostelium discoideum
+P54645	Prkaa1	Rattus norvegicus
+P54646	PRKAA2	Homo sapiens
+P54673	pikA	Dictyostelium discoideum
+P54674	pikB	Dictyostelium discoideum
+P54675	pikC	Dictyostelium discoideum
+P54676	pikE	Dictyostelium discoideum
+P54677	pikD	Dictyostelium discoideum
+P54685	cdk7	Dictyostelium discoideum
+P54753	EPHB3	Homo sapiens
+P54754	Ephb3	Mus musculus
+P54755	EPHA5	Gallus gallus
+P54756	EPHA5	Homo sapiens
+P54757	Epha5	Rattus norvegicus
+P54758	Epha6	Rattus norvegicus
+P54759	Epha7	Rattus norvegicus
+P54760	EPHB4	Homo sapiens
+P54761	Ephb4	Mus musculus
+P54762	EPHB1	Homo sapiens
+P54763	Ephb2	Mus musculus
+P54764	EPHA4	Homo sapiens
+P54936	lin-2	Caenorhabditis elegans
+P55144	Tyro3	Mus musculus
+P55146	Tyro3	Rattus norvegicus
+P55203	GUCY2D	Bos taurus
+P55204	GUCY2C	Sus scrofa
+P55205	Gucy2g	Rattus norvegicus
+P57058	HUNK	Homo sapiens
+P57059	SIK1	Homo sapiens
+P57078	RIPK4	Homo sapiens
+P57097	Mertk	Rattus norvegicus
+P57760	Stk16	Rattus norvegicus
+P58750	Pim3	Mus musculus
+P58801	Ripk2	Mus musculus
+P59241	Aurka	Rattus norvegicus
+P59895	Nek6	Rattus norvegicus
+P62205	plk1	Xenopus tropicalis
+P63085	Mapk1	Mus musculus
+P63086	Mapk1	Rattus norvegicus
+P63318	Prkcg	Mus musculus
+P63319	Prkcg	Rattus norvegicus
+P67827	CSNK1A1	Bos taurus
+P67962	CSNK1A1	Gallus gallus
+P67999	Rps6kb1	Rattus norvegicus
+P68181	Prkacb	Mus musculus
+P68182	Prkacb	Rattus norvegicus
+P68399	CSNK2A1	Bos taurus
+P68400	CSNK2A1	Homo sapiens
+P68403	Prkcb	Rattus norvegicus
+P68404	Prkcb	Mus musculus
+P70181	Pip5k1b	Mus musculus
+P70182	Pip5k1a	Mus musculus
+P70218	Map4k1	Mus musculus
+P70236	Map2k6	Mus musculus
+P70268	Pkn1	Mus musculus
+P70335	Rock1	Mus musculus
+P70336	Rock2	Mus musculus
+P70424	Erbb2	Mus musculus
+P70451	Fer	Mus musculus
+P70507	Grk4	Rattus norvegicus
+P70531	Eef2k	Rattus norvegicus
+P70539	Acvr1c	Rattus norvegicus
+P70600	Ptk2b	Rattus norvegicus
+P70618	Mapk14	Rattus norvegicus
+P78356	PIP4K2B	Homo sapiens
+P78362	SRPK2	Homo sapiens
+P78368	CSNK1G2	Homo sapiens
+P78527	PRKDC	Homo sapiens
+P79432	CDK4	Sus scrofa
+P79996	MAPK9	Gallus gallus
+P80192	MAP3K9	Homo sapiens
+P80201	Acvr1	Rattus norvegicus
+P80202	Acvr1b	Rattus norvegicus
+P80203	Acvrl1	Rattus norvegicus
+P80204	Tgfbr1	Rattus norvegicus
+P83097	Wsck	Drosophila melanogaster
+P83098	Stlk	Drosophila melanogaster
+P83099	Pkcdelta	Drosophila melanogaster
+P83100	p38c	Drosophila melanogaster
+P83101	gskt	Drosophila melanogaster
+P83102	Dyrk3	Drosophila melanogaster
+P83103	Haspin	Drosophila melanogaster
+P83104	Takl1	Drosophila melanogaster
+P83510	Tnik	Mus musculus
+P83741	Wnk1	Mus musculus
+P84199	nekl-4	Caenorhabditis elegans
+P90648	mhkB	Dictyostelium discoideum
+P90866	cdk-8	Caenorhabditis elegans
+P90980	pkc-2	Caenorhabditis elegans
+P91550	gcy-15	Caenorhabditis elegans
+P92199	let-502	Caenorhabditis elegans
+P92208	bsk	Drosophila melanogaster
+P97313	Prkdc	Mus musculus
+P97343	Uhmk1	Mus musculus
+P97377	Cdk2	Mus musculus
+P97477	Aurka	Mus musculus
+P97504	Bmx	Mus musculus
+P97523	Met	Rattus norvegicus
+P97633	Csnk1a1	Rattus norvegicus
+P97711	Grk6	Rattus norvegicus
+P97756	Camkk1	Rattus norvegicus
+P97793	Alk	Mus musculus
+P97820	Map4k4	Mus musculus
+P97874	Gak	Rattus norvegicus
+P97924	Kalrn	Rattus norvegicus
+Q00168	CaMKII	Drosophila melanogaster
+Q00342	Flt3	Mus musculus
+Q00495	Csf1r	Rattus norvegicus
+Q00526	CDK3	Homo sapiens
+Q00532	CDKL1	Homo sapiens
+Q00534	CDK6	Homo sapiens
+Q00535	CDK5	Homo sapiens
+Q00536	CDK16	Homo sapiens
+Q00537	CDK17	Homo sapiens
+Q00655	SYK	Sus scrofa
+Q00944	PTK2	Gallus gallus
+Q00993	Axl	Mus musculus
+Q01134	Chka	Rattus norvegicus
+Q01279	Egfr	Mus musculus
+Q01314	AKT1	Bos taurus
+Q01621	Lck	Rattus norvegicus
+Q01887	Ryk	Mus musculus
+Q01973	ROR1	Homo sapiens
+Q01974	ROR2	Homo sapiens
+Q01986	Map2k1	Rattus norvegicus
+Q02111	Prkcq	Mus musculus
+Q02156	PRKCE	Homo sapiens
+Q02399	CDK5	Bos taurus
+Q02720	casK	Dictyostelium discoideum
+Q02750	MAP2K1	Homo sapiens
+Q02763	TEK	Homo sapiens
+Q02779	MAP3K10	Homo sapiens
+Q02846	GUCY2D	Homo sapiens
+Q02858	Tek	Mus musculus
+Q02956	Prkcz	Mus musculus
+Q02977	YRK	Gallus gallus
+Q03042	Pkg21D	Drosophila melanogaster
+Q03043	for	Drosophila melanogaster
+Q03114	Cdk5	Rattus norvegicus
+Q03137	Epha4	Mus musculus
+Q03141	Mark3	Mus musculus
+Q03142	Fgfr4	Mus musculus
+Q03145	Epha2	Mus musculus
+Q03146	Ddr1	Mus musculus
+Q03147	Cdk7	Mus musculus
+Q03351	Ntrk3	Rattus norvegicus
+Q03526	Itk	Mus musculus
+Q03563	spk-1	Caenorhabditis elegans
+Q03963	Eif2ak2	Mus musculus
+Q04589	Fgfr1	Rattus norvegicus
+Q04735	Cdk16	Mus musculus
+Q04736	Yes1	Mus musculus
+Q04759	PRKCQ	Homo sapiens
+Q04771	ACVR1	Homo sapiens
+Q04859	Mak	Mus musculus
+Q04899	Cdk18	Mus musculus
+Q04912	MST1R	Homo sapiens
+Q04982	BRAF	Gallus gallus
+Q05030	Pdgfrb	Rattus norvegicus
+Q05397	PTK2	Homo sapiens
+Q05438	BMPR1B	Gallus gallus
+Q05512	Mark2	Mus musculus
+Q05513	PRKCZ	Homo sapiens
+Q05652	pll	Drosophila melanogaster
+Q05655	PRKCD	Homo sapiens
+Q05688	IGF1R	Bos taurus
+Q05823	RNASEL	Homo sapiens
+Q05876	FYN	Gallus gallus
+Q05921	Rnasel	Mus musculus
+Q06187	BTK	Homo sapiens
+Q06226	Sgk1	Rattus norvegicus
+Q06418	TYRO3	Homo sapiens
+Q06486	Csnk1d	Rattus norvegicus
+Q06805	TIE1	Bos taurus
+Q06806	Tie1	Mus musculus
+Q06807	TEK	Bos taurus
+Q07002	CDK18	Homo sapiens
+Q07014	Lyn	Rattus norvegicus
+Q07174	Map3k8	Mus musculus
+Q07292	lin-45	Caenorhabditis elegans
+Q07407	htl	Drosophila melanogaster
+Q07494	EPHB1	Gallus gallus
+Q07496	EPHA4	Gallus gallus
+Q07497	EPHB5	Gallus gallus
+Q07498	EPHB3	Gallus gallus
+Q07553	Gyc32E	Drosophila melanogaster
+Q07832	Plk1	Mus musculus
+Q07912	TNK2	Homo sapiens
+Q08156	KIT	Gallus gallus
+Q08345	DDR1	Homo sapiens
+Q08881	ITK	Homo sapiens
+Q08AE8	SPIRE1	Homo sapiens
+Q08CW1	tlk2	Xenopus tropicalis
+Q08DZ2	PRP4K	Bos taurus
+Q08E52	PAK1	Bos taurus
+Q09013	DMPK	Homo sapiens
+Q09136	PRKAA1	Sus scrofa
+Q09137	Prkaa2	Rattus norvegicus
+Q09147	btl	Drosophila melanogaster
+Q09298	pink-1	Caenorhabditis elegans
+Q09371	ZK177.2	Caenorhabditis elegans
+Q09435	gcy-1	Caenorhabditis elegans
+Q09437	cdk-11.1	Caenorhabditis elegans
+Q09488	sma-6	Caenorhabditis elegans
+Q09499	ire-1	Caenorhabditis elegans
+Q09503	ttbk-6	Caenorhabditis elegans
+Q09537	grk-1	Caenorhabditis elegans
+Q09595	R03D7.5	Caenorhabditis elegans
+Q09639	grk-2	Caenorhabditis elegans
+Q0GGW5	STK11	Gallus gallus
+Q0IHQ8	stk10	Xenopus tropicalis
+Q0IJ08	dyrk1a	Xenopus tropicalis
+Q0KHQ5	Tao	Drosophila melanogaster
+Q0KHT7	Drak	Drosophila melanogaster
+Q0KHV6	Pink1	Drosophila melanogaster
+Q0KK55	Kndc1	Mus musculus
+Q0KL02	Trio	Mus musculus
+Q0P5F7	PIP4K2C	Bos taurus
+Q0P5I2	IRAK2	Bos taurus
+Q0P6D2	DIPK1C	Homo sapiens
+Q0V7M1	PSKH1	Bos taurus
+Q0VBZ0	CSK	Bos taurus
+Q0VCE3	TRIB3	Bos taurus
+Q0VD22	STK33	Bos taurus
+Q10028	gcy-3	Caenorhabditis elegans
+Q10029	gcy-2	Caenorhabditis elegans
+Q10656	egl-15	Caenorhabditis elegans
+Q10664	mek-2	Caenorhabditis elegans
+Q10925	sid-3	Caenorhabditis elegans
+Q11090	C01C4.3	Caenorhabditis elegans
+Q11112	C03B1.5	Caenorhabditis elegans
+Q11177	dhs-27	Caenorhabditis elegans
+Q11179	mapk-15	Caenorhabditis elegans
+Q12851	MAP4K2	Homo sapiens
+Q12852	MAP3K12	Homo sapiens
+Q12866	MERTK	Homo sapiens
+Q13043	STK4	Homo sapiens
+Q13131	PRKAA1	Homo sapiens
+Q13153	PAK1	Homo sapiens
+Q13163	MAP2K5	Homo sapiens
+Q13164	MAPK7	Homo sapiens
+Q13177	PAK2	Homo sapiens
+Q13188	STK3	Homo sapiens
+Q13233	MAP3K1	Homo sapiens
+Q13237	PRKG2	Homo sapiens
+Q13308	PTK7	Homo sapiens
+Q13315	ATM	Homo sapiens
+Q13418	ILK	Homo sapiens
+Q13464	ROCK1	Homo sapiens
+Q13470	TNK1	Homo sapiens
+Q13523	PRP4K	Homo sapiens
+Q13535	ATR	Homo sapiens
+Q13546	RIPK1	Homo sapiens
+Q13554	CAMK2B	Homo sapiens
+Q13555	CAMK2G	Homo sapiens
+Q13557	CAMK2D	Homo sapiens
+Q13627	DYRK1A	Homo sapiens
+Q13705	ACVR2B	Homo sapiens
+Q13873	BMPR2	Homo sapiens
+Q13882	PTK6	Homo sapiens
+Q13976	PRKG1	Homo sapiens
+Q14004	CDK13	Homo sapiens
+Q14012	CAMK1	Homo sapiens
+Q14164	IKBKE	Homo sapiens
+Q14289	PTK2B	Homo sapiens
+Q14680	MELK	Homo sapiens
+Q14AX6	Cdk12	Mus musculus
+Q15131	CDK10	Homo sapiens
+Q15139	PRKD1	Homo sapiens
+Q15208	STK38	Homo sapiens
+Q15303	ERBB4	Homo sapiens
+Q15349	RPS6KA2	Homo sapiens
+Q15375	EPHA7	Homo sapiens
+Q15418	RPS6KA1	Homo sapiens
+Q15569	TESK1	Homo sapiens
+Q15746	MYLK	Homo sapiens
+Q15759	MAPK11	Homo sapiens
+Q15772	SPEG	Homo sapiens
+Q15831	STK11	Homo sapiens
+Q15835	GRK1	Homo sapiens
+Q16288	NTRK3	Homo sapiens
+Q16512	PKN1	Homo sapiens
+Q16513	PKN2	Homo sapiens
+Q16539	MAPK14	Homo sapiens
+Q16566	CAMK4	Homo sapiens
+Q16584	MAP3K11	Homo sapiens
+Q16620	NTRK2	Homo sapiens
+Q16644	MAPKAPK3	Homo sapiens
+Q16659	MAPK6	Homo sapiens
+Q16671	AMHR2	Homo sapiens
+Q16816	PHKG1	Homo sapiens
+Q16832	DDR2	Homo sapiens
+Q17446	pmk-1	Caenorhabditis elegans
+Q17833	old-1	Caenorhabditis elegans
+Q17850	pak-1	Caenorhabditis elegans
+Q17941	akt-1	Caenorhabditis elegans
+Q17QS4	PIP5KL1	Bos taurus
+Q17QV9	STK40	Bos taurus
+Q17R13	TNK2	Bos taurus
+Q18163	ddr-1	Caenorhabditis elegans
+Q18331	gcy-11	Caenorhabditis elegans
+Q18486	coq-8	Caenorhabditis elegans
+Q18846	rskn-2	Caenorhabditis elegans
+Q19187	gcy-12	Caenorhabditis elegans
+Q19192	pek-1	Caenorhabditis elegans
+Q19238	F09A5.2	Caenorhabditis elegans
+Q19266	pkc-3	Caenorhabditis elegans
+Q19469	sad-1	Caenorhabditis elegans
+Q19768	gcy-13	Caenorhabditis elegans
+Q19848	vrk-1	Caenorhabditis elegans
+Q1ECX4	tlk2	Danio rerio
+Q1EG27	Myo3b	Mus musculus
+Q1HG70	MAP2K2	Canis lupus familiaris
+Q1HKZ5	Map3k13	Mus musculus
+Q1JPZ3	src	Danio rerio
+Q1LUA6	trio	Danio rerio
+Q1LX51	wee2	Danio rerio
+Q1LYM3	spire1	Danio rerio
+Q1RLQ5	dipk1a	Danio rerio
+Q1RLU9	cdk15	Danio rerio
+Q1RMT7	RIOK3	Bos taurus
+Q1RMT8	IRAK4	Bos taurus
+Q1XHL7	grk7b	Danio rerio
+Q1ZXC8	pXi	Dictyostelium discoideum
+Q1ZXD6	roco5	Dictyostelium discoideum
+Q1ZXH2	fhkB	Dictyostelium discoideum
+Q1ZXI5	DDB_G0278845	Dictyostelium discoideum
+Q1ZXR2	DDB_G0267566	Dictyostelium discoideum
+Q20085	wee-1.1	Caenorhabditis elegans
+Q20347	mkk-4	Caenorhabditis elegans
+Q20443	prk-2	Caenorhabditis elegans
+Q20471	kin-20	Caenorhabditis elegans
+Q20845	plk-3	Caenorhabditis elegans
+Q21017	kin-29	Caenorhabditis elegans
+Q21029	nsy-1	Caenorhabditis elegans
+Q21038	ver-3	Caenorhabditis elegans
+Q21041	ver-4	Caenorhabditis elegans
+Q21307	mek-1	Caenorhabditis elegans
+Q21360	mak-1	Caenorhabditis elegans
+Q21734	rskn-1	Caenorhabditis elegans
+Q21776	bub-1	Caenorhabditis elegans
+Q22146	frk-1	Caenorhabditis elegans
+Q22258	atl-1	Caenorhabditis elegans
+Q22942	cka-2	Caenorhabditis elegans
+Q23023	unc-51	Caenorhabditis elegans
+Q23310	gcy-14	Caenorhabditis elegans
+Q23356	mig-15	Caenorhabditis elegans
+Q23357	cdk-11.2	Caenorhabditis elegans
+Q23551	unc-22	Caenorhabditis elegans
+Q23681	gcy-4	Caenorhabditis elegans
+Q23682	gcy-5	Caenorhabditis elegans
+Q23915	kinX	Dictyostelium discoideum
+Q23977	hep	Drosophila melanogaster
+Q24145	Shark	Drosophila melanogaster
+Q24210	CASK	Drosophila melanogaster
+Q24324	Dsor1	Drosophila melanogaster
+Q24488	Ror	Drosophila melanogaster
+Q24592	hop	Drosophila melanogaster
+Q27324	drl	Drosophila melanogaster
+Q28021	ROCK2	Bos taurus
+Q28041	ACVR1	Bos taurus
+Q28043	ACVR2A	Bos taurus
+Q28283	TRIB2	Canis lupus familiaris
+Q28824	MYLK	Bos taurus
+Q28923	YES1	Canis lupus familiaris
+Q28948	PRKAA2	Sus scrofa
+Q28DZ1	chuk	Xenopus tropicalis
+Q28FH2	scyl1	Xenopus tropicalis
+Q28G26	pi4k2b	Xenopus tropicalis
+Q28GW8	melk	Xenopus tropicalis
+Q29RI0	COQ8A	Bos taurus
+Q2HJF7	CAMK2D	Bos taurus
+Q2HWD6	KIT	Sus scrofa
+Q2KIP2	HASPIN	Bos taurus
+Q2KJ16	PHKG2	Bos taurus
+Q2L6W9	sax-1	Caenorhabditis elegans
+Q2LGB3	IRAK1	Bos taurus
+Q2M2I8	AAK1	Homo sapiens
+Q2NL51	Gsk3a	Mus musculus
+Q2PJ68	sgk-1	Caenorhabditis elegans
+Q2QLE0	MET	Sus scrofa
+Q2TA06	AURKA	Bos taurus
+Q2TA25	PLK1	Bos taurus
+Q2TBE6	Pi4k2a	Mus musculus
+Q2TBL8	CDK10	Bos taurus
+Q2YDN8	VRK3	Bos taurus
+Q32KY4	CDK4	Bos taurus
+Q32L23	LIMK2	Bos taurus
+Q32MK0	MYLK3	Homo sapiens
+Q32PI1	VRK1	Bos taurus
+Q32PP3	pdik1l	Danio rerio
+Q38SD2	LRRK1	Homo sapiens
+Q3MHJ9	CAMK2B	Bos taurus
+Q3MIX3	ADCK5	Homo sapiens
+Q3MJK5	Cdk12	Rattus norvegicus
+Q3SWY2	ILK	Bos taurus
+Q3SWY6	STK25	Bos taurus
+Q3SX21	CLK3	Bos taurus
+Q3SYZ2	MAPKAPK3	Bos taurus
+Q3SZJ2	RIPK2	Bos taurus
+Q3SZW1	TSSK1B	Bos taurus
+Q3T0N5	MAPK13	Bos taurus
+Q3TUA9	Pomk	Mus musculus
+Q3TYD6	Lmtk2	Mus musculus
+Q3TZA2	Cdkl4	Mus musculus
+Q3U1V8	Map3k9	Mus musculus
+Q3U214	Mast3	Mus musculus
+Q3U3Q1	Ulk3	Mus musculus
+Q3UFB7	Ntrk1	Mus musculus
+Q3UGM2	Nek10	Mus musculus
+Q3UH66	Wnk2	Mus musculus
+Q3UHC2	Lrrk1	Mus musculus
+Q3UHJ0	Aak1	Mus musculus
+Q3UHL1	Camkv	Mus musculus
+Q3UIZ8	Mylk3	Mus musculus
+Q3ULB5	Pak6	Mus musculus
+Q3UMM4	Cdk10	Mus musculus
+Q3UMW7	Mapkapk3	Mus musculus
+Q3USZ8	Dipk2a	Mus musculus
+Q3UTQ8	Cdkl5	Mus musculus
+Q3UU96	Cdc42bpa	Mus musculus
+Q3UUJ4	Strada	Mus musculus
+Q3UVC0	Ksr2	Mus musculus
+Q3UVR3	Ttbk2	Mus musculus
+Q3UWA6	Gucy2c	Mus musculus
+Q3UYH7	Grk3	Mus musculus
+Q3V016	Hipk4	Mus musculus
+Q3V129	Ulk4	Mus musculus
+Q3V3A1	Cdk15	Mus musculus
+Q3Y416	ckk-1	Caenorhabditis elegans
+Q498D6	Fgfr4	Rattus norvegicus
+Q49GP3	pi4kb	Danio rerio
+Q49GP5	pi4k2b	Danio rerio
+Q49HM9	grk7a	Danio rerio
+Q4FZD7	Plk5	Mus musculus
+Q4G050	Mknk1	Rattus norvegicus
+Q4G3H4	chuk	Danio rerio
+Q4JIM5	Abl2	Mus musculus
+Q4JL91	ippk	Danio rerio
+Q4KM34	Cdk20	Rattus norvegicus
+Q4KM47	Cdk10	Rattus norvegicus
+Q4KSH7	Map2k7	Rattus norvegicus
+Q4QQS0	Irak2	Rattus norvegicus
+Q4TVR5	DSTYK	Bos taurus
+Q4V793	Hipk4	Rattus norvegicus
+Q4V8A3	Dyrk3	Rattus norvegicus
+Q4V8A9	Pomk	Rattus norvegicus
+Q4VSN1	dstyk	Danio rerio
+Q4VSN4	DSTYK	Canis lupus familiaris
+Q501V0	pskh1	Danio rerio
+Q504Y2	PKDCC	Homo sapiens
+Q505I0	pi4k2a	Xenopus tropicalis
+Q52KF3	Spire1	Mus musculus
+Q52WX2	SBK1	Homo sapiens
+Q53UA7	Taok3	Rattus norvegicus
+Q54B33	pakE	Dictyostelium discoideum
+Q54B48	DDB_G0293958	Dictyostelium discoideum
+Q54BC9	dyrk2	Dictyostelium discoideum
+Q54BF0	fhkA	Dictyostelium discoideum
+Q54C18	DDB_G0293276	Dictyostelium discoideum
+Q54C38	DDB_G0293292	Dictyostelium discoideum
+Q54C71	kxcB	Dictyostelium discoideum
+Q54C77	DDB_G0293184	Dictyostelium discoideum
+Q54CY9	DDB_G0292624	Dictyostelium discoideum
+Q54D75	DDB_G0292550	Dictyostelium discoideum
+Q54DC8	DDB_G0292350	Dictyostelium discoideum
+Q54DF2	mrkA	Dictyostelium discoideum
+Q54DF7	DDB_G0292354	Dictyostelium discoideum
+Q54DK3	cdc7	Dictyostelium discoideum
+Q54DK4	ak1	Dictyostelium discoideum
+Q54DY0	DDB_G0291918	Dictyostelium discoideum
+Q54E34	DDB_G0291842	Dictyostelium discoideum
+Q54EG9	DDB_G0291516	Dictyostelium discoideum
+Q54EM1	DDB_G0291664	Dictyostelium discoideum
+Q54ER4	atr1	Dictyostelium discoideum
+Q54ET3	DDB_G0291350	Dictyostelium discoideum
+Q54EY4	dst3	Dictyostelium discoideum
+Q54F40	DDB_G0291133	Dictyostelium discoideum
+Q54FH3	DDB_G0290859	Dictyostelium discoideum
+Q54FR9	DDB_G0290621	Dictyostelium discoideum
+Q54G28	DDB_G0290471	Dictyostelium discoideum
+Q54G43	shkE	Dictyostelium discoideum
+Q54GY6	kxcA	Dictyostelium discoideum
+Q54H05	kinY	Dictyostelium discoideum
+Q54H45	drkB	Dictyostelium discoideum
+Q54H46	drkA	Dictyostelium discoideum
+Q54HC6	arkA	Dictyostelium discoideum
+Q54HD2	ndrD	Dictyostelium discoideum
+Q54I36	pyk3	Dictyostelium discoideum
+Q54IE8	irlE	Dictyostelium discoideum
+Q54IF2	DDB_G0288795	Dictyostelium discoideum
+Q54IH6	abkA	Dictyostelium discoideum
+Q54IH8	ndrB	Dictyostelium discoideum
+Q54IP4	shkB	Dictyostelium discoideum
+Q54JC7	DDB_G0288147	Dictyostelium discoideum
+Q54JG7	dst4	Dictyostelium discoideum
+Q54JM2	DDB_G0287957	Dictyostelium discoideum
+Q54JQ1	mkcC	Dictyostelium discoideum
+Q54L00	DDB_G0287001	Dictyostelium discoideum
+Q54L81	DDB_G0286841	Dictyostelium discoideum
+Q54LH8	DDB_G0286627	Dictyostelium discoideum
+Q54LR6	DDB_G0286481	Dictyostelium discoideum
+Q54LU8	DDB_G0286465	Dictyostelium discoideum
+Q54M77	roco8	Dictyostelium discoideum
+Q54MH0	fhkD	Dictyostelium discoideum
+Q54MV2	mrkB	Dictyostelium discoideum
+Q54MY9	mkcA	Dictyostelium discoideum
+Q54N73	7tmk1	Dictyostelium discoideum
+Q54P00	abkD	Dictyostelium discoideum
+Q54P26	samkB	Dictyostelium discoideum
+Q54P47	ndrC	Dictyostelium discoideum
+Q54PB4	DDB_G0284661	Dictyostelium discoideum
+Q54PK8	DDB_G0284491	Dictyostelium discoideum
+Q54PK9	pdkB	Dictyostelium discoideum
+Q54PX0	DDB_G0284251	Dictyostelium discoideum
+Q54Q69	dhkG	Dictyostelium discoideum
+Q54QB1	erkB	Dictyostelium discoideum
+Q54QD5	nek1	Dictyostelium discoideum
+Q54QI2	DDB_G0283821	Dictyostelium discoideum
+Q54QQ1	phg2	Dictyostelium discoideum
+Q54QV3	yakA	Dictyostelium discoideum
+Q54R58	DDB_G0283397	Dictyostelium discoideum
+Q54R82	mkkA	Dictyostelium discoideum
+Q54R95	DDB_G0283337	Dictyostelium discoideum
+Q54R98	DDB_G0283301	Dictyostelium discoideum
+Q54RB2	cdk11	Dictyostelium discoideum
+Q54RB7	shkA	Dictyostelium discoideum
+Q54RJ4	iksA	Dictyostelium discoideum
+Q54RP7	DDB_G0283065	Dictyostelium discoideum
+Q54RR9	DDB_G0282963	Dictyostelium discoideum
+Q54RV3	pakG	Dictyostelium discoideum
+Q54RZ7	DDB_G0282895	Dictyostelium discoideum
+Q54S77	vps15	Dictyostelium discoideum
+Q54SF9	mhkD	Dictyostelium discoideum
+Q54SJ5	DDB_G0282429	Dictyostelium discoideum
+Q54SK3	DDB_G0282417	Dictyostelium discoideum
+Q54T05	rio2	Dictyostelium discoideum
+Q54TA1	drkC	Dictyostelium discoideum
+Q54TA3	mrkC	Dictyostelium discoideum
+Q54TC3	slob1	Dictyostelium discoideum
+Q54TH6	DDB_G0281745	Dictyostelium discoideum
+Q54TM7	drkD	Dictyostelium discoideum
+Q54TN4	mkcE	Dictyostelium discoideum
+Q54TR5	abkB	Dictyostelium discoideum
+Q54TW2	pdkA	Dictyostelium discoideum
+Q54U31	shkD	Dictyostelium discoideum
+Q54U65	7tmk2	Dictyostelium discoideum
+Q54UA9	clkA	Dictyostelium discoideum
+Q54UC0	dnapkcs	Dictyostelium discoideum
+Q54UL8	mps1	Dictyostelium discoideum
+Q54US6	DDB_G0280855	Dictyostelium discoideum
+Q54UZ1	DDB_G0280717	Dictyostelium discoideum
+Q54V35	DDB_G0280643	Dictyostelium discoideum
+Q54V82	DDB_G0280559	Dictyostelium discoideum
+Q54V83	DDB_G0280557	Dictyostelium discoideum
+Q54VC0	DDB_G0280461	Dictyostelium discoideum
+Q54VD8	rio1	Dictyostelium discoideum
+Q54VI1	fhkE	Dictyostelium discoideum
+Q54VU4	DDB_G0280133	Dictyostelium discoideum
+Q54VU5	DDB_G0280131	Dictyostelium discoideum
+Q54VV7	DDB_G0280111	Dictyostelium discoideum
+Q54W07	bud32	Dictyostelium discoideum
+Q54W86	DDB_G0279831	Dictyostelium discoideum
+Q54WD7	DDB_G0279719	Dictyostelium discoideum
+Q54WE5	prp4k	Dictyostelium discoideum
+Q54WJ0	lkb1	Dictyostelium discoideum
+Q54WK1	DDB_G0279609	Dictyostelium discoideum
+Q54WS5	roco6	Dictyostelium discoideum
+Q54WW7	DDB_G0279405	Dictyostelium discoideum
+Q54WX4	aurK	Dictyostelium discoideum
+Q54XH9	DDB_G0278921	Dictyostelium discoideum
+Q54XI9	DDB_G0278909	Dictyostelium discoideum
+Q54XJ4	DDB_G0278901	Dictyostelium discoideum
+Q54XL6	fray1	Dictyostelium discoideum
+Q54XQ2	rckA	Dictyostelium discoideum
+Q54XS3	gdt1	Dictyostelium discoideum
+Q54XX5	DDB_G0278535	Dictyostelium discoideum
+Q54XY6	DDB_G0278521	Dictyostelium discoideum
+Q54XZ5	DDB_G0278509	Dictyostelium discoideum
+Q54Y06	DDB_G0278487	Dictyostelium discoideum
+Q54Y26	ndrA	Dictyostelium discoideum
+Q54Y55	shkC	Dictyostelium discoideum
+Q54Y90	DDB_G0278665	Dictyostelium discoideum
+Q54YF2	snfA	Dictyostelium discoideum
+Q54YZ5	DDB_G0277989	Dictyostelium discoideum
+Q54ZN3	DDB_G0277539	Dictyostelium discoideum
+Q550K8	DDB_G0277071	Dictyostelium discoideum
+Q550L8	ifkB	Dictyostelium discoideum
+Q551H4	fray2	Dictyostelium discoideum
+Q552C1	DDB_G0276181	Dictyostelium discoideum
+Q552C6	zak2	Dictyostelium discoideum
+Q552E9	pkgA	Dictyostelium discoideum
+Q552Z2	fnkE	Dictyostelium discoideum
+Q553E9	smg1	Dictyostelium discoideum
+Q554D8	etnkB	Dictyostelium discoideum
+Q554L2	DDB_G0274613	Dictyostelium discoideum
+Q555U5	DDB_G0274821	Dictyostelium discoideum
+Q556J6	DDB_G0272797	Dictyostelium discoideum
+Q556Q3	irlF-1	Dictyostelium discoideum
+Q556S2	pakH-1	Dictyostelium discoideum
+Q556Y4	cak1-1	Dictyostelium discoideum
+Q557G1	irlB-1	Dictyostelium discoideum
+Q558U1	ifkA	Dictyostelium discoideum
+Q559A2	irlA	Dictyostelium discoideum
+Q559T8	DDB_G0272282	Dictyostelium discoideum
+Q55A09	DDB_G0272254	Dictyostelium discoideum
+Q55A55	DDB_G0272092	Dictyostelium discoideum
+Q55BA0	DDB_G0271402	Dictyostelium discoideum
+Q55BM1	DDB_G0270444	Dictyostelium discoideum
+Q55BN8	nek2	Dictyostelium discoideum
+Q55BQ3	scy2	Dictyostelium discoideum
+Q55C57	glkA	Dictyostelium discoideum
+Q55CA6	DDB_G0270146	Dictyostelium discoideum
+Q55CE0	mkcF	Dictyostelium discoideum
+Q55CL6	mekA	Dictyostelium discoideum
+Q55CW1	samkD	Dictyostelium discoideum
+Q55CW2	samkC	Dictyostelium discoideum
+Q55CW3	samkA	Dictyostelium discoideum
+Q55CY9	gdt8	Dictyostelium discoideum
+Q55CZ1	gdt2	Dictyostelium discoideum
+Q55D99	pakA	Dictyostelium discoideum
+Q55DD4	pakD	Dictyostelium discoideum
+Q55DJ8	irlC	Dictyostelium discoideum
+Q55DJ9	irlD	Dictyostelium discoideum
+Q55DK2	DDB_G0269628	Dictyostelium discoideum
+Q55DU7	gdt4	Dictyostelium discoideum
+Q55DV2	gdt6	Dictyostelium discoideum
+Q55E58	pats1	Dictyostelium discoideum
+Q55EC7	gefX	Dictyostelium discoideum
+Q55EI8	DDB_G0268876	Dictyostelium discoideum
+Q55EN5	DDB_G0268812	Dictyostelium discoideum
+Q55EU4	DDB_G0268748	Dictyostelium discoideum
+Q55F27	DDB_G0268656	Dictyostelium discoideum
+Q55F45	DDB_G0268642	Dictyostelium discoideum
+Q55FJ6	DDB_G0268078	Dictyostelium discoideum
+Q55FS2	krsB	Dictyostelium discoideum
+Q55FT4	tsuA	Dictyostelium discoideum
+Q55FV4	fnkB	Dictyostelium discoideum
+Q55FV5	DDB_G0268550	Dictyostelium discoideum
+Q55G83	abkC	Dictyostelium discoideum
+Q55G97	tbck	Dictyostelium discoideum
+Q55GC2	dst2	Dictyostelium discoideum
+Q55GE6	roco7	Dictyostelium discoideum
+Q55GG4	DDB_G0267686	Dictyostelium discoideum
+Q55GJ2	ireA	Dictyostelium discoideum
+Q55GN6	DDB_G0267588	Dictyostelium discoideum
+Q55GS2	scy1	Dictyostelium discoideum
+Q55GS4	cdk10	Dictyostelium discoideum
+Q55GU0	DDB_G0267514	Dictyostelium discoideum
+Q55GV3	pakC	Dictyostelium discoideum
+Q566J8	Coq8b	Mus musculus
+Q56UN5	MAP3K19	Homo sapiens
+Q571I4	Prag1	Mus musculus
+Q58A45	PAN3	Homo sapiens
+Q58CX7	DIPK2B	Bos taurus
+Q58D94	MKNK1	Bos taurus
+Q59H18	TNNI3K	Homo sapiens
+Q5BJQ0	Coq8a	Rattus norvegicus
+Q5BKK4	sgk1	Xenopus tropicalis
+Q5CD18	TGFBR1	Sus scrofa
+Q5CZZ9	Pip5k1b	Rattus norvegicus
+Q5D891	PIK3C3	Sus scrofa
+Q5E9J9	STRADA	Bos taurus
+Q5E9L6	STK4	Bos taurus
+Q5E9X2	MAP2K6	Bos taurus
+Q5E9Y0	CDK2	Bos taurus
+Q5EAB2	CDK9	Bos taurus
+Q5EAK6	tefu	Drosophila melanogaster
+Q5EG47	Prkaa1	Mus musculus
+Q5F2E8	Taok1	Mus musculus
+Q5F349	POMK	Gallus gallus
+Q5F356	PIP4K2A	Gallus gallus
+Q5F361	TBCK	Gallus gallus
+Q5F3L1	RPS6KA5	Gallus gallus
+Q5F3W3	MAPK6	Gallus gallus
+Q5FVL3	Dipk1b	Rattus norvegicus
+Q5GIG6	Tnni3k	Mus musculus
+Q5GIT4	kdr	Danio rerio
+Q5GLH2	TRIB2	Bos taurus
+Q5I6B8	Pip5k1c	Rattus norvegicus
+Q5JZY3	EPHA10	Homo sapiens
+Q5M7P6	adck1	Xenopus tropicalis
+Q5M9F8	Scyl1	Rattus norvegicus
+Q5MAI5	CDKL4	Homo sapiens
+Q5MD89	flt4	Danio rerio
+Q5MJS3	Fam20c	Mus musculus
+Q5MPA9	Dclk2	Rattus norvegicus
+Q5PRD4	csnk1g1	Danio rerio
+Q5PU49	PRKCD	Canis lupus familiaris
+Q5PXE9	Ippk	Rattus norvegicus
+Q5RGU1	coq8a	Danio rerio
+Q5RH51	fam20b	Danio rerio
+Q5RJI4	Pkdcc	Mus musculus
+Q5RJI5	Brsk1	Mus musculus
+Q5RKH1	Prp4k	Rattus norvegicus
+Q5S006	Lrrk2	Mus musculus
+Q5S007	LRRK2	Homo sapiens
+Q5SDA5	Gucy2f	Mus musculus
+Q5SUV5	Mylk4	Mus musculus
+Q5SYL1	Rskr	Mus musculus
+Q5T7M9	DIPK1A	Homo sapiens
+Q5T9C9	PIP5KL1	Homo sapiens
+Q5TCX8	MAP3K21	Homo sapiens
+Q5TCY1	TTBK1	Homo sapiens
+Q5U2N4	Mknk2	Rattus norvegicus
+Q5U2X5	Tnk2	Rattus norvegicus
+Q5U3H9	spire2	Danio rerio
+Q5U3W1	pomk	Danio rerio
+Q5U4C9	Dyrk2	Mus musculus
+Q5U5V2	Hykk	Mus musculus
+Q5VJL3	gdt9	Dictyostelium discoideum
+Q5VST9	OBSCN	Homo sapiens
+Q5VT25	CDC42BPA	Homo sapiens
+Q5VUD6	DIPK1B	Homo sapiens
+Q5XIL2	Pi4k2b	Rattus norvegicus
+Q5XIS9	Prkd2	Rattus norvegicus
+Q5XIT0	Cdkl2	Rattus norvegicus
+Q5XJV6	Lmtk3	Mus musculus
+Q5ZHT1	ACAD11	Gallus gallus
+Q5ZIK0	PI4K2B	Gallus gallus
+Q5ZIU3	DYRK2	Gallus gallus
+Q5ZJ58	PIP5K1B	Gallus gallus
+Q5ZJB4	CHUK	Gallus gallus
+Q5ZJH6	ULK3	Gallus gallus
+Q5ZJK4	STK4	Gallus gallus
+Q5ZJS0	CSNK1G1	Gallus gallus
+Q5ZK47	STRADA	Gallus gallus
+Q5ZKI0	CAMK2D	Gallus gallus
+Q5ZKN1	CDK9	Gallus gallus
+Q5ZLL1	CSNK1E	Gallus gallus
+Q5ZMT7	ADCK1	Gallus gallus
+Q60592	Mast2	Mus musculus
+Q60629	Epha5	Mus musculus
+Q60670	Sik1	Mus musculus
+Q60680	Chuk	Mus musculus
+Q60700	Map3k12	Mus musculus
+Q60737	Csnk2a1	Mus musculus
+Q60750	Epha1	Mus musculus
+Q60751	Igf1r	Mus musculus
+Q60805	Mertk	Mus musculus
+Q60806	Plk3	Mus musculus
+Q60823	Akt2	Mus musculus
+Q60855	Ripk1	Mus musculus
+Q60936	Coq8a	Mus musculus
+Q61006	Musk	Mus musculus
+Q61036	Pak3	Mus musculus
+Q61083	Map3k2	Mus musculus
+Q61084	Map3k3	Mus musculus
+Q61097	Ksr1	Mus musculus
+Q61136	Prp4k	Mus musculus
+Q61161	Map4k2	Mus musculus
+Q61194	Pik3c2a	Mus musculus
+Q61214	Dyrk1a	Mus musculus
+Q61241	Tssk1b	Mus musculus
+Q61271	Acvr1b	Mus musculus
+Q61288	Acvrl1	Mus musculus
+Q61410	Prkg2	Mus musculus
+Q61526	Erbb3	Mus musculus
+Q61527	Erbb4	Mus musculus
+Q61532	Mapk6	Mus musculus
+Q61772	Epha7	Mus musculus
+Q61831	Mapk10	Mus musculus
+Q61846	Melk	Mus musculus
+Q61851	Fgfr3	Mus musculus
+Q62070	Pim2	Mus musculus
+Q62073	Map3k7	Mus musculus
+Q62074	Prkci	Mus musculus
+Q62101	Prkd1	Mus musculus
+Q62120	Jak2	Mus musculus
+Q62137	Jak3	Mus musculus
+Q62190	Mst1r	Mus musculus
+Q62270	Srms	Mus musculus
+Q62312	Tgfbr2	Mus musculus
+Q62371	Ddr2	Mus musculus
+Q62388	Atm	Mus musculus
+Q62406	Irak1	Mus musculus
+Q62407	Speg	Mus musculus
+Q62413	Epha6	Mus musculus
+Q62662	Frk	Rattus norvegicus
+Q62673	Plk1	Rattus norvegicus
+Q62689	Jak2	Rattus norvegicus
+Q62726	Cilk1	Rattus norvegicus
+Q62761	Csnk1g1	Rattus norvegicus
+Q62762	Csnk1g2	Rattus norvegicus
+Q62763	Csnk1g3	Rattus norvegicus
+Q62799	Erbb3	Rattus norvegicus
+Q62829	Pak3	Rattus norvegicus
+Q62833	Grk5	Rattus norvegicus
+Q62838	Musk	Rattus norvegicus
+Q62844	Fyn	Rattus norvegicus
+Q62862	Map2k5	Rattus norvegicus
+Q62868	Rock2	Rattus norvegicus
+Q62893	Amhr2	Rattus norvegicus
+Q62915	Cask	Rattus norvegicus
+Q62925	Map3k1	Rattus norvegicus
+Q62956	Erbb4	Rattus norvegicus
+Q63092	Camkv	Rattus norvegicus
+Q63117	Clk3	Rattus norvegicus
+Q63132	Ros1	Rattus norvegicus
+Q63184	Eif2ak2	Rattus norvegicus
+Q63185	Eif2ak1	Rattus norvegicus
+Q63272	Jak3	Rattus norvegicus
+Q63285	Uhmk1	Rattus norvegicus
+Q63433	Pkn1	Rattus norvegicus
+Q63450	Camk1	Rattus norvegicus
+Q63454	Mapk4	Rattus norvegicus
+Q63470	Dyrk1a	Rattus norvegicus
+Q63474	Ddr1	Rattus norvegicus
+Q63484	Akt3	Rattus norvegicus
+Q63531	Rps6ka1	Rattus norvegicus
+Q63538	Mapk12	Rattus norvegicus
+Q63553	Snrk	Rattus norvegicus
+Q63562	Map3k8	Rattus norvegicus
+Q63572	Tesk1	Rattus norvegicus
+Q63604	Ntrk2	Rattus norvegicus
+Q63638	Speg	Rattus norvegicus
+Q63644	Rock1	Rattus norvegicus
+Q63651	Grk1	Rattus norvegicus
+Q63686	Cdk16	Rattus norvegicus
+Q63699	Cdk2	Rattus norvegicus
+Q63796	Map3k12	Rattus norvegicus
+Q63802	Wee1	Rattus norvegicus
+Q63844	Mapk3	Mus musculus
+Q63932	Map2k2	Mus musculus
+Q640Q5	Pan3	Mus musculus
+Q641K5	Nuak1	Mus musculus
+Q641Z4	Cdk9	Rattus norvegicus
+Q64261	Cdk6	Mus musculus
+Q64303	Pak2	Rattus norvegicus
+Q64434	Ptk6	Mus musculus
+Q64595	Prkg2	Rattus norvegicus
+Q64617	Prkch	Rattus norvegicus
+Q64702	Plk4	Mus musculus
+Q64716	Insrr	Rattus norvegicus
+Q64725	Syk	Rattus norvegicus
+Q64729	Tgfbr1	Mus musculus
+Q66H84	Mapkapk3	Rattus norvegicus
+Q66HA1	Map3k11	Rattus norvegicus
+Q66HE5	Nuak2	Rattus norvegicus
+Q66HE7	Cdkl1	Rattus norvegicus
+Q66I46	mknk2	Xenopus tropicalis
+Q66JF3	mknk1	Xenopus tropicalis
+Q66JT0	Wee2	Mus musculus
+Q66L42	Map3k10	Mus musculus
+Q66T47	ACVR2B	Sus scrofa
+Q67E00	dstyk	Xenopus tropicalis
+Q696W0	speg	Danio rerio
+Q69Z38	Peak1	Mus musculus
+Q69Z98	Brsk2	Mus musculus
+Q69ZA1	Cdk13	Mus musculus
+Q69ZM6	Stk36	Mus musculus
+Q6A1A2	PDPK2P	Homo sapiens
+Q6AWJ9	otk	Drosophila melanogaster
+Q6AXJ9	cdkl1	Danio rerio
+Q6AY19	Coq8b	Rattus norvegicus
+Q6B9X6	vwkA	Dictyostelium discoideum
+Q6DBX4	mastl	Danio rerio
+Q6DEH3	camk2d1	Danio rerio
+Q6DGS3	camk2d2	Danio rerio
+Q6DHU8	pbk	Danio rerio
+Q6DT37	CDC42BPG	Homo sapiens
+Q6EWH2	fyna	Danio rerio
+Q6GL14	pip4k2c	Xenopus tropicalis
+Q6GLD8	cdk9	Xenopus tropicalis
+Q6IQ55	TTBK2	Homo sapiens
+Q6IQE1	pip4k2c	Danio rerio
+Q6J9G0	STYK1	Homo sapiens
+Q6J9G1	Styk1	Mus musculus
+Q6JQN1	ACAD10	Homo sapiens
+Q6NSM8	zgc:66101	Danio rerio
+Q6NSR3	Adck2	Mus musculus
+Q6NW76	aurkb	Danio rerio
+Q6P0Q8	MAST2	Homo sapiens
+Q6P1C1	Ippk	Mus musculus
+Q6P2M8	PNCK	Homo sapiens
+Q6P3K7	csnk1db	Danio rerio
+Q6P3N6	cdk8	Xenopus tropicalis
+Q6P3Q4	stk4	Xenopus tropicalis
+Q6P3R8	NEK5	Homo sapiens
+Q6P3W7	SCYL2	Homo sapiens
+Q6P4S6	Sik3	Mus musculus
+Q6P5G0	Mapk4	Mus musculus
+Q6P5Z2	PKN3	Homo sapiens
+Q6P647	csnk1d	Xenopus tropicalis
+Q6P6U0	Fgr	Rattus norvegicus
+Q6P9R2	Oxsr1	Mus musculus
+Q6PCN3	Ttbk1	Mus musculus
+Q6PD10	Ip6k1	Mus musculus
+Q6PDN3	Mylk	Mus musculus
+Q6PE18	pi4k2a	Danio rerio
+Q6PF93	Pik3c3	Mus musculus
+Q6PFQ0	rps6ka6	Danio rerio
+Q6PGN3	Dclk2	Mus musculus
+Q6PHR2	ULK3	Homo sapiens
+Q6PHZ2	Camk2d	Mus musculus
+Q6PQD5	ATM	Sus scrofa
+Q6QNF3	PDGFRB	Canis lupus familiaris
+Q6R2V0	WNK1	Sus scrofa
+Q6SA08	TSSK4	Homo sapiens
+Q6TJY3	RPS6KB1	Bos taurus
+Q6TL19	Gucy2g	Mus musculus
+Q6U1I9	SGK1	Gallus gallus
+Q6U7H8	Pip5kl1	Mus musculus
+Q6VAB6	KSR2	Homo sapiens
+Q6VNS1	Ntrk3	Mus musculus
+Q6VVW5	Npr2	Mus musculus
+Q6XHA5	roco11	Dictyostelium discoideum
+Q6XHA6	roco10	Dictyostelium discoideum
+Q6XHA7	roco9	Dictyostelium discoideum
+Q6XHB2	roco4	Dictyostelium discoideum
+Q6XUX0	DSTYK	Gallus gallus
+Q6XUX1	Dstyk	Mus musculus
+Q6XUX2	Dstyk	Rattus norvegicus
+Q6XUX3	DSTYK	Homo sapiens
+Q6ZMQ8	AATK	Homo sapiens
+Q6ZN16	MAP3K15	Homo sapiens
+Q6ZQ29	Taok2	Mus musculus
+Q6ZWH5	NEK10	Homo sapiens
+Q709F0	ACAD11	Homo sapiens
+Q70PP2	nonC	Drosophila melanogaster
+Q75JK0	zakA	Dictyostelium discoideum
+Q75JN1	ifkC	Dictyostelium discoideum
+Q75R65	JAK2	Gallus gallus
+Q75ZY9	MET	Canis lupus familiaris
+Q769I5	MET	Bos taurus
+Q76MJ5	ERN2	Homo sapiens
+Q76NI1	KNDC1	Homo sapiens
+Q76NV1	dyrk1	Dictyostelium discoideum
+Q76P07	DDB_G0277165	Dictyostelium discoideum
+Q78DX7	Ros1	Mus musculus
+Q78EA7	Bmpr1a	Rattus norvegicus
+Q7JP68	F47F2.1	Caenorhabditis elegans
+Q7JQ32	Gyc76C	Drosophila melanogaster
+Q7KRY6	ball	Drosophila melanogaster
+Q7KZI7	MARK2	Homo sapiens
+Q7L7X3	TAOK1	Homo sapiens
+Q7M6U3	Tex14	Mus musculus
+Q7PLI7	CG17528	Drosophila melanogaster
+Q7RTN6	STRADA	Homo sapiens
+Q7SXE8	cdk9	Danio rerio
+Q7SY24	prkcbb	Danio rerio
+Q7SY49	camkv	Danio rerio
+Q7SY52	stk10	Danio rerio
+Q7T0B0	stk40	Xenopus tropicalis
+Q7T0B1	STK40	Gallus gallus
+Q7T2E3	csnk1da	Danio rerio
+Q7TNJ7	Camk1g	Rattus norvegicus
+Q7TNL3	Stk40	Mus musculus
+Q7TNL4	Stk40	Rattus norvegicus
+Q7TNZ6	Strada	Rattus norvegicus
+Q7TPK6	Wnk4	Rattus norvegicus
+Q7TPS0	Rps6ka6	Mus musculus
+Q7TQP6	Tnni3k	Rattus norvegicus
+Q7TS72	Itpkc	Mus musculus
+Q7TSC3	Nek5	Mus musculus
+Q7TSE6	Stk38l	Mus musculus
+Q7TSJ6	Lats2	Mus musculus
+Q7TT16	Ipmk	Mus musculus
+Q7TT49	Cdc42bpb	Rattus norvegicus
+Q7TT50	Cdc42bpb	Mus musculus
+Q7YRC6	AURKB	Bos taurus
+Q7Z2Y5	NRK	Homo sapiens
+Q7Z695	ADCK2	Homo sapiens
+Q7ZTW4	sgk1	Danio rerio
+Q7ZUQ3	stk3	Danio rerio
+Q7ZUS1	vrk1	Danio rerio
+Q7ZVS3	plk4	Danio rerio
+Q80UE6	Wnk4	Mus musculus
+Q80UW5	Cdc42bpg	Mus musculus
+Q80V03	Adck5	Mus musculus
+Q80V72	Ip6k2	Mus musculus
+Q80X41	Vrk1	Mus musculus
+Q80XI4	Pip4k2b	Mus musculus
+Q80XI6	Map3k11	Mus musculus
+Q80XL6	Acad11	Mus musculus
+Q80XP9	Wnk3	Mus musculus
+Q80Y86	Mapk15	Mus musculus
+Q80YE4	Aatk	Mus musculus
+Q80YE7	Dapk1	Mus musculus
+Q80YP0	Cdk3	Mus musculus
+Q80YS9	Stkld1	Mus musculus
+Q80YV3	Trrap	Mus musculus
+Q80ZG2	Itpkc	Rattus norvegicus
+Q80ZW0	Stk35	Mus musculus
+Q810W7	Mast1	Rattus norvegicus
+Q811L6	Mast4	Mus musculus
+Q863I2	OXSR1	Sus scrofa
+Q869L4	fnkA	Dictyostelium discoideum
+Q869N2	pakB	Dictyostelium discoideum
+Q869T7	pakF	Dictyostelium discoideum
+Q869T9	etnkA	Dictyostelium discoideum
+Q869W6	DDB_G0275057	Dictyostelium discoideum
+Q869X3	DDB_G0275165	Dictyostelium discoideum
+Q86A12	sky1	Dictyostelium discoideum
+Q86AD7	DDB_G0271550	Dictyostelium discoideum
+Q86AE1	DDB_G0271538	Dictyostelium discoideum
+Q86AT8	spkA-1	Dictyostelium discoideum
+Q86C65	tor	Dictyostelium discoideum
+Q86CS2	atg1	Dictyostelium discoideum
+Q86GV3	gcy-28	Caenorhabditis elegans
+Q86HG9	DDB_G0271682	Dictyostelium discoideum
+Q86HN7	PLK	Dictyostelium discoideum
+Q86HW6	DDB_G0276461	Dictyostelium discoideum
+Q86I06	nek3	Dictyostelium discoideum
+Q86IX1	dst1	Dictyostelium discoideum
+Q86ME2	drl-1	Caenorhabditis elegans
+Q86SG6	NEK8	Homo sapiens
+Q86TB3	ALPK2	Homo sapiens
+Q86TW2	ADCK1	Homo sapiens
+Q86UE8	TLK2	Homo sapiens
+Q86UX6	STK32C	Homo sapiens
+Q86V86	PIM3	Homo sapiens
+Q86Y07	VRK2	Homo sapiens
+Q86YV5	PRAG1	Homo sapiens
+Q86YV6	MYLK4	Homo sapiens
+Q86Z02	HIPK1	Homo sapiens
+Q8AXB3	kdrl	Danio rerio
+Q8AXY6	MUSK	Gallus gallus
+Q8AYC9	CHEK1	Gallus gallus
+Q8AYG3	ttk	Danio rerio
+Q8BG48	Stk17b	Mus musculus
+Q8BGW6	Stk32a	Mus musculus
+Q8BHI9	Nim1k	Mus musculus
+Q8BI55	Dyrk4	Mus musculus
+Q8BK63	Csnk1a1	Mus musculus
+Q8BKC8	Pi4kb	Mus musculus
+Q8BKG3	Ptk7	Mus musculus
+Q8BKX6	Smg1	Mus musculus
+Q8BLF2	Cdkl3	Mus musculus
+Q8BLK9	Rps6kc1	Mus musculus
+Q8BM85	Tbck	Mus musculus
+Q8BN21	Vrk2	Mus musculus
+Q8BPM2	Map4k5	Mus musculus
+Q8BQT2	Dipk1c	Mus musculus
+Q8BRK8	Prkaa2	Mus musculus
+Q8BSK8	Rps6kb1	Mus musculus
+Q8BTH8	Csnk1g1	Mus musculus
+Q8BTI9	Pik3cb	Mus musculus
+Q8BTW9	Pak4	Mus musculus
+Q8BVP5	Csnk1g2	Mus musculus
+Q8BW96	Camk1d	Mus musculus
+Q8BWD2	Ip6k3	Mus musculus
+Q8BWD8	Cdk19	Mus musculus
+Q8BWQ5	Dclk3	Mus musculus
+Q8BWW9	Pkn2	Mus musculus
+Q8BX57	Pxk	Mus musculus
+Q8BYC6	Taok3	Mus musculus
+Q8BYG9	Epha10	Mus musculus
+Q8BYR2	Lats1	Mus musculus
+Q8BZ03	Prkd2	Mus musculus
+Q8BZ25	Ankk1	Mus musculus
+Q8BZN4	Nuak2	Mus musculus
+Q8C015	Pak5	Mus musculus
+Q8C050	Rps6ka5	Mus musculus
+Q8C078	Camkk2	Mus musculus
+Q8C0N0	Gm4922	Mus musculus
+Q8C0P0	Mastl	Mus musculus
+Q8C0Q4	Nek11	Mus musculus
+Q8C0V0	Tlk1	Mus musculus
+Q8C0V7	Stk-ps2	Mus musculus
+Q8C0X8	NA	Mus musculus
+Q8C1R0	Tssk5	Mus musculus
+Q8C3I9	Dipk2b	Mus musculus
+Q8C4X2	Csnk1g3	Mus musculus
+Q8CBF3	Ephb1	Mus musculus
+Q8CBQ5	Pi4k2b	Mus musculus
+Q8CDB0	Mknk2	Mus musculus
+Q8CE90	Map2k7	Mus musculus
+Q8CEE6	Pask	Mus musculus
+Q8CEQ0	Cdkl1	Mus musculus
+Q8CFA1	Irak2	Mus musculus
+Q8CFE4	Scyl2	Mus musculus
+Q8CFH6	Sik2	Mus musculus
+Q8CID3	Fam20a	Mus musculus
+Q8CIN4	Pak2	Mus musculus
+Q8CIP4	Mark4	Mus musculus
+Q8CIR4	Trpm6	Mus musculus
+Q8I113	mnk-1	Caenorhabditis elegans
+Q8I4N4	daf-11	Caenorhabditis elegans
+Q8I7I5	rol-3	Caenorhabditis elegans
+Q8I7M8	pct-1	Caenorhabditis elegans
+Q8I8U7	Nipped-A	Drosophila melanogaster
+Q8IMC6	Asator	Drosophila melanogaster
+Q8INB9	Akt	Drosophila melanogaster
+Q8IR79	LIMK1	Drosophila melanogaster
+Q8IU85	CAMK1D	Homo sapiens
+Q8IV63	VRK3	Homo sapiens
+Q8IVH8	MAP4K3	Homo sapiens
+Q8IVT5	KSR1	Homo sapiens
+Q8IVW4	CDKL3	Homo sapiens
+Q8IW41	MAPKAPK5	Homo sapiens
+Q8IWB6	TEX14	Homo sapiens
+Q8IWQ3	BRSK2	Homo sapiens
+Q8IWU2	LMTK2	Homo sapiens
+Q8IXL6	FAM20C	Homo sapiens
+Q8IY84	NIM1K	Homo sapiens
+Q8IYT8	ULK2	Homo sapiens
+Q8IZE3	SCYL3	Homo sapiens
+Q8IZL9	CDK20	Homo sapiens
+Q8JFR5	kita	Danio rerio
+Q8JG38	fgfr2	Danio rerio
+Q8JH47	cdk8	Danio rerio
+Q8JH64	BTK	Gallus gallus
+Q8K045	Pkn3	Mus musculus
+Q8K0D0	Cdk17	Mus musculus
+Q8K1R7	Nek9	Mus musculus
+Q8K1S6	Spire2	Mus musculus
+Q8K1Y2	Prkd3	Mus musculus
+Q8K274	Fn3krp	Mus musculus
+Q8K348	Acvr1c	Mus musculus
+Q8K370	Acad10	Mus musculus
+Q8K3G5	Vrk3	Mus musculus
+Q8K3H5	Myo3a	Mus musculus
+Q8K4B2	Irak3	Mus musculus
+Q8K4K2	Trib3	Mus musculus
+Q8K4K3	Trib2	Mus musculus
+Q8K4K4	Trib1	Mus musculus
+Q8K4T3	Stradb	Mus musculus
+Q8K592	Amhr2	Mus musculus
+Q8MJ44	PRKACA	Canis lupus familiaris
+Q8MQ70	hpk-1	Caenorhabditis elegans
+Q8MVR1	gbpC	Dictyostelium discoideum
+Q8MXI4	pmk-2	Caenorhabditis elegans
+Q8MY12	mhkC	Dictyostelium discoideum
+Q8MYF1	DDB_G0277449	Dictyostelium discoideum
+Q8MYQ1	F31E3.2	Caenorhabditis elegans
+Q8N165	PDIK1L	Homo sapiens
+Q8N2I9	STK40	Homo sapiens
+Q8N4C8	MINK1	Homo sapiens
+Q8N568	DCLK2	Homo sapiens
+Q8N5S9	CAMKK1	Homo sapiens
+Q8N752	CSNK1A1L	Homo sapiens
+Q8NB16	MLKL	Homo sapiens
+Q8NCB2	CAMKV	Homo sapiens
+Q8NDZ4	DIPK2A	Homo sapiens
+Q8NE28	STKLD1	Homo sapiens
+Q8NE63	HIPK4	Homo sapiens
+Q8NEB9	PIK3C3	Homo sapiens
+Q8NER5	ACVR1C	Homo sapiens
+Q8NEV1	CSNK2A3	Homo sapiens
+Q8NEV4	MYO3A	Homo sapiens
+Q8NFD2	ANKK1	Homo sapiens
+Q8NFU5	IPMK	Homo sapiens
+Q8NG66	NEK11	Homo sapiens
+Q8NI60	COQ8A	Homo sapiens
+Q8QFP8	LIMK1	Gallus gallus
+Q8QGX4	PRKDC	Gallus gallus
+Q8QHL3	FLT1	Gallus gallus
+Q8QZR7	Pdik1l	Mus musculus
+Q8QZV4	Stk32c	Mus musculus
+Q8QZX0	Sbk1	Mus musculus
+Q8R071	Itpka	Mus musculus
+Q8R2S1	Rps6kl1	Mus musculus
+Q8R3L8	Cdk8	Mus musculus
+Q8R4K2	Irak4	Mus musculus
+Q8R4U9	Sgk2	Rattus norvegicus
+Q8R4V0	Sgk3	Rattus norvegicus
+Q8SSS9	qkgA-1	Dictyostelium discoideum
+Q8SSV3	mkcD	Dictyostelium discoideum
+Q8SSY6	DDB_G0276527	Dictyostelium discoideum
+Q8T0S6	hpo	Drosophila melanogaster
+Q8T126	fnkC	Dictyostelium discoideum
+Q8T2I8	sepA	Dictyostelium discoideum
+Q8TAS1	UHMK1	Homo sapiens
+Q8TBX8	PIP4K2C	Homo sapiens
+Q8TCG2	PI4K2B	Homo sapiens
+Q8TD08	MAPK15	Homo sapiens
+Q8TD19	NEK9	Homo sapiens
+Q8TDC3	BRSK1	Homo sapiens
+Q8TDR2	STK35	Homo sapiens
+Q8TDX7	NEK7	Homo sapiens
+Q8TEA7	TBCK	Homo sapiens
+Q8TF76	HASPIN	Homo sapiens
+Q8VBY2	Camkk1	Mus musculus
+Q8VCR8	Mylk2	Mus musculus
+Q8VCS3	Fam20b	Mus musculus
+Q8VCT9	Tesk2	Mus musculus
+Q8VD65	Pik3r4	Mus musculus
+Q8VDF3	Dapk2	Mus musculus
+Q8VDG6	Map3k21	Mus musculus
+Q8VDU5	Snrk	Mus musculus
+Q8VEB1	Grk5	Mus musculus
+Q8VHF0	Mark3	Rattus norvegicus
+Q8VHJ5	Mark1	Mus musculus
+Q8WMV0	GRK7	Bos taurus
+Q8WN22	PRKDC	Canis lupus familiaris
+Q8WP15	GRK7	Sus scrofa
+Q8WQ99	csnk-1	Caenorhabditis elegans
+Q8WQG9	jnk-1	Caenorhabditis elegans
+Q8WQL7	mbk-1	Caenorhabditis elegans
+Q8WTQ7	GRK7	Homo sapiens
+Q8WU08	STK32A	Homo sapiens
+Q8WWL2	SPIRE2	Homo sapiens
+Q8WXR4	MYO3B	Homo sapiens
+Q8WZ42	TTN	Homo sapiens
+Q90413	fgfr4	Danio rerio
+Q90669	ACVR2A	Gallus gallus
+Q90670	ACVR2B	Gallus gallus
+Q90891	MAP2K2	Gallus gallus
+Q90999	TGFBR2	Gallus gallus
+Q90XC2	nek8	Danio rerio
+Q90XF2	prkci	Danio rerio
+Q90Z00	fgfr1a	Danio rerio
+Q90ZK6	ACVR1	Gallus gallus
+Q90ZY4	sbk1	Danio rerio
+Q90ZY6	tlk1b	Danio rerio
+Q91009	NTRK1	Gallus gallus
+Q91044	NTRK3	Gallus gallus
+Q91048	PTK7	Gallus gallus
+Q91987	NTRK2	Gallus gallus
+Q91V36	Nrbp2	Mus musculus
+Q91VB2	Camk1g	Mus musculus
+Q91VJ4	Stk38	Mus musculus
+Q91XS8	Stk17b	Rattus norvegicus
+Q91XU3	Pip4k2c	Mus musculus
+Q91Y86	Mapk8	Mus musculus
+Q91YA2	Pskh1	Mus musculus
+Q91YS8	Camk1	Mus musculus
+Q91Z96	Bmp2k	Mus musculus
+Q91ZB0	Alpk2	Mus musculus
+Q91ZN7	Chek1	Rattus norvegicus
+Q91ZR4	Nek8	Mus musculus
+Q91ZT1	Flt4	Rattus norvegicus
+Q922K9	Frk	Mus musculus
+Q922Q2	Riok1	Mus musculus
+Q922R0	Prkx	Mus musculus
+Q922Y0	Dyrk3	Mus musculus
+Q923J1	Trpm7	Mus musculus
+Q923T9	Camk2g	Mus musculus
+Q924C5	Alpk3	Mus musculus
+Q924I2	Map4k3	Rattus norvegicus
+Q924U5	Tesk2	Rattus norvegicus
+Q924X7	Stk33	Mus musculus
+Q92519	TRIB2	Homo sapiens
+Q92551	IP6K1	Homo sapiens
+Q925B3	Trpm7	Rattus norvegicus
+Q925K9	Tssk6	Mus musculus
+Q92630	DYRK2	Homo sapiens
+Q92772	CDKL2	Homo sapiens
+Q92918	MAP4K1	Homo sapiens
+Q94125	age-1	Caenorhabditis elegans
+Q95126	ACVR2B	Bos taurus
+Q95266	CAMK2D	Sus scrofa
+Q95KV0	IKBKB	Bos taurus
+Q95KV1	CHUK	Bos taurus
+Q95PZ9	spe-6	Caenorhabditis elegans
+Q95Q34	riok-2	Caenorhabditis elegans
+Q95Q62	lfe-2	Caenorhabditis elegans
+Q95Q95	let-363	Caenorhabditis elegans
+Q95QC4	zyg-8	Caenorhabditis elegans
+Q95RR8	PAN3	Drosophila melanogaster
+Q95T10	CG3631	Drosophila melanogaster
+Q95UN8	slpr	Drosophila melanogaster
+Q95YD4	kin-32	Caenorhabditis elegans
+Q95YH0	cdk8	Dictyostelium discoideum
+Q95ZQ4	aak-2	Caenorhabditis elegans
+Q95ZV7	ddr-2	Caenorhabditis elegans
+Q965G5	mak-2	Caenorhabditis elegans
+Q968Y9	daf-2	Caenorhabditis elegans
+Q96BR1	SGK3	Homo sapiens
+Q96C45	ULK4	Homo sapiens
+Q96D53	COQ8B	Homo sapiens
+Q96DU7	ITPKC	Homo sapiens
+Q96GD4	AURKB	Homo sapiens
+Q96GX5	MASTL	Homo sapiens
+Q96J92	WNK4	Homo sapiens
+Q96KB5	PBK	Homo sapiens
+Q96KG9	SCYL1	Homo sapiens
+Q96L34	MARK4	Homo sapiens
+Q96L96	ALPK3	Homo sapiens
+Q96LW2	RSKR	Homo sapiens
+Q96MK3	FAM20A	Homo sapiens
+Q96NX5	CAMK1G	Homo sapiens
+Q96PC2	IP6K3	Homo sapiens
+Q96PF2	TSSK2	Homo sapiens
+Q96PN8	TSSK3	Homo sapiens
+Q96PY6	NEK1	Homo sapiens
+Q96Q04	LMTK3	Homo sapiens
+Q96Q15	SMG1	Homo sapiens
+Q96Q40	CDK15	Homo sapiens
+Q96QP1	ALPK1	Homo sapiens
+Q96QS6	PSKH2	Homo sapiens
+Q96QT4	TRPM7	Homo sapiens
+Q96RG2	PASK	Homo sapiens
+Q96RR4	CAMKK2	Homo sapiens
+Q96RU7	TRIB3	Homo sapiens
+Q96RU8	TRIB1	Homo sapiens
+Q96S38	RPS6KC1	Homo sapiens
+Q96S44	TP53RK	Homo sapiens
+Q96S53	TESK2	Homo sapiens
+Q96SB4	SRPK1	Homo sapiens
+Q98949	TYRO3	Gallus gallus
+Q99558	MAP3K14	Homo sapiens
+Q99570	PIK3R4	Homo sapiens
+Q99640	PKMYT1	Homo sapiens
+Q99683	MAP3K5	Homo sapiens
+Q99755	PIP5K1A	Homo sapiens
+Q99759	MAP3K3	Homo sapiens
+Q99986	VRK1	Homo sapiens
+Q99J45	Nrbp1	Mus musculus
+Q99J82	Ilk	Rattus norvegicus
+Q99J95	Cdk9	Mus musculus
+Q99JP0	Map4k3	Mus musculus
+Q99JT2	Stk26	Mus musculus
+Q99KH8	Stk24	Mus musculus
+Q99KY4	Gak	Mus musculus
+Q99M64	Pi4k2a	Rattus norvegicus
+Q99MK8	Grk2	Mus musculus
+Q99ML2	Tnk1	Mus musculus
+Q99ML4	Dipk1b	Mus musculus
+Q99MQ3	Pink1	Mus musculus
+Q99MW1	Stk31	Mus musculus
+Q99N57	Raf1	Mus musculus
+Q99NI4	Ipmk	Rattus norvegicus
+Q99PW4	Tp53rkb	Mus musculus
+Q9BQI3	EIF2AK1	Homo sapiens
+Q9BRS2	RIOK1	Homo sapiens
+Q9BTU6	PI4K2A	Homo sapiens
+Q9BUB5	MKNK1	Homo sapiens
+Q9BVS4	RIOK2	Homo sapiens
+Q9BWU1	CDK19	Homo sapiens
+Q9BX84	TRPM6	Homo sapiens
+Q9BXA6	TSSK6	Homo sapiens
+Q9BXA7	TSSK1B	Homo sapiens
+Q9BXM7	PINK1	Homo sapiens
+Q9BXU1	STK31	Homo sapiens
+Q9BYP7	WNK3	Homo sapiens
+Q9BYT3	STK33	Homo sapiens
+Q9BZL6	PRKD2	Homo sapiens
+Q9C098	DCLK3	Homo sapiens
+Q9C0K7	STRADB	Homo sapiens
+Q9CQS5	Riok2	Mus musculus
+Q9CXB8	Alpk1	Mus musculus
+Q9D0L4	Adck1	Mus musculus
+Q9D2E1	Tssk3	Mus musculus
+Q9D2Y4	Mlkl	Mus musculus
+Q9D411	Tssk4	Mus musculus
+Q9D4V0	Etnk1	Mus musculus
+Q9D6I7	Dipk1a	Mus musculus
+Q9DB30	Phkg2	Mus musculus
+Q9DBU3	Riok3	Mus musculus
+Q9DC28	Csnk1d	Mus musculus
+Q9DE49	pdgfra	Danio rerio
+Q9DF58	ILK	Gallus gallus
+Q9DGD9	mapk8	Danio rerio
+Q9DGE0	map2k6	Danio rerio
+Q9DGE1	mapk14b	Danio rerio
+Q9DGE2	mapk14a	Danio rerio
+Q9EQC5	Scyl1	Mus musculus
+Q9EQY0	Ern1	Mus musculus
+Q9ER35	Fn3k	Mus musculus
+Q9ERE3	Sgk3	Mus musculus
+Q9ERH7	Hipk3	Mus musculus
+Q9ERK0	Ripk4	Mus musculus
+Q9ES70	Nek6	Mus musculus
+Q9ES74	Nek7	Mus musculus
+Q9ESG9	Pkmyt1	Mus musculus
+Q9ESL4	Map3k20	Mus musculus
+Q9ESM0	Ip6k1	Rattus norvegicus
+Q9GN62	par-4	Caenorhabditis elegans
+Q9GT24	zyg-1	Caenorhabditis elegans
+Q9GYQ4	gcy-8	Caenorhabditis elegans
+Q9H093	NUAK2	Homo sapiens
+Q9H0K1	SIK2	Homo sapiens
+Q9H1R3	MYLK2	Homo sapiens
+Q9H2G2	SLK	Homo sapiens
+Q9H2K8	TAOK3	Homo sapiens
+Q9H2X6	HIPK2	Homo sapiens
+Q9H3Y6	SRMS	Homo sapiens
+Q9H422	HIPK3	Homo sapiens
+Q9H479	FN3K	Homo sapiens
+Q9H4A3	WNK1	Homo sapiens
+Q9H4B4	PLK3	Homo sapiens
+Q9H5K3	POMK	Homo sapiens
+Q9H792	PEAK1	Homo sapiens
+Q9H7Y0	DIPK2B	Homo sapiens
+Q9H8X2	IPPK	Homo sapiens
+Q9HA64	FN3KRP	Homo sapiens
+Q9HAZ1	CLK4	Homo sapiens
+Q9HBH9	MKNK2	Homo sapiens
+Q9HBU6	ETNK1	Homo sapiens
+Q9HBY8	SGK2	Homo sapiens
+Q9HC98	NEK6	Homo sapiens
+Q9HCP0	CSNK1G1	Homo sapiens
+Q9I7F7	Ack-like	Drosophila melanogaster
+Q9I8N6	csf1r	Danio rerio
+Q9I8X3	fgfr3	Danio rerio
+Q9I9E0	TAOK3	Gallus gallus
+Q9IA88	SIK2	Gallus gallus
+Q9JHG7	Pik3cg	Mus musculus
+Q9JHU3	Cdk20	Mus musculus
+Q9JI10	Stk3	Mus musculus
+Q9JI11	Stk4	Mus musculus
+Q9JIH7	Wnk1	Rattus norvegicus
+Q9JJ78	Pbk	Mus musculus
+Q9JJX8	Stk32b	Mus musculus
+Q9JKK8	Atr	Mus musculus
+Q9JKV2	Cilk1	Mus musculus
+Q9JLM8	Dclk1	Mus musculus
+Q9JLN9	Mtor	Mus musculus
+Q9JLS3	Taok2	Rattus norvegicus
+Q9JM01	Cdkl3	Rattus norvegicus
+Q9JM52	Mink1	Mus musculus
+Q9JMK2	Csnk1e	Mus musculus
+Q9N0P9	PIM1	Bos taurus
+Q9N0X0	AURKB	Sus scrofa
+Q9N2L7	plk-2	Caenorhabditis elegans
+Q9N3Q4	atm-1	Caenorhabditis elegans
+Q9N3Z3	chk-1	Caenorhabditis elegans
+Q9NAH6	rsks-1	Caenorhabditis elegans
+Q9NB31	cst-1	Caenorhabditis elegans
+Q9NBK5	trc	Drosophila melanogaster
+Q9NGW9	mkcB	Dictyostelium discoideum
+Q9NI63	Myt1	Drosophila melanogaster
+Q9NIV1	PEK	Drosophila melanogaster
+Q9NLA1	flr-4	Caenorhabditis elegans
+Q9NQU5	PAK6	Homo sapiens
+Q9NR20	DYRK4	Homo sapiens
+Q9NRH2	SNRK	Homo sapiens
+Q9NRM7	LATS2	Homo sapiens
+Q9NRP7	STK36	Homo sapiens
+Q9NSY0	NRBP2	Homo sapiens
+Q9NSY1	BMP2K	Homo sapiens
+Q9NVF9	ETNK2	Homo sapiens
+Q9NWZ3	IRAK4	Homo sapiens
+Q9NY57	STK32B	Homo sapiens
+Q9NYL2	MAP3K20	Homo sapiens
+Q9NYV4	CDK12	Homo sapiens
+Q9NYY3	PLK2	Homo sapiens
+Q9NZJ5	EIF2AK3	Homo sapiens
+Q9P0L2	MARK1	Homo sapiens
+Q9P1W9	PIM2	Homo sapiens
+Q9P286	PAK5	Homo sapiens
+Q9P289	STK26	Homo sapiens
+Q9P2K8	EIF2AK4	Homo sapiens
+Q9PUF6	PDGFRA	Gallus gallus
+Q9QUK0	Cdkl2	Mus musculus
+Q9QVP9	Ptk2b	Mus musculus
+Q9QY01	Ulk2	Mus musculus
+Q9QY78	Ikbkb	Rattus norvegicus
+Q9QYK9	Pnck	Mus musculus
+Q9QYZ3	Smok2b	Mus musculus
+Q9QYZ4	Smok1	Mus musculus
+Q9QYZ6	Smok2a	Mus musculus
+Q9QZ05	Eif2ak4	Mus musculus
+Q9QZL0	Ripk3	Mus musculus
+Q9QZR5	Hipk2	Mus musculus
+Q9QZS5	Sgk2	Mus musculus
+Q9R011	Plk3	Rattus norvegicus
+Q9R012	Plk2	Rattus norvegicus
+Q9R0A5	Nek3	Mus musculus
+Q9R0G8	Nrk	Mus musculus
+Q9R0I8	Pip4k2a	Rattus norvegicus
+Q9R0T8	Ikbke	Mus musculus
+Q9R0U1	Ip6k2	Rattus norvegicus
+Q9R117	Tyk2	Mus musculus
+Q9R1L5	Mast1	Mus musculus
+Q9R1U5	Sik1	Rattus norvegicus
+Q9TTY2	FER	Canis lupus familiaris
+Q9TVL3	cdk-9	Caenorhabditis elegans
+Q9TW45	par-1	Caenorhabditis elegans
+Q9TXI7	vps-34	Caenorhabditis elegans
+Q9TXJ0	cmk-1	Caenorhabditis elegans
+Q9TZC4	pat-4	Caenorhabditis elegans
+Q9TZM3	lrk-1	Caenorhabditis elegans
+Q9U1K1	spir	Drosophila melanogaster
+Q9U1Y5	chk-2	Caenorhabditis elegans
+Q9U2H1	cdkl-1	Caenorhabditis elegans
+Q9U2Q9	gsk-3	Caenorhabditis elegans
+Q9U9Y8	lit-1	Caenorhabditis elegans
+Q9UBE8	NLK	Homo sapiens
+Q9UBF8	PI4KB	Homo sapiens
+Q9UBS0	RPS6KB2	Homo sapiens
+Q9UEE5	STK17A	Homo sapiens
+Q9UEW8	STK39	Homo sapiens
+Q9UF33	EPHA6	Homo sapiens
+Q9UHD2	TBK1	Homo sapiens
+Q9UHH9	IP6K2	Homo sapiens
+Q9UHY1	NRBP1	Homo sapiens
+Q9UIK4	DAPK2	Homo sapiens
+Q9UK32	RPS6KA6	Homo sapiens
+Q9UKE5	TNIK	Homo sapiens
+Q9UKI8	TLK1	Homo sapiens
+Q9UL54	TAOK2	Homo sapiens
+Q9UM73	ALK	Homo sapiens
+Q9UPE1	SRPK3	Homo sapiens
+Q9UPZ9	CILK1	Homo sapiens
+Q9UQ07	MOK	Homo sapiens
+Q9UQ88	CDK11A	Homo sapiens
+Q9UQB9	AURKC	Homo sapiens
+Q9UQM7	CAMK2A	Homo sapiens
+Q9V3D5	Dyrk2	Drosophila melanogaster
+Q9V3I5	JIL-1	Drosophila melanogaster
+Q9V3Q6	Tak1	Drosophila melanogaster
+Q9V3Z1	trbl	Drosophila melanogaster
+Q9V422	dnt	Drosophila melanogaster
+Q9V6K3	Nrk	Drosophila melanogaster
+Q9V9J3	Src42A	Drosophila melanogaster
+Q9VA38	wts	Drosophila melanogaster
+Q9VBW3	Cad96Ca	Drosophila melanogaster
+Q9VEZ5	IKKbeta	Drosophila melanogaster
+Q9VI13	Pak	Drosophila melanogaster
+Q9VK45	mTor	Drosophila melanogaster
+Q9VKN7	aurB	Drosophila melanogaster
+Q9VM90	meng	Drosophila melanogaster
+Q9VP22	Cdk12	Drosophila melanogaster
+Q9VPC0	Pitslre	Drosophila melanogaster
+Q9VT57	Cdk8	Drosophila melanogaster
+Q9VWQ2	S6KL	Drosophila melanogaster
+Q9VXE5	mbt	Drosophila melanogaster
+Q9VXG8	mei-41	Drosophila melanogaster
+Q9VZI2	Ack	Drosophila melanogaster
+Q9W0V1	Pdk1	Drosophila melanogaster
+Q9W133	Adck1	Drosophila melanogaster
+Q9W1B0	gek	Drosophila melanogaster
+Q9W2Q7	Ipk1	Drosophila melanogaster
+Q9W2R3	sktl	Drosophila melanogaster
+Q9W354	Erk7	Drosophila melanogaster
+Q9WTK7	Stk11	Mus musculus
+Q9WTL4	Insrr	Mus musculus
+Q9WTQ0	Prkcq	Rattus norvegicus
+Q9WTQ1	Prkd1	Rattus norvegicus
+Q9WTQ6	Trib3	Rattus norvegicus
+Q9WTR2	Map3k6	Mus musculus
+Q9WTU6	Mapk9	Mus musculus
+Q9WTY9	Mapk13	Rattus norvegicus
+Q9WUA6	Akt3	Mus musculus
+Q9WUD9	Src	Rattus norvegicus
+Q9WUI1	Mapk11	Mus musculus
+Q9WUL6	Map3k14	Mus musculus
+Q9WUN2	Tbk1	Mus musculus
+Q9WUT3	Rps6ka2	Mus musculus
+Q9WV60	Gsk3b	Mus musculus
+Q9WVC6	Sgk1	Mus musculus
+Q9WVL4	Grk1	Mus musculus
+Q9WVS4	Mok	Mus musculus
+Q9WVS7	Map2k5	Mus musculus
+Q9WVS8	Mapk7	Mus musculus
+Q9XTC6	mom-4	Caenorhabditis elegans
+Q9XTF3	mbk-2	Caenorhabditis elegans
+Q9XTG7	akt-2	Caenorhabditis elegans
+Q9XTR1	cdk-4	Caenorhabditis elegans
+Q9XTW2	famk-1	Caenorhabditis elegans
+Q9XTY1	gcy-22	Caenorhabditis elegans
+Q9XU42	gcy-27	Caenorhabditis elegans
+Q9XUJ7	dkf-1	Caenorhabditis elegans
+Q9Y0Y6	Madm	Drosophila melanogaster
+Q9Y1J3	pdk-1	Caenorhabditis elegans
+Q9Y243	AKT3	Homo sapiens
+Q9Y259	CHKB	Homo sapiens
+Q9Y2H1	STK38L	Homo sapiens
+Q9Y2H9	MAST1	Homo sapiens
+Q9Y2I7	PIKFYVE	Homo sapiens
+Q9Y2K2	SIK3	Homo sapiens
+Q9Y2U5	MAP3K2	Homo sapiens
+Q9Y3S1	WNK2	Homo sapiens
+Q9Y463	DYRK1B	Homo sapiens
+Q9Y4A5	TRRAP	Homo sapiens
+Q9Y4K4	MAP4K5	Homo sapiens
+Q9Y572	RIPK3	Homo sapiens
+Q9Y5S2	CDC42BPB	Homo sapiens
+Q9Y616	IRAK3	Homo sapiens
+Q9Y6E0	STK24	Homo sapiens
+Q9Y6M4	CSNK1G3	Homo sapiens
+Q9Y6R4	MAP3K4	Homo sapiens
+Q9Y6S9	RPS6KL1	Homo sapiens
+Q9YHZ5	pim2	Danio rerio
+Q9YI66	tyro3	Danio rerio
+Q9Z0G2	Srpk3	Mus musculus
+Q9Z0H0	Cdc7	Mus musculus
+Q9Z0R0	Haspin	Mus musculus
+Q9Z138	Ror2	Mus musculus
+Q9Z139	Ror1	Mus musculus
+Q9Z188	Dyrk1b	Mus musculus
+Q9Z1B7	Mapk13	Mus musculus
+Q9Z1J2	Nek4	Mus musculus
+Q9Z1L0	Pik3cb	Rattus norvegicus
+Q9Z1M4	Rps6kb2	Mus musculus
+Q9Z1T6	Pikfyve	Mus musculus
+Q9Z1W9	Stk39	Mus musculus
+Q9Z1Z1	Eif2ak3	Rattus norvegicus
+Q9Z265	Chek2	Mus musculus
+Q9Z2A0	Pdpk1	Mus musculus
+Q9Z2A6	Mapk15	Rattus norvegicus
+Q9Z2B5	Eif2ak3	Mus musculus
+Q9Z2B9	Rps6ka4	Mus musculus
+Q9Z2E3	Ern2	Mus musculus
+Q9Z2P5	Ripk3	Rattus norvegicus
+Q9Z2R9	Eif2ak1	Mus musculus
+Q9Z2W1	Stk25	Mus musculus
+Q9Z335	Sbk1	Rattus norvegicus
+U4PR86	pig-1	Caenorhabditis elegans
+X5M5N0	wnk-1	Caenorhabditis elegans
+X5M8U1	gcy-17	Caenorhabditis elegans

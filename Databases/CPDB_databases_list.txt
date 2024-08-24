@@ -1,0 +1,10 @@
+Database
+KEGG
+Reactome
+BioCarta
+HumanCyc
+INOH
+NetPath
+PID
+Wikipathways
+SMPDB
