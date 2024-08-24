@@ -22,12 +22,24 @@
 
 
 
-Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRING_data_file=NULL,IntAct_data_file=NULL,file_DEA_names,phenotype_names,phenotype_comparison,splicing_file_name,Use_precompiled_database,LookUp_table_file=NULL, BioMart_Dataset){
+Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRING_data_file=NULL,IntAct_data_file=NULL,file_DEA_names,phenotype_names,phenotype_comparison,splicing_file_name,Use_precompiled_database,LookUp_table_file=NULL,BioMart_Dataset,BiomaRT_selected_organisms,Uniprot_Ncbi_map,ChEBI_map){
   
   splicing_file_index <- grep(splicing_file_name,file_DEA_names)
   
   if(length(splicing_file_index)==0){splicing_file_index <- -1}
   if(length(splicing_file_index)>1){stop("Please provide the name of the DTU file. It should be unique.")}
+  
+  BiomaRT_organisms <- read.table(BiomaRT_selected_organisms,sep="\t",quote="",header = TRUE)
+  BiomaRT_organisms <- BiomaRT_organisms[which(BiomaRT_organisms$BiomaRT %in% BioMart_Dataset),]
+  flag_biomart <- 0
+  if(length(BiomaRT_organisms)==0){flag_biomart <- 1}
+  print(flag_biomart)
+  uni_ncbi_mapping <- read.table(Uniprot_Ncbi_map,sep="\t",header = TRUE,quote = "")
+  uni_ncbi_mapping <- uni_ncbi_mapping[which(uni_ncbi_mapping$Organism %in% BiomaRT_organisms$Name),c(1,2,3)]
+  colnames(uni_ncbi_mapping) <- c("Uniprot_ChEBI","Name","NCBI_ChEBI")
+  ChEBI_mapping <- read.table(ChEBI_map,sep="\t",header = TRUE,comment.char = "@",quote = "")
+  colnames(ChEBI_mapping) <- c("Uniprot_ChEBI","Name","NCBI_ChEBI")
+  Id_mapp_data <- rbind(uni_ncbi_mapping,ChEBI_mapping)
   
   library(readxl)
   library(biomaRt)
@@ -62,7 +74,8 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
   dir.create(paste0(edge_file_folder,'/NotMapped_Symbol'))
   #Functions######################################################################
   
-  get_symbol_idMART <- function(names,mart){
+  get_symbol_idMART <- function(names,mart,Id_mapp_data,flag_biomart){
+    if(flag_biomart){
     MART_sym1 <- getBM(filters = "entrezgene_id",
                        attributes = c("entrezgene_id", "external_gene_name"),
                        values = as.character(names[,1]), mart = mart,useCache = FALSE)
@@ -73,6 +86,14 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
                        attributes = c("entrezgene_id", "external_gene_name"),
                        values = as.character(names[,2]), mart = mart,useCache = FALSE)
     edge2 <- MART_sym2[match(edge2, MART_sym2$entrezgene_id),2]
+    }else{
+      MART_sym1 <- Id_mapp_data[which(Id_mapp_data$NCBI_ChEBI %in% names[,1]),c(3,2)]
+      edge1 <- names[,1]
+      edge1 <- MART_sym1[match(edge1, MART_sym1$NCBI_ChEBI),2]
+      edge2 <- names[,2]
+      MART_sym2 <- Id_mapp_data[which(Id_mapp_data$NCBI_ChEBI %in% names[,2]),c(3,2)]
+      edge2 <- MART_sym2[match(edge2, MART_sym2$NCBI_ChEBI),2]
+    }
     edge <- cbind(edge1,edge2)
     ind <- which(is.na(edge[,1]))
     if(length(ind)>0) {edge <- edge[-ind,]}
@@ -96,6 +117,7 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
                        attributes = c("ensembl_peptide_id", "entrezgene_id"),
                        values = as.character(names[,2]), mart = mart,useCache = FALSE)
     protein2 <- MART_sym2[match(protein2, MART_sym2$ensembl_peptide_id),2]
+
     protein <- cbind(protein1,protein2)
     ind <- which(is.na(protein[,1]))
     if(length(ind)>0) {protein <- protein[-ind,]}
@@ -119,6 +141,7 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
                        attributes = c("uniprot_gn_id", "entrezgene_id"),
                        values = as.character(names[,2]), mart = mart,useCache = FALSE)
     protein2 <- MART_sym2[match(protein2, MART_sym2$uniprot_gn_id),2]
+
     protein <- cbind(protein1,protein2)
     ind <- which(is.na(protein[,1]))
     if(length(ind)>0) {protein <- protein[-ind,]}
@@ -131,7 +154,8 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
     return(protein)
   }
   
-  get_uniprot_idMART <- function(names,mart){
+  get_uniprot_idMART <- function(names,mart,Id_mapp_data,flag_biomart){
+    if(flag_biomart){
     MART_sym1 <- getBM(filters = "entrezgene_id",
                        attributes = c("entrezgene_id", "uniprot_gn_id"),
                        values = as.character(names[,1]), mart = mart,useCache = FALSE)
@@ -142,6 +166,14 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
                        attributes = c("entrezgene_id", "uniprot_gn_id"),
                        values = as.character(names[,2]), mart = mart,useCache = FALSE)
     edge2 <- MART_sym2[match(edge2, MART_sym2$entrezgene_id),2]
+    }else{
+      MART_sym1 <- Id_mapp_data[which(Id_mapp_data$NCBI_ChEBI %in% names[,1]),c(3,1)]
+      edge1 <- names[,1]
+      edge1 <- MART_sym1[match(edge1, MART_sym1$NCBI_ChEBI),2]
+      edge2 <- names[,2]
+      MART_sym2 <- Id_mapp_data[which(Id_mapp_data$NCBI_ChEBI %in% names[,2]),c(3,1)]
+      edge2 <- MART_sym2[match(edge2, MART_sym2$NCBI_ChEBI),2]
+    }
     edge <- cbind(edge1,edge2)
     ind <- which(is.na(edge[,1]))
     if(length(ind)>0) {edge <- edge[-ind,]}
@@ -154,29 +186,41 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
     return(edge)
   }
   
-  get_protein_idMART <- function(names,mart){
+  get_protein_idMART <- function(names,mart,Id_mapp_data,flag_biomart){
     if(length(names)>0){
+      if(flag_biomart){
       aux2 <- getBM(filters = "uniprot_gn_id",
                     attributes = c("entrezgene_id", "uniprot_gn_id"),
                     values = as.character(names), mart = mart,useCache = FALSE)
+      }else{
+        aux2 <- data.frame(entrezgene_id=Id_mapp_data$NCBI_ChEBI[which(Id_mapp_data$Uniprot_ChEBI %in% names)])
+      }
       return(aux2$entrezgene_id)
     }else {return(names)}
   }
   
-  get_protein_idMARTAUX <- function(names,mart){
+  get_protein_idMARTAUX <- function(names,mart,Id_mapp_data,flag_biomart){
     if(length(names)>0){
+      if(flag_biomart){
       aux2 <- getBM(filters = "uniprot_gn_id",
                     attributes = c("entrezgene_id", "uniprot_gn_id"),
                     values = as.character(names), mart = mart,useCache = FALSE)
+      }else{
+        aux2 <- data.frame(uniprot_gn_id=Id_mapp_data$Uniprot_ChEBI[which(Id_mapp_data$Uniprot_ChEBI %in% names)])
+      }
       return(aux2$uniprot_gn_id)
     }else {return(names)}
   }
   
-  get_protein_idMART1 <- function(names,mart){
+  get_protein_idMART1 <- function(names,mart,Id_mapp_data,flag_biomart){
     if(length(names)>0){
+      if(flag_biomart){
       aux2 <- getBM(filters = "external_gene_name",
                     attributes = c("entrezgene_id", "external_gene_name"),
                     values = as.character(names), mart = mart,useCache = FALSE)
+      }else{
+        aux2 <- data.frame(entrezgene_id=Id_mapp_data$NCBI_ChEBI[which(Id_mapp_data$Name %in% names)])
+      }
       return(aux2$entrezgene_id)
     }else {return(names)}
   }
@@ -203,7 +247,7 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
     return(aux)
   }
   
-  centrality_extraxtion <- function (aux,save_name,i,mart,phenotype_comparison,Transcriptomics_DTU_total,flag,multi_omics_data,enhancement_flag,file_DEA_names_short){
+  centrality_extraxtion <- function (aux,save_name,i,mart,phenotype_comparison,Transcriptomics_DTU_total,flag,multi_omics_data,enhancement_flag,file_DEA_names_short,Id_mapp_data,flag_biomart){
     
     aux_bck <- aux
     if ((length(which(is.na(aux)))==length(aux)) == FALSE){
@@ -238,18 +282,18 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
         
         #Write edge tables
         aux_decomposed_edges <- as_edgelist(aux_decomposed)
-        aux_uniprot <- get_uniprot_idMART(aux_decomposed_edges,mart)
+        aux_uniprot <- get_uniprot_idMART(aux_decomposed_edges,mart,Id_mapp_data,flag_biomart)
         aux_uniprot <- cbind(aux_uniprot,rep(1,length(aux_uniprot[,1])))
         save_name1 <- paste(edge_file_folder,'/Uniprot/',save_name,'_',phenotype_comparison[i],'.txt',sep='')
         file.remove(save_name1)
         write.table(aux_uniprot,file=save_name1,row.names=FALSE,col.names=FALSE,sep = '\t',quote = FALSE)
-        aux_symbol <- get_symbol_idMART(aux_decomposed_edges,mart)
+        aux_symbol <- get_symbol_idMART(aux_decomposed_edges,mart,Id_mapp_data,flag_biomart)
         aux_symbol <- cbind(aux_symbol,rep(1,length(aux_symbol[,1])))
         save_name1 <- paste(edge_file_folder,'/Symbol/',save_name,'_',phenotype_comparison[i],'.txt',sep='')
         file.remove(save_name1)
         write.table(aux_symbol,file=save_name1,row.names=FALSE,col.names=FALSE,sep = '\t', quote = FALSE)
         
-        aux_symbol_removes <- get_symbol_idMART(aux_edges_removes,mart)
+        aux_symbol_removes <- get_symbol_idMART(aux_edges_removes,mart,Id_mapp_data,flag_biomart)
         aux_symbol_removes <- cbind(aux_symbol_removes,rep(1,length(aux_symbol_removes[,1])))
         save_name1 <- paste(edge_file_folder,'/NotMapped_Symbol/',save_name,'_',phenotype_comparison[i],'_NotIncluded.txt',sep='')
         file.remove(save_name1)
@@ -314,10 +358,14 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
         centralities_values_CINNA1$Katz.Betweenness <- specific_metric$importance_katz
         centralities_values_CINNA1$Random.Walk.Betweenness <- specific_metric$importance_random
         
-        
+        if(flag_biomart){
         axx <- getBM(filters = "entrezgene_id",
                      attributes = c("entrezgene_id", "external_gene_name"),
-                     values = as.character(rownames(centralities_values_CINNA1)), mart = mart,useCache = FALSE)
+                     values = as.character(rownames(centralities_values_CINNA1)), mart = mart,useCache = FALSE)}
+        else{
+          axx <- data.frame(entrezgene_id=Id_mapp_data$NCBI_ChEBI[which(Id_mapp_data$NCBI_ChEBI %in% rownames(centralities_values_CINNA1))],
+                            external_gene_name=Id_mapp_data$Name[which(Id_mapp_data$NCBI_ChEBI %in% rownames(centralities_values_CINNA1))])
+        }
         names_sym <- axx[match(rownames(centralities_values_CINNA1), axx$entrezgene_id),2]
         centralities_values_CINNA1$Symbol <- names_sym
         colnames(centralities_values_CINNA1) <- str_replace_all(colnames(centralities_values_CINNA1),pattern = "\\.", replacement = "_")
@@ -461,7 +509,10 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
   Lookup_data <- rbind(BioGRID_data,STRING_data,IntAct_data)
   }
   if(Use_precompiled_database==1){
-    Lookup_data <- read.table(LookUp_table_file,header=TRUE,colClasses = "character")
+    Lookup_data <- read.table(LookUp_table_file,header=TRUE,colClasses = "character",sep="\t",quote="")
+    if (ncol(Lookup_data)==3){
+      Lookup_data <- Lookup_data[which(Lookup_data$Organism %in% BiomaRT_organisms$Name),c(1,2)]
+    }
   }
   ################################################################################
   
@@ -496,14 +547,17 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
     names(mapping_error)[[i]] <- file_DEA_names_short[i]
   }
   
+  what_was_mapped <- c()
+  
   for (j in 1:length(file_DEA_names)){
     for (i in 1:length(phenotype_comparison)){
       
       aux <- as.data.frame(read_excel(file_DEA_names[j],sheet = phenotype_comparison[i]))
       #Get the corresponding entrez ids from the uniprot ones#######################
       if(length(aux)>0){
-        file_DEA[[j]][[i]] <- as.character(unique(get_protein_idMART(aux$Protein,mart)))
-        addMap <- as.character(unique(get_protein_idMARTAUX(aux$Protein,mart)))
+        file_DEA[[j]][[i]] <- as.character(unique(get_protein_idMART(aux$Protein,mart,Id_mapp_data,flag_biomart)))
+        addMap <- as.character(unique(get_protein_idMARTAUX(aux$Protein,mart,Id_mapp_data,flag_biomart)))
+        what_was_mapped <- c(what_was_mapped,addMap)
         mapping_error[[j]][[i]] <- aux$Protein[-which(aux$Protein %in% addMap)]
         names(mapping_error[[j]])[[i]] <- phenotype_comparison[i]
         }else{
@@ -514,6 +568,9 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
       
     }
   }
+  
+  #Remove entries that were not mapped to overcome problematic ChEBI and NCBI IDs
+  Id_mapp_data <- Id_mapp_data[which(Id_mapp_data$Uniprot_ChEBI %in% what_was_mapped),]
   
   for (i in 1:length(mapping_error)){
     openxlsx::write.xlsx(mapping_error[[i]],file = paste0(edge_file_folder,"/FailedToMap_", names(mapping_error)[[i]],".xlsx"),overwrite = TRUE)
@@ -559,9 +616,9 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
       aux <- as.matrix(file_DEA_edges[[j]][[i]])
       colnames(aux) <- c()
       if(splicing_file_index>0){
-        centrality_extraxtion(aux,file_DEA_names_short[j],i,mart,phenotype_comparison,file_DEA_total[[splicing_file_index]],0,c(),0,file_DEA_names_short)
+        centrality_extraxtion(aux,file_DEA_names_short[j],i,mart,phenotype_comparison,file_DEA_total[[splicing_file_index]],0,c(),0,file_DEA_names_short,Id_mapp_data,flag_biomart)
       }else{
-        centrality_extraxtion(aux,file_DEA_names_short[j],i,mart,phenotype_comparison,c(),0,c(),0,file_DEA_names_short)
+        centrality_extraxtion(aux,file_DEA_names_short[j],i,mart,phenotype_comparison,c(),0,c(),0,file_DEA_names_short,Id_mapp_data,flag_biomart)
         
       }
     }
@@ -585,9 +642,9 @@ Network_analysis <- function(working_dir,Results_dir,BioGRID_data_file=NULL,STRI
     }
     aux_total = aux_total[!duplicated(aux_total),]
     if(splicing_file_index>0){
-      centrality_extraxtion(aux_total,"Total",i,mart,phenotype_comparison,file_DEA_total[[splicing_file_index]],1,file_DEA_edges,1,file_DEA_names_short)
+      centrality_extraxtion(aux_total,"Total",i,mart,phenotype_comparison,file_DEA_total[[splicing_file_index]],1,file_DEA_edges,1,file_DEA_names_short,Id_mapp_data,flag_biomart)
     }else{
-      centrality_extraxtion(aux_total,"Total",i,mart,phenotype_comparison,c(),1,file_DEA_edges,1,file_DEA_names_short)
+      centrality_extraxtion(aux_total,"Total",i,mart,phenotype_comparison,c(),1,file_DEA_edges,1,file_DEA_names_short,Id_mapp_data,flag_biomart)
     }
   }
   

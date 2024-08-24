@@ -34,7 +34,9 @@ library(shinyjs)
 library(biomaRt)
 
 
-setwd(Your_Working_Dir)
+setwd("/home/omics/Linux_test/")
+
+#setwd("C:/work/Files/Algorithms/DO_server/V13/Linux_test")
 
 working_dir <- getwd()
 
@@ -125,7 +127,11 @@ css <- '
 .tooltip > .arrow::before {
   border-right-color: #73AD21;
 }
-  
+
+.title-iconLogo {
+        width: 1em;
+        height: 1em;
+      }  
   
 .footer {
 background-attachment: scroll;
@@ -200,7 +206,7 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                           tags$style(HTML(css)),
                           tags$script(HTML(js))
                         ),tags$head(tags$link(rel="icon", href="https://omics-oracle.com/favicon.ico")),
-                        navbarPage(title=tags$a(style="color: inherit;text-decoration: inherit;font-size:25px;",href="https://omics-oracle.com/",tags$img(src='logo.png',height="2%", width="2%"),"Network Oriented multi-Omics Data Analysis and Integration"),theme = bs_theme(version = 5, bootswatch="journal"),
+                        navbarPage(title=tags$a(style="color: inherit;text-decoration: inherit;font-size:25px;white-space: normal;",href="https://omics-oracle.com/",tags$img(src='logo.png',class = "title-iconLogo"),"Network Oriented multi-Omics Data Analysis and Integration"),theme = bs_theme(version = 5, bootswatch="journal"),
                                    tags$script(
                                      HTML("var header = $('.navbar > .container-fluid');
                               header.append('<div style=\"float:right; padding-top: 8px;padding-right: 13px\"><button id=\"signin\" type=\"button\" class=\"btn btn-primary action-button\" onclick=\"RedirectSite()\">Tutorials</button></div>')")
@@ -224,9 +230,9 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                                                                          conditionalPanel( condition = "input.Type_of_analysis == 'Run the full pipeline'",
                                                                                            fluidRow(
                                                                                              column(1,div(style = "margin-top: 30px;",span(actionButton(width = "100%",inputId="Demo_values",label=tooltip(trigger=list("Demo",icon("info-circle")),"Upload the Demo data"))))),
-                                                                                             column(2,span(textInput(width = "100%",inputId="phenotype_names", label=tooltip(trigger=list("Samples names",icon("info-circle")),"Provide the names of the samples (phenotypes) analyzed and written in the xlsx sheets of the input omics files (DO NOT USE '_' for names!). Format example: Cool,Hot3,mkey")))),
-                                                                                             column(4,span(textInput(width = "100%",inputId="phenotype_comparison", label=tooltip(trigger=list("Samples contrasts",icon("info-circle")),"Provide the analyzed samples (phenotypes) contrasts. They should be the names of the xlsx sheets. Format example: CoolvsHot3,mkeyvsCool,Hot3vsCool")))),
-                                                                                             column(4,span(fileInput(width = "100%",inputId="file_DEA_names3", label=tooltip(trigger=list("Omics files archive",icon("info-circle")),"Upload an archive containing the omics files. Each omics file needs to be an Excel table with the sheets containing a 'Protein' column with Uniprot Ids in accordance with the documentation")))),
+                                                                                             column(2,span(textInput(width = "100%",inputId="phenotype_names", label=tooltip(trigger=list("Conditions names",icon("info-circle")),"Provide the names of the conditions (phenotypes) analyzed and written in the xlsx sheets of the input omics files (DO NOT USE '_' for names!). Format example: Cool,Hot3,mkey")))),
+                                                                                             column(4,span(textInput(width = "100%",inputId="phenotype_comparison", label=tooltip(trigger=list("Conditions contrasts",icon("info-circle")),"Provide the analyzed conditions (phenotypes) contrasts. They should be the names of the xlsx sheets. Format example: CoolvsHot3,mkeyvsCool,Hot3vsCool")))),
+                                                                                             column(4,span(fileInput(width = "100%",inputId="file_DEA_names3", label=tooltip(trigger=list("Omics files archive",icon("info-circle")),"Upload an archive containing at least one omics file. Each omics file needs to be an Excel table with the sheets containing a 'Protein' column with Uniprot Ids in accordance with the documentation")))),
                                                                                              column(1,div(style = "margin-top: 30px;",span(downloadButton(width = "100%",outputId="Demo_download",icon=NULL,label=tooltip(trigger=list("Demo",icon("cloud-arrow-down")),"Download the input demo data")))))
                                                                                            )
                                                                          ),
@@ -235,8 +241,8 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                                                                                              column(2,offset=5,span(textInput(inputId="Results_index", label=tooltip(trigger=list("Results directory index",icon("info-circle")),"What is the directory index where your NOODAI analysis results are found? The index is provided after the input data is submitted for the analysis")))),
                                                                                            ),
                                                                                            fluidRow(
-                                                                                             column(offset=1,2,span(textInput(width = "100%",inputId="phenotype_names1", label=tooltip(trigger=list("Samples names",icon("info-circle")),"Provide the names of the samples (phenotypes) analyzed and written in the xlsx sheets of the input omics files (DO NOT USE '_' for names!). Format example: Cool,Hot3,mkey")))),
-                                                                                             column(2,span(textInput(width = "100%",inputId="phenotype_comparison1", label=tooltip(trigger=list("Samples contrasts",icon("info-circle")),"Provide the analyzed samples (phenotypes) contrasts. They should be the names of the xlsx sheets. Format example: CoolvsHot3,mkeyvsCool,Hot3vsCool")))),
+                                                                                             column(offset=1,2,span(textInput(width = "100%",inputId="phenotype_names1", label=tooltip(trigger=list("Conditions names",icon("info-circle")),"Provide the names of the conditions (phenotypes) analyzed and written in the xlsx sheets of the input omics files (DO NOT USE '_' for names!). Format example: Cool,Hot3,mkey")))),
+                                                                                             column(2,span(textInput(width = "100%",inputId="phenotype_comparison1", label=tooltip(trigger=list("Conditions contrasts",icon("info-circle")),"Provide the analyzed conditions (phenotypes) contrasts. They should be the names of the xlsx sheets. Format example: CoolvsHot3,mkeyvsCool,Hot3vsCool")))),
                                                                                              column(2,span(textInput(width = "100%",inputId="BioMart_Dataset",value = "hsapiens_gene_ensembl", label=tooltip(trigger=list("BioMart dataset",icon("info-circle")),"Provide the BioMart dataset used for the mapping of the protein Ids. For other organisms than homo sapiens, provide the pre-formated interaction table! The available database is only for humans")))),
                                                                                              column(1,span(textInput(width = "100%",inputId="splicing_file_name",value ="DTU", label=tooltip(trigger=list("DTU file",icon("info-circle")),"Provide the name of the splicing file in the archive. If you use splicing data, the contrast must be symmetric! Leave default for no DTU data")))),
                                                                                              column(3,span(selectInput(width = "100%",inputId="Use_precompiled_database",choices=c("No"="0","Yes"="1"),selected ='1', label=tooltip(trigger=list("Use Pre-compiled Interaction file",icon("info-circle")),"Choose if you would like to use a pre-compiled interaction file, formated in accordance with the instructions. A default interaction file is available. For other organisms than humans, upload a pre-compiled interaction file!"))))
@@ -248,12 +254,12 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                                                                                                                column(offset=1,2,span(fileInput(width = "100%",inputId="BioGRID_data_file", label=tooltip(trigger=list("BioGrid database file",icon("info-circle")),"Upload the BioGrid database file. Leave empty for default version 4.4.218")), style="opacity:0.5; input-group{opacity:0.5;}")),
                                                                                                                column(3,span(fileInput(width = "100%",inputId="STRING_data_file", label=tooltip(trigger=list("STRING database file",icon("info-circle")),"Upload the STRING database file. Leave empty for default version 11.5")),style="opacity:0.5; input-group{opacity:0.5;}")),
                                                                                                                column(3,span(fileInput(width = "100%",inputId="IntAct_data_file", label=tooltip(trigger=list("IntAct database file",icon("info-circle")),"Upload the IntAct database file. Leave empty for default release 245")),style="opacity:0.5; input-group{opacity:0.5;}")),
-                                                                                                               column(2,span(fileInput(width = "100%",inputId="file_DEA_names1", label=tooltip(trigger=list("Omics files archive",icon("info-circle")),"Upload an archive containing the omics files. Each omics file needs to be an Excel table with the sheets containing a 'Protein' column with Uniprot Ids in accordance with the documentation"))))
+                                                                                                               column(2,span(fileInput(width = "100%",inputId="file_DEA_names1", label=tooltip(trigger=list("Omics files archive",icon("info-circle")),"Upload an archive containing at least one omics file. Each omics file needs to be an Excel table with the sheets containing a 'Protein' column with Uniprot Ids in accordance with the documentation"))))
                                                                                                              )),
                                                                                            conditionalPanel( condition = "input.Use_precompiled_database == '1'",
                                                                                                              fluidRow(
                                                                                                                column(offset=1,5,span(fileInput(width = "100%",inputId="LookUp_table_file", label=tooltip(trigger=list("Interaction table file",icon("info-circle")),"Upload the pre-formatted interaction database file. Leave empty for default")),style="opacity:0.5; input-group{opacity:0.5;}")),
-                                                                                                               column(5,span(fileInput(width = "100%",inputId="file_DEA_names2", label=tooltip(trigger=list("Omics files archive",icon("info-circle")),"Upload an archive containing the omics files. Each omics file needs to be an Excel table with the sheets containing a 'Protein' column with Uniprot Ids in accordance with the documentation"))))
+                                                                                                               column(5,span(fileInput(width = "100%",inputId="file_DEA_names2", label=tooltip(trigger=list("Omics files archive",icon("info-circle")),"Upload an archive containing at least one omics file. Each omics file needs to be an Excel table with the sheets containing a 'Protein' column with Uniprot Ids in accordance with the documentation"))))
                                                                                                              ))
                                                                          ),
                                                                          fluidRow(
@@ -269,8 +275,8 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                                                                          
                                                                          conditionalPanel( condition = "input.Type_of_analysis == 'Run the full pipeline'",
                                                                                            fluidRow(
-                                                                                             column(offset=1,3,span(textInput(width = "100%",inputId="Monet_method_stringFULL", value = "--method=M1 --avgk=10 --linksdir=undirected", label=tooltip(trigger=list("MONET method",icon("info-circle")),"Provide the MONET analysis method string")))),
-                                                                                             column(2,span(textInput(width = "100%",inputId="CPDB_databasesFULL",value = "Reactome", label=tooltip(trigger=list("Pathways databases",icon("info-circle")),"Provide the names of the databases against which the enrichment will be performed. Example: Reactome, Wikipathways")))),
+                                                                                             column(offset=1,3,span(textInput(width = "100%",inputId="Monet_method_stringFULL", value = "--method=M1 --avgk=10 --linksdir=undirected", label=tooltip(trigger=list("MONET method",icon("info-circle")),"Provide the MONET analysis method options")))),
+                                                                                             column(2,span(selectInput(width = "100%",inputId="CPDB_databasesFULL",choices = c("Reactome","KEGG","Wikipathways", "BioCarta", "PID", "NetPath", "HumanCyc", "INOH","SMPDB"),selected="Reactome",multiple=TRUE, label=tooltip(trigger=list("Pathways databases",icon("info-circle")),"Provide the names of the databases against which the enrichment will be performed. Example: Reactome, Wikipathways")))),
                                                                                              column(2,span(textInput(width = "100%",inputId="BioMart_Dataset1",value = "hsapiens_gene_ensembl", label=tooltip(trigger=list("BioMart dataset",icon("info-circle")),"Provide the BioMart dataset used for the mapping of the protein Ids. For other organisms than homo sapiens, provide the pre-formated interaction table! The available database is only for humans.")))),
                                                                                              column(3,span(selectInput(width = "100%",inputId="Use_precompiled_database1",choices=c("No"="0","Yes"="1"), selected='1', label=tooltip(trigger=list("Use Pre-compiled Interaction file",icon("info-circle")),"Choose if you would like to use a pre-compiled interaction file, formated in accordance with the instructions. A default interaction file is available. For other organisms than humans, upload a pre-compiled interaction file!")))),
                                                                                            ),
@@ -282,7 +288,7 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                                                                          conditionalPanel( condition = "input.Type_of_analysis == 'Run the full pipeline'",
                                                                                            fluidRow(),
                                                                                            fluidRow(
-                                                                                             column(offset=1,1,span(width = "100%",actionButton(inputId="AdditionalDatabases",label='', icon = icon('plus'),class = 'btn-xs',style="color: #fff; background-color: #337ab7; border-color: #2e6da4;margin-top:30px;opacity:0.75; input-group{opacity:0.75;}")|>tooltip("Upload interaction databases (Default ones are avialable)"))),
+                                                                                             column(offset=1,1,span(width = "100%",actionButton(inputId="AdditionalDatabases",label='', icon = icon('plus'),class = 'btn-xs',style="color: #fff; background-color: #337ab7; border-color: #2e6da4;margin-top:30px;opacity:0.75; input-group{opacity:0.75;}")|>tooltip("Upload interaction databases (Default ones are available)"))),
                                                                                              column(9,span(width='100%',conditionalPanel( condition = " input.AdditionalDatabases%2 == 1  & input.Use_precompiled_database1 == '0'",
                                                                                                                                           fluidRow( column(4,span(fileInput(width = "100%",inputId="BioGRID_data_file1", label=tooltip(trigger=list("BioGrid database file",icon("info-circle")),"Upload the BioGrid database file. Leave empty for default version 4.4.218")), style="opacity:0.5; input-group{opacity:0.5;}")),
                                                                                                                                                     column(4,span(fileInput(width = "100%",inputId="STRING_data_file1", label=tooltip(trigger=list("STRING database file",icon("info-circle")),"Upload the STRING database file. Leave empty for default version 11.5")),style="opacity:0.5; input-group{opacity:0.5;}")),
@@ -307,7 +313,7 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                                                                          conditionalPanel( condition = "input.Type_of_analysis == 'Custom algorithms'",
                                                                                            fluidRow(
                                                                                              column(offset=1,3,span(textInput(width = "100%",inputId="edge_file_path",value = "edge_files_PPINetworks/Symbol", label=tooltip(trigger=list("Edge file path",icon("info-circle")),"Provide the path where the network edges are saved.")),style="opacity:0.5; input-group{opacity:0.5;}")),
-                                                                                             column(3,span(textInput(width = "100%",inputId="Monet_method_string",value = "--method=M1 --avgk=10 --linksdir=undirected", label=tooltip(trigger=list("MONET method",icon("info-circle")),"Provide the MONET analysis method string")))),
+                                                                                             column(3,span(textInput(width = "100%",inputId="Monet_method_string",value = "--method=M1 --avgk=10 --linksdir=undirected", label=tooltip(trigger=list("MONET method",icon("info-circle")),"Provide the MONET analysis method options")))),
                                                                                              column(2,span(textInput(width = "100%",inputId="tmp_bin_folder", label=tooltip(trigger=list("Temporary folder",icon("info-circle")),"Provide a temporary bin server. Leave empty for default")),style="opacity:0.5; input-group{opacity:0.5;}")),
                                                                                              column(2,span(textInput(width = "100%",inputId="monet_path", label=tooltip(trigger=list("MONET path",icon("info-circle")),"Provide the monet executable path. Developer mode")),style="opacity:0.5; input-group{opacity:0.7;}")),
                                                                                            ),
@@ -316,7 +322,7 @@ ui <- shinyUI(fluidPage(useShinyjs(),
                                                                                            ),
                                                                                            
                                                                                            fluidRow(
-                                                                                             column(offset=1,3,span(textInput(width = "100%",inputId="CPDB_databases", value = "Reactome", label=tooltip(trigger=list("CPDB databases",icon("info-circle")),"Provide the names of the databases against which the enrichment is to be performed. Example: Reactome, Wikipathways")))),
+                                                                                             column(offset=1,3,span(selectInput(width = "100%",inputId="CPDB_databases",choices = c("Reactome","KEGG","Wikipathways", "BioCarta", "PID", "NetPath", "HumanCyc", "INOH","SMPDB"),selected="Reactome",multiple=TRUE, label=tooltip(trigger=list("CPDB databases",icon("info-circle")),"Provide the names of the databases against which the enrichment is to be performed. Example: Reactome, Wikipathways")))),
                                                                                              column(4,span(fileInput(width = "100%",inputId="MONET_background_file", label=tooltip(trigger=list("MONET background file",icon("info-circle")),"Provide the MONET background file. Leave empty for default")),style="opacity:0.5; input-group{opacity:0.5;}")),
                                                                                              column(3,span(fileInput(width = "100%",inputId="CPDB_database_file", label=tooltip(trigger=list("CPDB database file",icon("info-circle")),"Provide the CPDB database file. Leave empty for default")),style="opacity:0.5; input-group{opacity:0.5;}")),
                                                                                            ),
@@ -962,8 +968,8 @@ server <- function(input, output, session) {
   CPDB_databases <- reactive({
     if(length(input$CPDB_databases)>0){
       x <- input$CPDB_databases
-      x <- strsplit(x,',')
-      x <- unlist(x)
+     # x <- strsplit(x,',')
+     # x <- unlist(x)
       return(x)
     }
   })
@@ -971,8 +977,8 @@ server <- function(input, output, session) {
   CPDB_databasesFULL <- reactive({
     if(length(input$CPDB_databasesFULL)>0){
       x <- input$CPDB_databasesFULL
-      x <- strsplit(x,',')
-      x <- unlist(x)
+     # x <- strsplit(x,',')
+     # x <- unlist(x)
       return(x)
     }
   })

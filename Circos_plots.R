@@ -18,7 +18,7 @@
 #     Contact: tiberiu.totu@empa.ch
 
 
-Cricos_plots <- function(working_dir,edges_dir,TF_Database,file_extension,BioMart_Dataset){
+Cricos_plots <- function(working_dir,edges_dir,TF_Database,file_extension,BioMart_Dataset,BiomaRT_selected_organisms){
 
 library(readr)
 library(RColorBrewer)
@@ -54,7 +54,12 @@ centralities_modules_files <- list.files(path = getwd(),pattern = "centralities_
 
 edge_modules_files <- list.files(path = edges_dir,pattern = paste0(file_extension,"_"))
 
-tf_list <- read.table(TF_Database,sep="\t",fill=TRUE,header=TRUE)
+BiomaRT_organisms <- read.table(BiomaRT_selected_organisms,sep="\t",quote="",header = TRUE)
+  BiomaRT_organisms <- BiomaRT_organisms[which(BiomaRT_organisms$BiomaRT %in% BioMart_Dataset),]
+  BiomaRT_organisms$Name <- stringr::str_replace_all(BiomaRT_organisms$Name," ","_")
+  
+  tf_list <- read.table(TF_Database,sep="\t",fill=TRUE,header=TRUE)
+  tf_list <- tf_list[which(tolower(tf_list$Species) %in% tolower(BiomaRT_organisms$Name)),]
 
 for (i in 1:length(centralities_modules_files)){
   

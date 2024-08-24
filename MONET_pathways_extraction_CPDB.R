@@ -17,7 +17,7 @@
 #     Contact: tiberiu.totu@empa.ch
 
 
-MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databases,MONET_background_file,phenotype_names,phenotype_comparison,BioMart_Dataset){
+MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databases,MONET_background_file,phenotype_names,phenotype_comparison,BioMart_Dataset,BiomaRT_selected_organisms,Uniprot_Ncbi_map,ChEBI_map){
   
   library(readxl)
   library(biomaRt)
@@ -29,6 +29,17 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
   library(rbioapi)
   library(clusterProfiler)
 
+  BiomaRT_organisms <- read.table(BiomaRT_selected_organisms,sep="\t",quote="",header = TRUE)
+  BiomaRT_organisms <- BiomaRT_organisms[which(BiomaRT_organisms$BiomaRT %in% BioMart_Dataset),]
+  flag_biomart <- 0
+  if(length(BiomaRT_organisms)==0){flag_biomart <- 1}
+  
+  uni_ncbi_mapping <- read.table(Uniprot_Ncbi_map,sep="\t",header = TRUE,quote = "")
+  uni_ncbi_mapping <- uni_ncbi_mapping[which(uni_ncbi_mapping$Organism %in% BiomaRT_organisms$Name),c(1,2,3)]
+  colnames(uni_ncbi_mapping) <- c("Uniprot_ChEBI","Name","NCBI_ChEBI")
+  ChEBI_mapping <- read.table(ChEBI_map,sep="\t",header = TRUE,comment.char = "@",quote = "")
+  colnames(ChEBI_mapping) <- c("Uniprot_ChEBI","Name","NCBI_ChEBI")
+  Id_mapp_data <- rbind(uni_ncbi_mapping,ChEBI_mapping)
 
   setwd(working_dir)
   n_cores <- detectCores()
@@ -47,8 +58,13 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
   options(java.parameters = "-Xmx6000m")
   set.seed(21)
   
-  cpdb_db <- read.table(CPDB_database_file,fill=TRUE,sep="\t",header=TRUE)
+  BiomaRT_organisms <- read.table(BiomaRT_selected_organisms,sep="\t",quote="",header = TRUE)
+  BiomaRT_organisms <- BiomaRT_organisms[which(BiomaRT_organisms$BiomaRT %in% BioMart_Dataset),]
+  
+  cpdb_db <- read.table(CPDB_database_file,fill=TRUE,sep="\t",header=TRUE,quote = "")
   cpdb_db <- cpdb_db[which(tolower(cpdb_db$source) %in% tolower(CPDB_databases)),]
+  cpdb_db <- cpdb_db[which(tolower(cpdb_db$Organism) %in% tolower(BiomaRT_organisms$Name)),]
+  cpdb_db <- cpdb_db[,c(1:4)]
   cpdb_db_aux <- data.frame(matrix(nrow=1, ncol=4))
   colnames(cpdb_db_aux) <- colnames(cpdb_db)
   
@@ -92,7 +108,7 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
     }
     )
   }
-  
+
   fsx <- function(files_index){
     
     
@@ -144,10 +160,14 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
         ind <- which(aux=="")
         if (length(ind)>0){ aux <- aux[-ind] }
 
-        
+        if(flag_biomart){
         aux_converted <- getBM(filters = "external_gene_name",
                                attributes = c("external_gene_name", "entrezgene_id","uniprot_gn_id"),
                                values = as.character(aux), mart = mart,useCache = FALSE)
+        }else{
+          aux_converted <- data.frame(entrezgene_id=Id_mapp_data$NCBI_ChEBI[which(Id_mapp_data$Name %in% aux)])
+          
+        }
         
         KeggReactome_ora_results <- c()
         KeggReactome_ora_results <- enricher(

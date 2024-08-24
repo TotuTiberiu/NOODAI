@@ -38,7 +38,9 @@ Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRI
   if(is.null(IntAct_data_file)){IntAct_data_file <- paste0(working_dir,"/Databases/IntAct_24022022_07Confidence.txt")}
   if(is.null(LookUp_table_file)){LookUp_table_file <- paste0(working_dir,"/Databases/Interaction_Lookup_table.txt")}
   if(is.null(BioMart_Dataset)){BioMart_Dataset <- 'hsapiens_gene_ensembl'}
-  
+  BiomaRT_selected_organisms <- paste0(working_dir,"/Databases/BiomaRT_selected_organisms.txt")
+  Uniprot_Ncbi_map <- paste0(working_dir,"/Databases/Unip_NCBI_map.txt")
+  ChEBI_map <- paste0(working_dir,"/Databases/ChEBI_entries_map.txt")
   
   #Run the network centrality computation
   source('Network_analysis_BioGRID_STRING_IntAct.R')
@@ -51,7 +53,8 @@ Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRI
       status <- Network_analysis(working_dir,Results_dir,BioGRID_data_file,
                                  STRING_data_file,IntAct_data_file,file_DEA_names,
                                  phenotype_names,phenotype_comparison,splicing_file_name,
-                                 Use_precompiled_database,LookUp_table_file,BioMart_Dataset)
+                                 Use_precompiled_database,LookUp_table_file,BioMart_Dataset,
+								 BiomaRT_selected_organisms,Uniprot_Ncbi_map,ChEBI_map)
     )
     gc()
   }
@@ -130,8 +133,9 @@ MONET_pathways <- function(working_dir,CPDB_databases,MONET_background_file=NULL
   
   if(is.null(CPDB_database_file)){CPDB_database_file <- paste0(working_dir,"/Databases/CPDB_pathways_genes.tab")}
   if(is.null(BioMart_Dataset)){BioMart_Dataset <- 'hsapiens_gene_ensembl'}
-  
-  
+  BiomaRT_selected_organisms <- paste0(working_dir,"/Databases/BiomaRT_selected_organisms.txt")
+  Uniprot_Ncbi_map <- paste0(working_dir,"/Databases/Unip_NCBI_map.txt")
+  ChEBI_map <- paste0(working_dir,"/Databases/ChEBI_entries_map.txt")
   
   Results_dir <- paste0(getwd(),"/Results_",Results_index)
   working_dir <- paste0(Results_dir,"/MONET_analysis/MONET")
@@ -149,10 +153,12 @@ MONET_pathways <- function(working_dir,CPDB_databases,MONET_background_file=NULL
     attempt <- attempt + 1
     try(
       status <- MONET_Pathways_extraction(working_dir,CPDB_database_file,CPDB_databases,
-                                          MONET_background_file,phenotype_names,phenotype_comparison,BioMart_Dataset)
+                                          MONET_background_file,phenotype_names,phenotype_comparison,BioMart_Dataset,BiomaRT_selected_organisms,Uniprot_Ncbi_map,ChEBI_map)
     )
   }
   
+  setwd(wkd)
+  Results_dir <- paste0(getwd(),"/Results_",Results_index)
   #Save the results as a zip file in the results folder
   library(utils)
   if(file.exists(paste0(Results_dir,'/ResultsZip.zip'))){file.remove(paste0(Results_dir,'/ResultsZip.zip'))}
@@ -160,7 +166,6 @@ MONET_pathways <- function(working_dir,CPDB_databases,MONET_background_file=NULL
   utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = sapply(Results_dir,FUN=function(x){strsplit(x,"/home/omics/Linux_test/")[[1]][2]}))
   
   gc()
-  
   
 }
 
@@ -175,6 +180,7 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
   
   if(is.null(TF_Database)){TF_Database <- paste0(working_dir,"/Databases/_TF.txt")}
   if(is.null(BioMart_Dataset)){BioMart_Dataset <- 'hsapiens_gene_ensembl'}
+  BiomaRT_selected_organisms <- paste0(working_dir,"/Databases/BiomaRT_selected_organisms.txt")
   
   setwd(wkd)
   Results_dir <- paste0(getwd(),"/Results_",Results_index)
@@ -227,7 +233,7 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
   while( is.null(status) && attempt <= 5 ) {
     attempt <- attempt + 1
     try(
-      status <- Cricos_plots(working_dir,files_edges_path,TF_Database,file_extension,BioMart_Dataset)
+      status <- Cricos_plots(working_dir,files_edges_path,TF_Database,file_extension,BioMart_Dataset,BiomaRT_selected_organisms)
     )
   }
   
@@ -263,7 +269,8 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
       omics_file_names = tmp_omics_names,
       TF_file = TF_Database,
       kinome_file = Kinome_database,
-      pathways_folder = pathways_dir
+      pathways_folder = pathways_dir,
+	  BiomaRT_organisms_file = BiomaRT_selected_organisms
     ),
     output_file = paste0(Results_dir,"/Results_Interpretation")
   )
@@ -282,6 +289,7 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
   system(paste0("cp ",Results_dir,"/* ",Results_dir,"/Additional_Results/ -r"))
   system(paste0("rm ",Results_dir,"/Additional_Results/Additional_Results -r"))
   system(paste0("rm ",Results_dir,"/Additional_Results/Main_Results -r"))
+  system(paste0("rm ",Results_dir,"/Additional_Results/ResultsZip.zip"))
   #system(paste0("mv ",Results_dir,"/Additional_Results/Main_Results ",Results_dir,"/"))
   
   #Save the results as a zip file in the results folder

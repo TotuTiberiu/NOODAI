@@ -12,6 +12,7 @@ params:
   TF_file: ""
   kinome_file: ""
   pathways_folder: ""
+  BiomaRT_organisms_file: ""
 ---
 
 
@@ -25,6 +26,7 @@ omics_file_names = params$omics_file_names
 TF_file = params$TF_file
 kinome_file = params$kinome_file
 pathways_folder = params$pathways_folder
+BiomaRT_organisms_file = params$BiomaRT_organisms_file
 
 
 
@@ -109,11 +111,19 @@ for (i in  1:length(contrasts_sheets)){
     important_nodes[[i]] <- aux[ind,c(1,2)]
   }
   
+  BiomaRT_organisms <- read.table(BiomaRT_organisms_file,sep="\t",quote="",header = TRUE)
+  BiomaRT_organisms <- BiomaRT_organisms[which(BiomaRT_organisms$BiomaRT %in% BioMart_Dataset),]
+  BiomaRT_organismsNamesOrig <- BiomaRT_organisms$Name
+  BiomaRT_organisms$Name <- stringr::str_replace_all(BiomaRT_organisms$Name," ","_")
+  
+  
   TF_database <- read.table(TF_file,sep="\t",fill=TRUE,header=TRUE)
+  TF_database <- TF_database[which(tolower(TF_database$Species) %in% tolower(BiomaRT_organisms$Name)),]
   ind <- which(aux[c(1:round(nrow(aux)/10*1.5)),2] %in% TF_database$Symbol)
   identified_TF[[i]] <- aux[ind,c(1,2)]
   
   Kinome <- read.table(kinome_file,sep="\t",fill=TRUE,header=TRUE)
+  Kinome <- Kinome[which(tolower(Kinome$Species) %in% tolower(BiomaRT_organismsNamesOrig)),]
   ind <- which(aux[c(1:round(nrow(aux)/10*1.5)),2] %in% Kinome$Gene_name)
   identified_kinases[[i]] <- aux[ind,c(1,2)]
   
