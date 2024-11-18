@@ -19,22 +19,22 @@
 
 
 #The centrality file associated with the respective edge file
-Centrality_file <- "C:/work/Files/Conferences/PH_24.08.2024/Live_Demo/Demo/Additional_Results/PPINetworks_centralities_values_CINNA_Total.xlsx"
+Centrality_file <- "ResultsFolder/Additional_Results/PPINetworks_centralities_values_CINNA_Total.xlsx"
 #The Excel sheet from which to read the centrality values
 Centrality_file_sheet <- "M1vsM2a"
 #Provide the names of the omics datasets
 names_of_omicsDatasets <- c("Omics1","Omics2","Omics3","Omics4")
 #The Edge file that contain the network as node-node list of values. It must have the same identifier as the Centrality file!
-Edge_file <- "C:/work/Files/Conferences/PH_24.08.2024/Live_Demo/Demo/Additional_Results/edge_files_PPINetworks/Symbol/Total_M1vsM2a.txt"
-#Edge_file <- "C:/work/Files/Conferences/PH_24.08.2024/Live_Demo/Demo/Additional_Results/MONET_analysis/MONET/Edges_tables/2024-06-22-225802__M1__result-modules__Total_M1vsM2a_edges.xlsx"
+Edge_file <- "ResultsFolder/Additional_Results/edge_files_PPINetworks/Symbol/Total_M1vsM2a.txt"
+#Edge_file <- "ResultsFolder/Additional_Results/MONET_analysis/MONET/Edges_tables/2024-06-22-225802__M1__result-modules__Total_M1vsM2a_edges.xlsx"
 #If the Edge file is an Excel table, provide the appropriate sheet
 Edge_file_sheet <- "Cluster_1"
 #Working directory where to save the files
-working_dir <- "C:/work/Files/Conferences/PH_24.08.2024/Live_Demo/Cytoscape_Networks"
+working_dir <- "Path_To_It"
 #The path to the Cytoscape executable
 Cytoscape_path <- "C:/Programs/Cytoscape_v3.10.1/Cytoscape.exe"
 #The Cytoscape style file that contains the color mappings and nodes dimensions mapping
-Cytoscape_style_file <- "C:/work/Files/Conferences/PH_24.08.2024/Live_Demo/Style_NOODAI_Networks.xml"
+Cytoscape_style_file <- "Path_To_Style/Style_NOODAI_Networks.xml"
 #The name of the created Cytoscape Network
 save_name_netowrk <- "Cytoscape_Network"
 
