@@ -34,10 +34,6 @@ library(shinyjs)
 library(biomaRt)
 
 
-setwd("/home/omics/Linux_test/")
-
-#setwd("C:/work/Files/Algorithms/DO_server/V13/Linux_test")
-
 working_dir <- getwd()
 
 
