@@ -1,6 +1,6 @@
 #The function extract the pathways associated with each module identified after the MONET decomposition.
 # 
-#     Copyright © 2024, Empa, Tiberiu Totu.
+#     Copyright © 2025, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -127,10 +127,13 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
       
 	  data_resave <- data
 	  
-      name_index <- str_replace_all(files_monet[i],"__","amx")
-      name_index <- str_split(name_index,patter="_")
-      name_index <- str_split(name_index[[1]][2],patter="[.]")
-      name_index <- name_index[[1]][1]
+      #name_index <- str_replace_all(files_monet[i],"__","amx")
+      #name_index <- str_split(name_index,patter="_")
+      #name_index <- str_split(name_index[[1]][2],patter="[.]")
+      #name_index <- name_index[[1]][1]
+	  #name_index <- str_extract(files_monet[i], "(?<=result-modules__)[^_]+")
+	  name_index <- str_extract(files_monet[i], "(?<=_)[^_]+(?=\\.txt)")
+	  
       
       universe_entrez <- read_excel(file_universe_entrez, sheet = name_index, col_names = FALSE)
       colnames(universe_entrez) <- c("EntrezID")
@@ -200,7 +203,7 @@ MONET_Pathways_extraction <- function(working_dir,CPDB_database_file,CPDB_databa
           KeggReactome_ora_results$members_input_overlap <- str_replace_all(KeggReactome_ora_results$members_input_overlap,pattern = "/", replacement = ";")
         }
         
-        if(nrow(KeggReactome_ora_results)>0){
+        if(length(KeggReactome_ora_results)>0){
           xlsx::write.xlsx(KeggReactome_ora_results,save_name_CPDB,sheetName=paste("Cluster_",as.character(j),sep=""),append=TRUE)
         }
         

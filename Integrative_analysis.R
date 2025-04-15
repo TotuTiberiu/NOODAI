@@ -1,7 +1,7 @@
 #The script contains the main functions used by the NOODAI app. The Monet analysis is done explicitly in this script as is wrapped in an additional function.
 
 # 
-#     Copyright © 2024, Empa, Tiberiu Totu.
+#     Copyright © 2025, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 
 Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRING_data_file=NULL,IntAct_data_file=NULL,file_DEA_names,
                                          phenotype_names,phenotype_comparison,splicing_file_name="nnn",
-                                         Use_precompiled_database,LookUp_table_file=NULL,Results_index,BioMart_Dataset){
+                                         Use_precompiled_database,LookUp_table_file=NULL,Results_index,BioMart_Dataset,weight_penalty){
   ###Network analysis
   
   #Set the working directory as the one where the scripts are found and the results directory as the one newly created
@@ -54,7 +54,7 @@ Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRI
                                  STRING_data_file,IntAct_data_file,file_DEA_names,
                                  phenotype_names,phenotype_comparison,splicing_file_name,
                                  Use_precompiled_database,LookUp_table_file,BioMart_Dataset,
-								 BiomaRT_selected_organisms,Uniprot_Ncbi_map,ChEBI_map)
+								 BiomaRT_selected_organisms,Uniprot_Ncbi_map,ChEBI_map,weight_penalty)
     )
     gc()
   }
@@ -65,6 +65,7 @@ Integrative_Network_analysis <- function(working_dir,BioGRID_data_file=NULL,STRI
   #zip(zipfile =  paste0(Results_dir,'/ResultsZip.zip'), files = Results_dir,root = Results_dir,include_directories = FALSE)
   #utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir,extras = '-j')
   utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = sapply(Results_dir,FUN=function(x){strsplit(x,"/home/omics/Linux_test/")[[1]][2]}))
+  system(paste0("cp ",paste0(Results_dir,'/ResultsZip.zip')," /srv/shiny-server/Downloads/",Results_index))
 }
 
 
@@ -116,7 +117,7 @@ MONET_analysis <- function(working_dir,edge_file_path=NULL,monet_path=NULL,Monet
   if(file.exists(paste0(Results_dir,'/ResultsZip.zip'))){file.remove(paste0(Results_dir,'/ResultsZip.zip'))}
   #utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir, extras = '-j')
   utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = sapply(Results_dir,FUN=function(x){strsplit(x,"/home/omics/Linux_test/")[[1]][2]}))
-  
+  system(paste0("cp ",paste0(Results_dir,'/ResultsZip.zip')," /srv/shiny-server/Downloads/",Results_index))
   gc()
   
 }
@@ -164,7 +165,7 @@ MONET_pathways <- function(working_dir,CPDB_databases,MONET_background_file=NULL
   if(file.exists(paste0(Results_dir,'/ResultsZip.zip'))){file.remove(paste0(Results_dir,'/ResultsZip.zip'))}
   #utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir, extras = '-j')
   utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = sapply(Results_dir,FUN=function(x){strsplit(x,"/home/omics/Linux_test/")[[1]][2]}))
-  
+  system(paste0("cp ",paste0(Results_dir,'/ResultsZip.zip')," /srv/shiny-server/Downloads/",Results_index))
   gc()
   
 }
@@ -278,12 +279,12 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
   system(paste0("rm ",Results_dir,"/Additional_Results/ -r"))
   system(paste0("mkdir ",Results_dir,"/Main_Results"))
   system(paste0("mkdir ",Results_dir,"/Main_Results/Modules_Signaling_Pathways"))
-  system(paste0("mkdir ",Results_dir,"/Main_Results/Pathway_Images"))
+  system(paste0("mkdir ",Results_dir,"/Main_Results/Functional_Enrichment_Plots"))
   system(paste0("mkdir ",Results_dir,"/Main_Results/Circular_Diagrams"))
   system(paste0("mkdir ",Results_dir,"/Additional_Results"))
   system(paste0("cp ",Results_dir,"/Results_Interpretation.html ",Results_dir,"/Main_Results/"))
   system(paste0("cp ",Results_dir,"/PPINetworks_centralities_values_CINNA_Total.xlsx ",Results_dir,"/Main_Results/"))
-  system(paste0("cp ",Results_dir,"/MONET_analysis/MONET/Signaling_Pathways/Images/* ",Results_dir,"/Main_Results/Pathway_Images/"))
+  system(paste0("cp ",Results_dir,"/MONET_analysis/MONET/Signaling_Pathways/Images/* ",Results_dir,"/Main_Results/Functional_Enrichment_Plots/"))
   system(paste0("cp ",Results_dir,"/MONET_analysis/MONET/Signaling_Pathways/*_Total_* ",Results_dir,"/Main_Results/Modules_Signaling_Pathways/"))
   system(paste0("cp ",Results_dir,"/MONET_analysis/MONET/Centralities_modules_links/Images/* ",Results_dir,"/Main_Results/Circular_Diagrams/"))
   system(paste0("cp ",Results_dir,"/* ",Results_dir,"/Additional_Results/ -r"))
@@ -298,7 +299,7 @@ Circos_and_auxiliary <- function(working_dir,phenotype_names,phenotype_compariso
   #utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = Results_dir, extras = '-j')
   utils::zip(zipfile = paste0(Results_dir,'/ResultsZip.zip'), files  = c(sapply(paste0(Results_dir,"/Main_Results"),FUN=function(x){strsplit(x,"/home/omics/Linux_test/")[[1]][2]}),
              sapply(paste0(Results_dir,"/Additional_Results"),FUN=function(x){strsplit(x,"/home/omics/Linux_test/")[[1]][2]})) )
-  
+  system(paste0("cp ",paste0(Results_dir,'/ResultsZip.zip')," /srv/shiny-server/Downloads/",Results_index,".zip"))
   gc()
   
   

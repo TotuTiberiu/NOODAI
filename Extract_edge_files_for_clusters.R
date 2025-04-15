@@ -1,7 +1,7 @@
 #The function extracts the edges that are found in each identified subnetwork after the MONET decomposition. These are used for the circular diagrams.
 
 # 
-#     Copyright © 2024, Empa, Tiberiu Totu.
+#     Copyright © 2025, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by

@@ -2,7 +2,11 @@
 title: "Network Analysis results"
 output:
   html_document:
-    df_print: paged
+    theme: united
+    toc: yes
+    toc_float:
+      collapsed: true
+    # df_print: paged
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 
 params:
@@ -35,11 +39,41 @@ knitr::opts_knit$set(root.dir = results_dir)
 
 ```
 
-## General information. Folder structure
+## Introduction
 
-The elements of each omics analysis for the same evaluated comparison are merged together into a joint network. Central nodes are then extracted from this network using the current-flow betweenness centrality measurement, identifying them as network hubs. As the next step, we apply a network modularization algorithm through MONET, with the aim of identifying subnetworks with specific biological functions. The different omics elements are not treated as individual network layers. Following the extraction of the list of modules present in our network, we extract the pathways associated with each subnetwork and investigate which of the modules are linked to our top 10% most central nodes. We focused next on selecting representative modules for the studied contrast.
+This report contains the main results from the analysis using the NOODAI workflow. The main steps in this workflow are:
 
-### The main files and folders evaluated in this document are found in the _"Main_Results"_ subfolder:
+1. Merging all elements from each omics network into a joint network.
+2. Extracting central nodes using the current-flow betweenness centrality measure. 
+3. Network modularization using MONET to find subnetworks with specific biological functions. 
+4. Extraction of pathways associated with each subnetwork and investigate which of the modules are linked to our top 10% most central nodes.
+5. Selection of representative modules for the studied contrast. 
+
+<!-- The elements of each omics analysis for the same evaluated comparison are merged together into a joint network. Central nodes are then extracted from this network using the current-flow betweenness centrality measurement, identifying them as network hubs. As the next step, we apply a network modularization algorithm through MONET, with the aim of identifying subnetworks with specific biological functions. The different omics elements are not treated as individual network layers. Following the extraction of the list of modules present in our network, we extract the pathways associated with each subnetwork and investigate which of the modules are linked to our top 10% most central nodes. We focused next on selecting representative modules for the studied contrast. -->
+
+![](Ribbon.png)
+
+## Output file structure
+
+The output of this analysis is structured in two directories:
+
+- **Main_Results:** this folder contains the results aggregated over all omics. The files and folders found there are:
+    - **PPINetworks_centralities_values_CINNA_Total.xlsx:** this table contains the results of the centrality metrics for the elements comprising the interaction network created from combining all omics data. Each sheet in the Excel file corresponds to a specific contrast.
+    - **Modules_Signaling_Pathways:** this folder contains Excel tables containing the pathways identified for each subnetwork corresponding to each contrast.
+    - **Pathway_Images:** this folder contains the representations of the top three pathways for the first 5 clusters for each analyzed contrast either as a function of the pathway's FDR or based on the ratio between the number of pathway members and the total number of subnetwork members.
+    - **Circular_Diagrams:** this folder contains the plots highlighting the top transcription factors along with their connecting proteinbs, which where found to be among the top 30% of the most central nodes. The colors of the tracks highlight the modules associated with the proteins. A maximum of 7 TFs for 25 connecting proteins and 30 connections are represented.
+- **Additional_Results:** this folder contains the same entries as in the Main_Results folder, but organized differently and separately for each omics dataset. The files and folders found there are:
+    - **PPINetworks_centralities_values_CINNA_XYZ.xlsx:** this collection of tables (`XYZ` in the filename corresponds to each omics layer) contain the results of centrality metrics for the elements comprising the interaction network created for the mentioned omics dataset. Each Excel sheet corresponds to a specific contrast. 
+    - **edge_files_PPINetworks:** this folder contains the edges used to construct each of the analyzed network either as UniProt IDs (_"Uniprot"_) or as gene names (_"Symbol"_). The PCA validation for the centrality metrics can be seen in the `PCA_validation` folder. The genes that were not included in the analysis due to an ID conversion error are in the associated `FailedToMap` Excel tables. The edges that were not included because they were not linked to the largest network chosen for the analysis are found in the `NotMapped_Symbol` folder.
+    - **MONET:** this folder contains the results of the network decomposition step. The `.txt.` files contain each module identified from the respective network, ordered by the number of elements found in each cluster.
+        - **MONET/Signaling_Pathways:** this subfolder contains the Excel Tables showing the identified pathways for each extracted module and for each contrast.
+            - **MONET/Signaling_Pathways/Images:** this subfolder contains the same circular diagrams found in `Main_Results/Pathway_Images`.
+        - **MONET/Centralities_modules_links/Images:** this subfolder contains the same circular diagrams found in `Main_Results/Circular_Diagrams`.
+        - **MONET/Edges_tables:** this subfolder contains the Excel tables with the network edges for each extracted module for each contrast.
+
+
+
+<!-- ### The main files and folders evaluated in this document are found in the _"Main_Results"_ subfolder:
 
 * Table _"PPINetworks_centralities_values_CINNA_Total.xlsx"_ contains the results of centrality metrics for the elements comprising the interaction network created from all the combined omics data. Each Excel sheet corresponds to a specific contrast;
 * In _"Modules_Signaling_Pathways"_ folder there are Excel tables containing the pathways identified for each subnetwork corresponding to each contrast;
@@ -53,21 +87,20 @@ The elements of each omics analysis for the same evaluated comparison are merged
 * In _"MONET/Signaling_Pathways"_ folder there are Excel tables showing the identified pathways for each extracted module for each contrast;
 * In _"MONET/Signaling_Pathways/Images"_ there are the same circular diagrams found in _"Main_Results/Pathway_Images"_;
 * In the folder _"MONET/Centralities_modules_links/Images"_ there are the same circular diagrams found in _"Main_Results/Circular_Diagrams"_;
-* In _"MONET/Edges_tables"_ folder there are Excel tables containing the network edges for each extracted module for each contrast.
+* In _"MONET/Edges_tables"_ folder there are Excel tables containing the network edges for each extracted module for each contrast. -->
 
-### Important observations:
+## Important observations
 
 * **Robust nodes** are top central node (top 15% nodes considering the current-flow betwenness centrality) present in at least 75% of all considered omics datasets.
 * The terms subnetworks, clusters and modules are used interchangeably.
 * In this document, the only used centrality metric was the current-flow betwenness centrality.
 * **Salient nodes** are top central node (top 10% nodes considering the current-flow betwenness centrality) present in at least half of all considered omics datasets.
 
-### Workflow:
+<!-- ## Workflow
 
-First, the table 'PPINetworks_centralities_values_CINNA_Total.xlsx' was examined to extract the most robust and salient nodes across all contrasts. Secondly, transcription factors (TFs) and kinases present in the top 15% central nodes were identified for each comparison. The main pathways are displayed for the modules containing the robust nodes and the identified TFs and kinases. Additionally, the top three pathways from the three largest subnetworks are highlighted (without correcting for pathway overlap). The most robust pathways and their associated modules are presented separately. Robust pathways are defined as those where the number of associated members exceeds 70% of the total number of elements in the respective modules. These pathways taken cumulatively describe specific biological processes that characterize the studied contrasts.
+First, the table 'PPINetworks_centralities_values_CINNA_Total.xlsx' was examined to extract the most robust and salient nodes across all contrasts. Secondly, transcription factors (TFs) and kinases present in the top 15% central nodes were identified for each comparison. The main pathways are displayed for the modules containing the robust nodes and the identified TFs and kinases. Additionally, the top three pathways from the three largest subnetworks are highlighted (without correcting for pathway overlap). The most robust pathways and their associated modules are presented separately. Robust pathways are defined as those where the number of associated members exceeds 70% of the total number of elements in the respective modules. These pathways taken cumulatively describe specific biological processes that characterize the studied contrasts. -->
 
-
-## Results
+## Results {.tabset}
 
 ```{r echo=FALSE}
 library(openxlsx)
@@ -91,11 +124,12 @@ Top_clusters_pathways <- list()
 for (i in  1:length(contrasts_sheets)){
   aux <- read.xlsx(xlsxFile = centralities_file_name,sheet = contrasts_sheets[i])
   aux <- aux[order(aux$Current_Flow_Betweenness_Centrality,decreasing = TRUE),]
-  ind <- which(tolower(colnames(aux)) %in% tolower(c("Symbol","Entrez.ID","Current_Flow_Betweenness_Centrality",omics_file_names)))
+  ind <- which(tolower(colnames(aux)) %in% tolower(c("Symbol","NCBI.ID","Current_Flow_Betweenness_Centrality",omics_file_names)))
   
   centralities[[i]] <- aux[,ind]
   
   aux <- aux[,ind]
+  colnames(aux)[which(tolower(colnames(aux)) %in% tolower("NCBI.ID"))] <- "Entrez.ID"
   aux[,c(4:ncol(aux))] <- sapply(X = aux[,c(4:ncol(aux))],FUN = function(x){as.numeric(as.character(x))})
   if(length(4:ncol(aux))>1){
   ind <- which( rowSums(aux[c(1:round(nrow(aux)/10*1.5)),4:ncol(aux)]) >= round(0.75*length(omics_file_names)) )
@@ -118,12 +152,16 @@ for (i in  1:length(contrasts_sheets)){
   
   
   TF_database <- read.table(TF_file,sep="\t",fill=TRUE,header=TRUE)
+  if(length(unique(TF_database$Species))>1){
   TF_database <- TF_database[which(tolower(TF_database$Species) %in% tolower(BiomaRT_organisms$Name)),]
-  ind <- which(aux[c(1:round(nrow(aux)/10*1.5)),2] %in% TF_database$Symbol)
+  }
+  ind <- which(tolower(aux[c(1:round(nrow(aux)/10*1.5)),2]) %in% tolower(TF_database$Symbol))
   identified_TF[[i]] <- aux[ind,c(1,2)]
   
   Kinome <- read.table(kinome_file,sep="\t",fill=TRUE,header=TRUE)
+  if(length(unique(Kinome$Species))>1){
   Kinome <- Kinome[which(tolower(Kinome$Species) %in% tolower(BiomaRT_organismsNamesOrig)),]
+  }
   ind <- which(aux[c(1:round(nrow(aux)/10*1.5)),2] %in% Kinome$Gene_name)
   identified_kinases[[i]] <- aux[ind,c(1,2)]
   
@@ -250,6 +288,11 @@ for (i in  1:length(contrasts_sheets)){
 
 ```{r echo = FALSE, results = "asis"}
 
+library(kableExtra)
+library(dplyr)
+library(tidyverse)
+library(knitr)
+
 template1 <- "\n %s. \n
 "
 
@@ -269,71 +312,207 @@ template3 <- "\n Module %s: %s. \n
 # template6 <- "The most important and robust clusters and their associated pathways: Module %s: %s"
 
 for (i in 1:length(contrasts_sheets)) {
+
+  # kable(head(iris)) %>%
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  # htmltools::HTML() %>%
+  # print
   
-  writeLines(sprintf("## Comparison group:  %s \n",contrasts_sheets[i]))
   
-  robust_n <- paste0(robust_nodes[[i]]$Symbol,collapse = "; ")
-  if(nchar(robust_n)==0){robust_n <- "None"}
   
-  if(length(important_nodes)>0){
-  important_n <- paste0(important_nodes[[i]]$Symbol,collapse = "; ")
-  if(nchar(important_n)==0){important_n <- "None"}
-  }
-  TF_ident <- paste0(identified_TF[[i]]$Symbol,collapse = "; ")
-  if(nchar(TF_ident)==0){TF_ident <- "None"}
-  kinases_ident <- paste0(identified_kinases[[i]]$Symbol, collapse = "; ")
-  if(nchar(kinases_ident)==0){kinases_ident <- "None"}
-  
-  writeLines(sprintf('##### <span style="color:#d12323"> Most __robust nodes__ (present in 75%% of the omics datasets, top 15%% central nodes): </span>'))
-  cat(sprintf(template1, robust_n))
-  
-  if(length(important_nodes)>0){
-  writeLines(sprintf('##### <span style="color:#d12323"> Other __salient nodes__ (present in 50%% of the omics datasets if possible, top 10%% central nodes): </span>'))
-  cat(sprintf(template1,important_n))
+  writeLines(sprintf("### Comparison group:  %s \n",contrasts_sheets[i]))
+
+  if(length(robust_nodes[[i]]$Symbol) == 0) {
+    robust_n <- "None"
+  } else {
+    robust_n <- paste0("- ", robust_nodes[[i]]$Symbol, collapse = "\n")
   }
   
-  writeLines(sprintf('##### <span style="color:#d12323"> The identified __TF__ in the top 15%% central nodes: </span>'))
-  cat(sprintf(template1,TF_ident))
+  if(length(important_nodes[[i]]$Symbol) == 0) {
+    important_n <- "None"
+  } else {
+    if(length(important_nodes) > 0) {
+      important_n <- paste0("- ", important_nodes[[i]]$Symbol, collapse = "\n")
+    }
+  }
   
-  writeLines(sprintf('##### <span style="color:#d12323"> The identified __Kinases__ in the top 15%% central nodes: </span>'))
-  cat(sprintf(template1, kinases_ident))
+  if(length(identified_TF[[i]]$Symbol) == 0) {
+    TF_ident <- "None"
+  } else {
+    TF_ident <- paste0("- ", identified_TF[[i]]$Symbol, collapse = "\n")
+  }
   
-  writeLines(sprintf('##### <span style="color:#d12323"> The __robust nodes__ are associated with the following pathways: </span>'))
-  if(length(robust_genes_pathways[[i]]$Symbol)>0){
-    writeLines(sprintf("\n"))
-    cat(sprintf(template2,robust_genes_pathways[[i]]$Symbol, robust_genes_pathways[[i]]$Module, robust_genes_pathways[[i]]$Pathways))
-    #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, robust_genes_pathways[[i]]$Symbol, robust_genes_pathways[[i]]$Module, robust_genes_pathways[[i]]$Pathways)
-  }else{writeLines(sprintf("None \n"))}
+  if(length(identified_kinases[[i]]$Symbol) == 0) {
+    kinases_ident <- "None"
+  } else {
+    kinases_ident <- paste0("- ", identified_kinases[[i]]$Symbol, collapse = "\n")
+  }
+  
+  cat("<details>")
+  cat("<summary><strong>Most robust nodes (present in 75% of the omics datasets, top 15% central nodes)</strong></summary>")
+  cat(robust_n)
+  cat("\n")
+  cat("</details>")
+
+  if(length(important_nodes)>0) {
+    cat("<details>")
+    cat("<summary><strong>Other salient nodes (present in 50% of the omics datasets if possible, top 10% central nodes)</strong></summary>")
+    cat(important_n)
+    cat("\n")
+    cat("</details>")
+  }
+
+  cat("<details>")
+  cat("<summary><strong>Identified TFs in the top 15% central nodes</strong></summary>")
+  cat(TF_ident)
+  cat("\n")
+  cat("\n")
+  cat("</details>")
+
+  cat("<details>")
+  cat("<summary><strong>Identified kinases in the top 15% central nodes</strong></summary>")
+  cat(kinases_ident)
+  cat("\n")
+  cat("\n")
+  cat("</details>")
+
+  cat("<details>")
+  cat("<summary><strong>Robust nodes are associated with the following pathways</strong></summary>")
+  if(length(robust_genes_pathways[[i]]$Symbol) > 0){
+    robust_genes_pathways[[i]] %>% 
+      select(Symbol, Module, Pathways) %>% 
+      kbl(row.names = F) %>% 
+      kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+      htmltools::HTML() %>% 
+      print
+  cat("\n")
+  } else {writeLines(sprintf("None \n"))}
+  cat("\n")
+  cat("</details>")
+
+  cat("<details>")
+  cat("<summary><strong>The mentioned TFs are associated with the following pathways</strong></summary>")
+  if(length(identified_TF_pathways[[i]]$Symbol) > 0){
+    identified_TF_pathways[[i]] %>% 
+      select(Symbol, Module, Pathways) %>% 
+      kbl(row.names = F) %>% 
+      kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+      htmltools::HTML() %>% 
+      print
+  cat("\n")
+  } else {writeLines(sprintf("None \n"))}
+  cat("\n")
+  cat("</details>")
+
+  cat("<details>")
+  cat("<summary><strong>The mentioned kinases are associated with the following pathways</strong></summary>")
+  if(length(identified_kinases_pathways[[i]]$Symbol) > 0){
+    identified_kinases_pathways[[i]] %>% 
+      select(Symbol, Module, Pathways) %>% 
+      kbl(row.names = F) %>% 
+      kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+      htmltools::HTML() %>% 
+      print
+  cat("\n")
+  } else {writeLines(sprintf("None \n"))}
+  cat("\n")
+  cat("</details>")
+
+  cat("<details>")
+  cat("<summary><strong>Top 3 pathways for the top 3 modules (considering the number of members)</strong></summary>")
+  if(length(Top_3_3_pathways_clusters[[i]]$Module) > 0){
+    modules <- Top_3_3_pathways_clusters[[i]]$Module
+    for (m in 1:length(modules)) {
+
+      pathways = strsplit(Top_3_3_pathways_clusters[[i]]$Pathways[m], " and ")
+      pathways = paste("    - ", pathways[[1]], collapse = "\n")
+      cat(paste0("- **Module ", modules[m], ":**\n\n"))
+      cat(pathways)
+      cat("\n")
+
+    }
+  } else {writeLines(sprintf("None \n"))}
+  cat("\n")
+  cat("</details>")
+
+  cat("<details>")
+  cat("<summary><strong>The most important robust modules and their associated pathways</strong></summary>")
+  if(length(Top_clusters_pathways[[i]]$Module) > 0){
+    Top_clusters_pathways[[i]] %>% 
+      select(Module, Pathways) %>% 
+      kbl(row.names = F) %>% 
+      kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+      htmltools::HTML() %>% 
+      print
+  cat("\n")
+  } else {writeLines(sprintf("None \n"))}
+  cat("\n")
+#  cat("</details>")
+
+  # writeLines(sprintf('##### <span style="color:#d12323"> Most __robust nodes__ (present in 75%% of the omics datasets, top 15%% central nodes): </span>'))
+  # cat(sprintf(template1, robust_n))
+  
+  # if(length(important_nodes)>0){
+  # writeLines(sprintf('##### <span style="color:#d12323"> Other __salient nodes__ (present in 50%% of the omics datasets if possible, top 10%% central nodes): </span>'))
+  # cat(sprintf(template1,important_n))
+  # }
+  
+  # writeLines(sprintf('##### <span style="color:#d12323"> The identified __TF__ in the top 15%% central nodes: </span>'))
+  # cat(sprintf(template1,TF_ident))
+  
+  # writeLines(sprintf('##### <span style="color:#d12323"> The identified __Kinases__ in the top 15%% central nodes: </span>'))
+  # cat(sprintf(template1, kinases_ident))
+  
+  # cat("#### The robust nodes are associated with the following pathways:\n")
+  # if(length(robust_genes_pathways[[i]]$Symbol)>0){
+  #   robust_genes_pathways[[1]] %>% 
+  #     select(Symbol, Module, Pathways) %>% 
+  #     kbl(row.names = F) %>% 
+  #     kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  #     htmltools::HTML() %>% 
+  #     print
+  # cat("\n")
+  # } else {writeLines(sprintf("None \n"))}
+  # # writeLines(sprintf('##### <span style="color:#d12323"> The __robust nodes__ are associated with the following pathways: </span>'))
+  # # if(length(robust_genes_pathways[[i]]$Symbol)>0){
+  # #   writeLines(sprintf("\n"))
+  # #   robust_genes_pathways[[i]] %>% 
+  # #     select(Symbol, Module, Pathways) %>% 
+  # #     kbl(row.names = F) %>% 
+  # #     kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+  # #   # cat(sprintf(template2,robust_genes_pathways[[i]]$Symbol, robust_genes_pathways[[i]]$Module, robust_genes_pathways[[i]]$Pathways))
+  # #   #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, robust_genes_pathways[[i]]$Symbol, robust_genes_pathways[[i]]$Module, robust_genes_pathways[[i]]$Pathways)
+  # # }else{writeLines(sprintf("None \n"))}
+  # cat("\n")
+  
+  # writeLines(sprintf('##### <span style="color:#d12323">The mentioned __TF__ are associated with the following pathways: </span>'))
+  # if(length(identified_TF_pathways[[i]]$Symbol)>0){
+  #   writeLines(sprintf("\n"))
+  #   cat(sprintf(template2,identified_TF_pathways[[i]]$Symbol, identified_TF_pathways[[i]]$Module, identified_TF_pathways[[i]]$Pathways))
+  #   #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, identified_TF_pathways[[i]]$Symbol, identified_TF_pathways[[i]]$Module, identified_TF_pathways[[i]]$Pathways)
+  # }else{writeLines(sprintf("None \n"))}
+  
+  # writeLines(sprintf('##### <span style="color:#d12323"> The mentioned __Kinase__ are associated with the following pathways: </span>'))
+  # if(length(identified_kinases_pathways[[i]]$Symbol)>0){
+  #   writeLines(sprintf("\n"))
+  #   cat(sprintf(template2,identified_kinases_pathways[[i]]$Symbol, identified_kinases_pathways[[i]]$Module, identified_kinases_pathways[[i]]$Pathways))
+  #   #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, identified_kinases_pathways[[i]]$Symbol, identified_kinases_pathways[[i]]$Module, identified_kinases_pathways[[i]]$Pathways)
+  # }else{writeLines(sprintf("None \n"))}
   
   
-  writeLines(sprintf('##### <span style="color:#d12323">The mentioned __TF__ are associated with the following pathways: </span>'))
-  if(length(identified_TF_pathways[[i]]$Symbol)>0){
-    writeLines(sprintf("\n"))
-    cat(sprintf(template2,identified_TF_pathways[[i]]$Symbol, identified_TF_pathways[[i]]$Module, identified_TF_pathways[[i]]$Pathways))
-    #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, identified_TF_pathways[[i]]$Symbol, identified_TF_pathways[[i]]$Module, identified_TF_pathways[[i]]$Pathways)
-  }else{writeLines(sprintf("None \n"))}
+  # writeLines(sprintf('##### <span style="color:#d12323"> The top 3 pathways for the top 3 modules (considering the number of members) are: </span>'))
+  # if(length(Top_3_3_pathways_clusters[[i]]$Module)>0){
+  #   writeLines(sprintf("\n"))
+  #   cat(sprintf(template3, Top_3_3_pathways_clusters[[i]]$Module, Top_3_3_pathways_clusters[[i]]$Pathways))
+  #   #mapply(function(x,y){cat(sprintf(template3,x,y))}, Top_3_3_pathways_clusters[[i]]$Module, Top_3_3_pathways_clusters[[i]]$Pathways)
+  # }else{writeLines(sprintf("None \n"))}
   
-  writeLines(sprintf('##### <span style="color:#d12323"> The mentioned __Kinase__ are associated with the following pathways: </span>'))
-  if(length(identified_kinases_pathways[[i]]$Symbol)>0){
-    writeLines(sprintf("\n"))
-    cat(sprintf(template2,identified_kinases_pathways[[i]]$Symbol, identified_kinases_pathways[[i]]$Module, identified_kinases_pathways[[i]]$Pathways))
-    #mapply(function(x,y,z){cat(sprintf(template2,x,y,z))}, identified_kinases_pathways[[i]]$Symbol, identified_kinases_pathways[[i]]$Module, identified_kinases_pathways[[i]]$Pathways)
-  }else{writeLines(sprintf("None \n"))}
-  
-  
-  writeLines(sprintf('##### <span style="color:#d12323"> The top 3 pathways for the top 3 modules (considering the number of members) are: </span>'))
-  if(length(Top_3_3_pathways_clusters[[i]]$Module)>0){
-    writeLines(sprintf("\n"))
-    cat(sprintf(template3, Top_3_3_pathways_clusters[[i]]$Module, Top_3_3_pathways_clusters[[i]]$Pathways))
-    #mapply(function(x,y){cat(sprintf(template3,x,y))}, Top_3_3_pathways_clusters[[i]]$Module, Top_3_3_pathways_clusters[[i]]$Pathways)
-  }else{writeLines(sprintf("None \n"))}
-  
-  writeLines(sprintf('##### <span style="color:#d12323"> The most important and __robust modules__ and their associated pathways: </span>'))
-  if(length(Top_clusters_pathways[[i]]$Module)>0){
-    writeLines(sprintf("\n"))
-    cat(sprintf(template3, Top_clusters_pathways[[i]]$Module, Top_clusters_pathways[[i]]$Pathways))
-    #mapply(function(x,y){cat(sprintf(template3,x,y))},Top_clusters_pathways[[i]]$Module, Top_clusters_pathways[[i]]$Pathways)
-  }else{writeLines(sprintf("None \n"))}
+  # writeLines(sprintf('##### <span style="color:#d12323"> The most important and __robust modules__ and their associated pathways: </span>'))
+  # if(length(Top_clusters_pathways[[i]]$Module)>0){
+  #   writeLines(sprintf("\n"))
+  #   cat(sprintf(template3, Top_clusters_pathways[[i]]$Module, Top_clusters_pathways[[i]]$Pathways))
+  #   #mapply(function(x,y){cat(sprintf(template3,x,y))},Top_clusters_pathways[[i]]$Module, Top_clusters_pathways[[i]]$Pathways)
+  # }else{writeLines(sprintf("None \n"))}
   
 }
 ```

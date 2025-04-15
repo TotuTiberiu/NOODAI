@@ -1,7 +1,7 @@
 #The function creates the representation of the top 3 pathways for the top 5 biggest subnetworks (considering the number of elements)
 
 # 
-#     Copyright © 2024, Empa, Tiberiu Totu.
+#     Copyright © 2025, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by

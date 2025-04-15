@@ -1,7 +1,7 @@
 #The function creates the circular diagrams that characterize a full protein-protein interaction network.
 
 # 
-#     Copyright © 2024, Empa, Tiberiu Totu.
+#     Copyright © 2025, Empa, Tiberiu Totu.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -59,7 +59,9 @@ BiomaRT_organisms <- read.table(BiomaRT_selected_organisms,sep="\t",quote="",hea
   BiomaRT_organisms$Name <- stringr::str_replace_all(BiomaRT_organisms$Name," ","_")
   
   tf_list <- read.table(TF_Database,sep="\t",fill=TRUE,header=TRUE)
+  if(length(unique(tf_list$Species))>1){
   tf_list <- tf_list[which(tolower(tf_list$Species) %in% tolower(BiomaRT_organisms$Name)),]
+  }
 
 for (i in 1:length(centralities_modules_files)){
   
@@ -83,7 +85,7 @@ for (i in 1:length(centralities_modules_files)){
    if (length(ind)>0){data <- data[-ind,]}
 
   
-  ind <- which(data$Gene %in% tf_list$Symbol)
+  ind <- which(tolower(data$Gene) %in% tolower(tf_list$Symbol))
   
   if(length(ind)>7){ind<-ind[1:7]}
 
@@ -97,7 +99,7 @@ for (i in 1:length(centralities_modules_files)){
     ind1 <- which(data$Gene %in% aux$V1)
     ind2 <- which(data$Gene %in% aux$V2)
     aux2 <- unique(data$Gene[union(ind1,ind2)])
-    aux2 <- aux2[-which(aux2 %in% tf_list$Symbol)]
+    aux2 <- aux2[-which(tolower(aux2) %in% tolower(tf_list$Symbol))]
     
     if(length(aux2)>0){
     data_tf <- rbind(data_tf,data.frame(aux2,data$Gene[ind[j]]))
