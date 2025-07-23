@@ -15,19 +15,16 @@ This repository provides the local version of the application running at [https:
 - Generate Cytoscape-compatible networks, circus and enrichment plots.
 - Generate PDF reports
 
-- Pre-set for 13 species:
+- Pre-set for 12 species besides *Homo sapiens*:
 
 |                             |                             |
 |-----------------------------|-----------------------------|
-| *Homo sapiens*              | *Rattus norvegicus*         |
-| *Mus musculus*              | *Saccharomyces cerevisiae*  |
+| *Mus musculus*              | *Rattus norvegicus*         |
+| *Drosophila melanogaster*   | *Saccharomyces cerevisiae*  |
 | *Bos taurus*                | *Xenopus tropicalis*        |
 | *Caenorhabditis elegans*    | *Sus scrofa*                |
 | *Canis familiaris*          | *Schizosaccharomyces pombe* |
-| *Danio rerio*               |                             |
-| *Drosophila melanogaster*   |                             |
-| *Gallus gallus*             |                             |
-
+| *Danio rerio*               | *Gallus gallus*             |
 
 ---
 
