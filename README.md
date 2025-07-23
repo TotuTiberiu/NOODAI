@@ -34,7 +34,7 @@ This repository provides the local version of the application running at [https:
 ## Repository Structure
 
 ```
-| Path / File                                | Description |
+|                                            |             |
 |--------------------------------------------|-------------|
 | `Databases/`                                | Reference files and Cytoscape style configuration |
 | `ccRCC_inputData/`                          | Input data from the case study: [DOI:10.1101/2025.01.31.635927 (https://doi.org/10.1101/2025.01.31.635927) |
@@ -100,7 +100,8 @@ Rscript install_NOODAI_packages.R
 Cytoscape must be running in headless mode before starting NOODAI. From terminal:
 
 ```
- env JAVA_HOME=$JAVA_HOME JAVA_OPTS='-Djava.awt.headless=true' cytoscape.sh -R -Dorg.lwjgl.util.Debug=true Dorg.lwjgl.util.DebugLoader=true
+env JAVA_HOME=$JAVA_HOME JAVA_OPTS='-Djava.awt.headless=true' ./cytoscape.sh -R -Dorg.lwjgl.util.Debug=true -Dorg.lwjgl.util.DebugLoader=true
+
 ```
 
 (On Windows, this may be `Cytoscape.bat -R`.)
