@@ -17,7 +17,6 @@ This repository provides the local version of the application running at [https:
 
 - Pre-set for 12 species besides *Homo sapiens*:
 
-|                             |                             |
 |-----------------------------|-----------------------------|
 | *Mus musculus*              | *Rattus norvegicus*         |
 | *Drosophila melanogaster*   | *Saccharomyces cerevisiae*  |
