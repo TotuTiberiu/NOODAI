@@ -33,8 +33,8 @@ This repository provides the local version of the application running at [https:
 
 ## Repository Structure
 
-```
-|                                            |             |
+
+| Path / File                                | Description |
 |--------------------------------------------|-------------|
 | `Databases/`                                | Reference files and Cytoscape style configuration |
 | `ccRCC_inputData/`                          | Input data from the case study: [DOI:10.1101/2025.01.31.635927 (https://doi.org/10.1101/2025.01.31.635927) |
@@ -56,7 +56,7 @@ This repository provides the local version of the application running at [https:
 | `Runtime_test_datasets.7z`                  | Comprehensive multi-omics runtime test dataset |
 | `Tools-runtime.zip`                         | Runtime test for competitor tools |
 | `Uplaoded_Data_Archive.zip`                 | Demo dataset for direct website upload |
-```
+
 
 ---
 
