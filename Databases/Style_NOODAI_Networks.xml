@@ -53,7 +53,7 @@
             <visualProperty default="#89D0F5" name="NODE_FILL_COLOR"/>
             <visualProperty default="255" name="NODE_LABEL_TRANSPARENCY"/>
             <visualProperty default="" name="NODE_TOOLTIP"/>
-            <visualProperty default="12" name="NODE_LABEL_FONT_SIZE"/>
+            <visualProperty default="15" name="NODE_LABEL_FONT_SIZE"/>
             <visualProperty default="50.0" name="NODE_CUSTOMGRAPHICS_SIZE_2"/>
             <visualProperty default="50.0" name="NODE_CUSTOMGRAPHICS_SIZE_4"/>
             <visualProperty default="50.0" name="NODE_CUSTOMGRAPHICS_SIZE_7"/>
