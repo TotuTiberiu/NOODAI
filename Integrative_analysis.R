@@ -183,7 +183,7 @@ Integrative_Network_analysis <- function(
     files  = sapply(
       Results_dir,
       FUN = function(x) {
-        strsplit(x, "/home/omics/NOODAI_shiny/")[[1]][2]
+        strsplit(x, normalizePath(working_dir))[[1]][2]
       }
     )
   )
@@ -325,7 +325,7 @@ MONET_analysis <- function(
     files  = sapply(
       Results_dir,
       FUN = function(x) {
-        strsplit(x,"/home/omics/NOODAI_shiny/")[[1]][2]
+        strsplit(x,normalizePath(working_dir))[[1]][2]
       }
     )
   )
@@ -452,7 +452,7 @@ MONET_pathways <- function(
     zipfile = paste0(Results_dir,'/ResultsZip.zip'),
     files  = sapply(
       Results_dir, FUN = function(x) {
-        strsplit(x,"/home/omics/NOODAI_shiny/")[[1]][2]
+        strsplit(x,normalizePath(wkd))[[1]][2]
       }
     )
   )
@@ -887,13 +887,13 @@ Circos_and_auxiliary <- function(
       sapply(
         paste0(Results_dir,"/Main_Results"),
         FUN = function(x) {
-          strsplit(x,"/home/omics/NOODAI_shiny/")[[1]][2]
+          strsplit(x,normalizePath(wkd))[[1]][2]
         }
       ),
       sapply(
         paste0(Results_dir,"/Additional_Results"),
         FUN = function(x) {
-          strsplit(x,"/home/omics/NOODAI_shiny/")[[1]][2]
+          strsplit(x,normalizePath(wkd))[[1]][2]
         }
       )
     )
