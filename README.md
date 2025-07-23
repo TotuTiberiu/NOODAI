@@ -122,6 +122,7 @@ This will open NOODAI in your browser at a local address
 - MONET must be executable by the R session. If `sudo` is needed, configure securely.
 - Cytoscape must be launched before running the app.
 - Ensure all directories and files used by the app are readable and writable.
+- As certain internal paths -such as the path to the MONET executable - are used by the application, it is recommended to use the Custom Algorithms tab, which allows users to configure these paths directly through the interface.
 
 ---
 
