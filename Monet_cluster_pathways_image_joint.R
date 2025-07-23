@@ -1,7 +1,7 @@
 #The function creates the representation of the top 3 pathways for the top 5 biggest subnetworks (considering the number of elements)
 
 # 
-#     Copyright © 2025, Empa, Tiberiu Totu.
+#     Copyright © 2025, Empa, Tiberiu Totu and Rafael Riudavets Puig.
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -15,113 +15,250 @@
 # 
 #     You should have received a copy of the GNU General Public License
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#     Contact: tiberiu.totu@empa.ch
-
-MONET_cluster_pathways_joint_image <- function(pathways_dir,file_extension){
-
-library(ggplot2)
-library(ggchicklet)
-library(openxlsx)
-library(stringr)
-
-setwd(pathways_dir)
+#     Contact: tiberiu.totu@proton.me
 
 
-theme_a <- theme(axis.title = element_text(color="black", size=22,
-                                           hjust = 0.5, vjust = 1),
-                 axis.line=element_line(size=1, colour="black"),
-                 axis.text.x = element_text(color = "black", size = 18),
-                 axis.text.y = element_text(color="black",size = 18),
-                 plot.title =element_text(color = "black", face = 'bold.italic',size=18, hjust = 0,vjust = 1),
-                 panel.background=element_blank(),
-                 axis.line.y=element_blank(),
-                 legend.title = element_text(color = "black", size = 18, face = "bold"),
-                 legend.text = element_text(color = "black", size = 18),
-                 legend.key=element_rect(fill="whitesmoke"),
-                 legend.background=element_blank(), legend.text.align = 0.5)
+
+#' Generate joint pathway enrichment plots across MONET clusters.
+#'
+#' Reads pathway enrichment results of the MONET modules (in Excel format after running the 'MONET_pathways_extraction_CPDB.R')
+#' from a specified directory and generates visualizations showing the top enriched pathways per cluster.
+#'
+#' The function also updates the '@pathways' slot in the provided NOODAI_object with the enrichment
+#' data used for plotting.
+#'
+#' @param pathways_dir Character. Path to the directory containing the enrichment Excel files.
+#' @param file_extension Character. Common prefix or suffix used to identify the relevant enrichment files.
+#' @param NOODAI_object object. An instance of the NOODAI object that will be updated with the processed pathway data.
+#'
+#' @return A list containing a success flag ('1') and the updated NOODAI_object.
+#'
+#' @details
+#' - Only the top 3 pathways are considered from each sheet of the Excel files (up to 5 sheets per file).
+#' - Two ggplot2-based chicklet bar plots are created per file:
+#'   1. A plot showing -log10(q-values) of pathway enrichment.
+#'   2. A plot showing the ratio of pathway hits to cluster members.
+#' - The plots are saved as PDFs using the base name of the Excel file with suffixes '_FDR.pdf' and '_Ratio.pdf'.
+#'
+#' @examples
+#' # Assuming 'my_NOODAI_object' is an existing NOODAI object and the enrichment Excel files 
+#' # are stored in the directory "path/to/enrichment" with a file name pattern that includes "Total":
+#' result <- MONET_cluster_pathways_joint_image(
+#'   pathways_dir = "path/to/enrichment",
+#'   file_extension = "Total",
+#'   NOODAI_object = my_NOODAI_object
+#' )
+#'
+#' @import ggplot2 ggchicklet openxlsx stringr
 
 
-files_pathways <- list.files(path = getwd(), pattern = paste0(file_extension,"_"))
+MONET_cluster_pathways_joint_image <- function(pathways_dir, file_extension, NOODAI_object) {
 
-dir.create(paste0(pathways_dir,'/Images/'))
+  library(ggplot2)
+  library(ggchicklet)
+  library(openxlsx)
+  library(stringr)
 
-for (ij in files_pathways){
+  setwd(pathways_dir)
 
-xlsx_sheets <- openxlsx::getSheetNames(ij)
-
-if(length(xlsx_sheets)>5){xlsx_sheets <- xlsx_sheets[1:5]}
-
-data <- c()
-index <-1
-for (jk in xlsx_sheets){
-  aux <- openxlsx::read.xlsx(ij,sheet=jk,colNames = TRUE, rowNames = TRUE)
-  if(nrow(aux)>3){aux <- aux[1:3,c(1,4,7)]}
-  else{aux <- aux[1,c(1,4,7)]}
-  ams <- str_split(aux[,3],'/')
-  ams <- sapply(ams,FUN=function(x){as.numeric(x[[1]])/as.numeric(x[[2]])})
-  aux$Ratio <- ams
-  aux$Cluster <- paste0("Cluster",index)
-  index <- index+1
-  data <- rbind(data,aux)
-  
-}
-
-x <- data
-
-colnames(x) <- c('X1','X2','X3','X4','X5')
-
-x1 <- x
-x1$X2 <- as.numeric(x1$X2)
-
-
-x1$X2 <- -log10(as.numeric(x1$X2))
-
-index <- 1 
-unq_cls <- unique(x1$X5)
-for (mm in unq_cls){
-  x1$X5[which(x1$X5 %in% mm)] <- index
-  index <- index+1
-}
-
-x1$X1 <- as.character(x1$X1)
-x1$X1 <- factor(x1$X1,levels=unique(x1$X1))
-x1$X5 <- as.character(x1$X5)
-x1$X5 <- factor(x1$X5,levels=unique(x1$X5))
-
-
-g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X2, fill=X5)) + scale_fill_manual(values=c("#7196BE","#BD3737","#CD9B1D","#E8768F","#855C5C"))+
- geom_chicklet(radius = grid::unit(7.5, "mm"),width = 0.8)+coord_flip() + ylab("-log10(q-value)")
-g$theme <- theme_a
-g$labels$x=element_blank()
-g <- g + scale_x_discrete(labels=x1$X1, breaks=nrow(x1):1, limits=factor(1:nrow(x1))) +
-  guides(fill=guide_legend(title="Module"))
-
-save_name_pdf <- paste0(pathways_dir,'/Images/',str_remove(ij,'.xlsx'),'_FDR.pdf')
-
-pdf(file = save_name_pdf, width = (trunc(max(nchar(as.character(x1$X1)))/10)*20/3)/2, length(x1$X1)*1.5/2)
-print(g, newpage = FALSE)
-dev.off()
-
-x1$X1 <- as.character(x1$X1)
-x1$X1 <- factor(x1$X1,levels=unique(x1$X1))
-x1$X5 <- as.character(x1$X5)
-x1$X5 <- factor(x1$X5,levels=unique(x1$X5))
+  theme_a <- theme(
+    axis.title = element_text(
+      color="black",
+      size = 22,
+      hjust = 0.5,
+      vjust = 1
+    ),
+    axis.line = element_line(
+      size = 1,
+      colour = "black"
+    ),
+    axis.text.x = element_text(
+      color = "black",
+      size = 18
+    ),
+    axis.text.y = element_text(
+      color = "black",
+      size = 18
+    ),
+    plot.title = element_text(
+      color = "black",
+      face = 'bold.italic',
+      size = 18,
+      hjust = 0,
+      vjust = 1
+    ),
+    panel.background = element_blank(),
+    axis.line.y = element_blank(),
+    legend.title = element_text(
+      color = "black",
+      size = 18,
+      face = "bold"
+    ),
+    legend.text = element_text(
+      color = "black",
+      size = 18
+    ),
+    legend.key = element_rect(fill = "whitesmoke"),
+    legend.background = element_blank(),
+    legend.text.align = 0.5
+  )
 
 
-g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X4, fill=X5)) + scale_fill_manual(values=c("#7196BE","#BD3737","#CD9B1D","#E8768F","#855C5C"))+
-geom_chicklet(radius = grid::unit(7.5, "mm"),width = 0.8)+coord_flip() + ylab("Pathway Hits/Cluster Members")
-g$theme <- theme_a
-g$labels$x=element_blank()
+  files_pathways <- list.files(
+    path = getwd(),
+    pattern = paste0(file_extension, "_")
+  )
 
-g <- g + scale_x_discrete(labels=x1$X1, breaks=nrow(x1):1, limits=factor(1:nrow(x1))) +
-  guides(fill=guide_legend(title="Module"))
+  dir.create(paste0(pathways_dir,'/Images/'), recursive = T)
+
+  for (ij in files_pathways) {
+
+    xlsx_sheets <- openxlsx::getSheetNames(ij)
+
+    if(length(xlsx_sheets) > 5) {xlsx_sheets <- xlsx_sheets[1:5]}
+
+    data <- c()
+    index <-1
+    
+    for (jk in xlsx_sheets) {
+      
+      aux <- openxlsx::read.xlsx(
+        ij,
+        sheet = jk,
+        colNames = TRUE,
+        rowNames = TRUE
+      )
+
+      if(nrow(aux) > 3) {
+        aux <- aux[1:3, c(1, 4, 7)]
+      } else {
+        aux <- aux[1, c(1, 4, 7)]
+      }
+
+      ams <- str_split(aux[, 3], '/')
+      ams <- sapply(
+        ams,
+        FUN = function(x) {
+          as.numeric(x[[1]]) / as.numeric(x[[2]])
+        }
+      )
+      aux$Ratio <- ams
+      aux$Cluster <- paste0("Cluster", index)
+      index <- index + 1
+      data <- rbind(data, aux)
+      
+    }
+
+    x <- data
+
+    colnames(x) <- c('X1', 'X2', 'X3', 'X4', 'X5')
+
+    x1 <- x
+    x1$X2 <- as.numeric(x1$X2)
 
 
-save_name_pdf <- paste0(pathways_dir,'/Images/',str_remove(ij,'.xlsx'),'_Ratio.pdf')
-pdf(file = save_name_pdf, width = (trunc(max(nchar(as.character(x1$X1)))/10)*20/3)/2, length(x1$X1)*1.5/2)
-print(g, newpage = FALSE)
-dev.off()
+    x1$X2 <- -log10(as.numeric(x1$X2))
 
-}
+    index <- 1 
+    unq_cls <- unique(x1$X5)
+    for (mm in unq_cls) {
+      x1$X5[which(x1$X5 %in% mm)] <- index
+      index <- index + 1
+    }
+
+    x1$X1 <- as.character(x1$X1)
+    x1$X1 <- factor(x1$X1, levels = unique(x1$X1))
+    x1$X5 <- as.character(x1$X5)
+    x1$X5 <- factor(x1$X5, levels = unique(x1$X5))
+
+    ##
+
+    slot_name = sapply(strsplit(ij, "_"), "[[", length(strsplit(ij, "_")[[1]]) - 1)
+    enrichment_data = list(name = x1)
+    names(enrichment_data) = slot_name
+    NOODAI_object@pathways = c(NOODAI_object@pathways, enrichment_data)
+
+    ##
+
+    g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X2, fill = X5)) + 
+      scale_fill_manual(
+        values = c(
+          "#7196BE",
+          "#BD3737",
+          "#CD9B1D",
+          "#E8768F",
+          "#855C5C"
+        )
+      ) +
+      geom_chicklet(radius = grid::unit(7.5, "mm"), width = 0.8) +
+      coord_flip() + 
+      ylab("-log10(q-value)")
+
+    g$theme <- theme_a
+    g$labels$x = element_blank()
+    
+    g <- g + 
+      scale_x_discrete(labels = x1$X1, breaks = nrow(x1):1, limits = factor(1:nrow(x1))) +
+      guides(fill = guide_legend(title = "Module"))
+
+    save_name_pdf <- paste0(
+      pathways_dir,
+      '/Images/',
+      str_remove(ij, '.xlsx'),
+      '_FDR.pdf'
+    )
+
+    pdf(
+      file = save_name_pdf,
+      width = (trunc(max(nchar(as.character(x1$X1))) / 10) * 20 / 3) / 2,
+      length(x1$X1) * 1.5 / 2
+    )
+    print(g, newpage = FALSE)
+    dev.off()
+
+    x1$X1 <- as.character(x1$X1)
+    x1$X1 <- factor(x1$X1, levels = unique(x1$X1))
+    x1$X5 <- as.character(x1$X5)
+    x1$X5 <- factor(x1$X5, levels = unique(x1$X5))
+
+    g <- ggplot(data = x1, aes(x = nrow(x1):1, y = X4, fill = X5)) + 
+      scale_fill_manual(
+        values = c(
+          "#7196BE",
+          "#BD3737",
+          "#CD9B1D",
+          "#E8768F",
+          "#855C5C"
+        )
+      ) +
+      geom_chicklet(radius = grid::unit(7.5, "mm"), width = 0.8) +
+      coord_flip() +
+      ylab("Pathway Hits/Cluster Members")
+
+    g$theme <- theme_a
+    g$labels$x = element_blank()
+
+    g <- g + 
+      scale_x_discrete(labels = x1$X1, breaks = nrow(x1):1, limits = factor(1:nrow(x1))) +
+      guides(fill = guide_legend(title = "Module"))
+
+    save_name_pdf <- paste0(
+      pathways_dir,
+      '/Images/',
+      str_remove(ij, '.xlsx'),
+      '_Ratio.pdf'
+    )
+
+    pdf(
+      file = save_name_pdf,
+      width = (trunc(max(nchar(as.character(x1$X1))) / 10) * 20 / 3) / 2,
+      length(x1$X1) * 1.5 / 2
+    )
+    print(g, newpage = FALSE)
+    dev.off()
+
+  }
+
+  return(list(1, NOODAI_object))
 
 }
