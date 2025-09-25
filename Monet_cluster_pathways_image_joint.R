@@ -17,41 +17,6 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #     Contact: tiberiu.totu@proton.me
 
-
-
-#' Generate joint pathway enrichment plots across MONET clusters.
-#'
-#' Reads pathway enrichment results of the MONET modules (in Excel format after running the 'MONET_pathways_extraction_CPDB.R')
-#' from a specified directory and generates visualizations showing the top enriched pathways per cluster.
-#'
-#' The function also updates the '@pathways' slot in the provided NOODAI_object with the enrichment
-#' data used for plotting.
-#'
-#' @param pathways_dir Character. Path to the directory containing the enrichment Excel files.
-#' @param file_extension Character. Common prefix or suffix used to identify the relevant enrichment files.
-#' @param NOODAI_object object. An instance of the NOODAI object that will be updated with the processed pathway data.
-#'
-#' @return A list containing a success flag ('1') and the updated NOODAI_object.
-#'
-#' @details
-#' - Only the top 3 pathways are considered from each sheet of the Excel files (up to 5 sheets per file).
-#' - Two ggplot2-based chicklet bar plots are created per file:
-#'   1. A plot showing -log10(q-values) of pathway enrichment.
-#'   2. A plot showing the ratio of pathway hits to cluster members.
-#' - The plots are saved as PDFs using the base name of the Excel file with suffixes '_FDR.pdf' and '_Ratio.pdf'.
-#'
-#' @examples
-#' # Assuming 'my_NOODAI_object' is an existing NOODAI object and the enrichment Excel files 
-#' # are stored in the directory "path/to/enrichment" with a file name pattern that includes "Total":
-#' result <- MONET_cluster_pathways_joint_image(
-#'   pathways_dir = "path/to/enrichment",
-#'   file_extension = "Total",
-#'   NOODAI_object = my_NOODAI_object
-#' )
-#'
-#' @import ggplot2 ggchicklet openxlsx stringr
-
-
 MONET_cluster_pathways_joint_image <- function(pathways_dir, file_extension, NOODAI_object) {
 
   library(ggplot2)

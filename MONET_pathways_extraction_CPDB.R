@@ -17,57 +17,6 @@
 #     Contact: tiberiu.totu@proton.me
 
 
-#' Perform pathway enrichment analysis for MONET modules using CPDB based databases
-#'
-#' This function processes MONET module results by mapping module genes to Entrez IDs and 
-#' performing pathway enrichment analysis using data from CPDB. 
-#' The analysis is parallelized for efficiency and outputs an Excel 
-#' file per module with enriched signaling pathways.
-#'
-#' @description
-#' The function reads MONET module output files (named with `result-modules*`), maps gene symbols 
-#' to Entrez IDs using BioMart or UniProt/ChEBI pre-mappings, and runs over-representation analysis (ORA) 
-#' using 'clusterProfiler'. The results are written to Excel spreadsheets, one per module, in a 
-#' 'Signaling_Pathways' subdirectory.
-#'
-#' The function is optimized for multi-core environments.
-#'
-#' @param working_dir Character. Path to the working directory containing MONET module outputs and where results will be saved.
-#' @param CPDB_database_file Character. Path to the CPDB pathway-to-gene mapping file ('CPDB_pathways_genes.tab').
-#' @param CPDB_databases Character vector. Names of the CPDB databases to include (e.g., '"KEGG"', '"Reactome"').
-#' @param MONET_background_file Character. Path to Excel file containing background Entrez genes per cluster (one sheet per cluster).
-#' @param phenotype_names Character vector. Names of phenotypes used in the comparison (e.g., `c("Control", "Disease")`).
-#' @param phenotype_comparison Character. A string like `"DiseaseVsControl"` indicating which groups were compared.
-#' @param BioMart_Dataset Character. The BioMart dataset name (e.g., '"hsapiens_gene_ensembl"').
-#' @param BiomaRT_selected_organisms Character. Path to a text file listing BioMart-supported organisms and dataset names.
-#' @param Uniprot_Ncbi_map Character. Path to UniProt to NCBI gene mapping file.
-#' @param ChEBI_map Character. Path to ChEBI to gene mapping file.
-#'
-#' @return Integer value '1' indicating successful execution. Enrichment results are written to Excel files in the 'Signaling_Pathways/' directory.
-#'
-#' @details
-#' - Input files named 'result-modules*' are assumed to be present in the working directory.
-#' - If BioMart mapping fails, fallback mapping is done using UniProt and ChEBI datasets.
-#' - Pathway enrichment is performed with 'clusterProfiler::enricher()' using TERM2GENE format.
-#' - Only clusters with sufficient genes are processed (minimum 10 genes by default).
-#' - Results are saved in '.xlsx' format, one sheet per module.
-#'
-#' @examples
-#' MONET_Pathways_extraction(
-#'   working_dir = "path/to/results_dir",
-#'   CPDB_database_file = "path/to/CPDB_pathways_genes.tab",
-#'   CPDB_databases = c("KEGG", "Reactome"),
-#'   MONET_background_file = "path/to/Background_total.xlsx",
-#'   phenotype_names = c("Control", "Treated"),
-#'   phenotype_comparison = "TreatedVsControl",
-#'   BioMart_Dataset = "hsapiens_gene_ensembl",
-#'   BiomaRT_selected_organisms = "path/to/BiomaRT_selected_organisms.txt",
-#'   Uniprot_Ncbi_map = "path/to/Unip_NCBI_map.txt",
-#'   ChEBI_map = "path/to/ChEBI_entries_map.txt"
-#' )
-#'
-#' @import readxl biomaRt stringr parallel org.Hs.eg.db AnnotationDbi msigdbr rbioapi clusterProfiler
-
 MONET_Pathways_extraction <- function(
   working_dir,
   CPDB_database_file,
@@ -254,7 +203,12 @@ MONET_Pathways_extraction <- function(
       )
       
       data_resave <- data
-
+      
+        #name_index <- str_replace_all(files_monet[i],"__","amx")
+        #name_index <- str_split(name_index,patter="_")
+        #name_index <- str_split(name_index[[1]][2],patter="[.]")
+        #name_index <- name_index[[1]][1]
+      #name_index <- str_extract(files_monet[i], "(?<=result-modules__)[^_]+")
       name_index <- str_extract(files_monet[i], "(?<=_)[^_]+(?=\\.txt)")
       
         

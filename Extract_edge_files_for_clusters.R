@@ -18,40 +18,6 @@
 #     Contact: tiberiu.totu@proton.me
 
 
-
-#' Extract and Export Module-Specific Edge Tables from MONET Output
-#'
-#' This function processes MONET module files and edge files for multiple phenotypes,
-#' extracting module-specific edges and saving them as Excel files. It matches nodes
-#' from MONET clusters with corresponding edges to generate edge tables per module.
-#'
-#' @param working_dir Character. Directory where MONET module result files are stored and outputs will be saved.
-#' @param phenotype_names Character vector. Names of phenotypes.
-#' @param phenotype_comparison Character vector. Names of phenotype comparisons (e.g., '"NightVsDay"').
-#' @param files_edges_path Character. Directory path where raw edge list files (used for filtering) are located.
-#' @param file_extension Character. File extension or identifier used in the filenames (e.g., `"Total"`).
-#'
-#' @details
-#' - For each phenotype comparison, the function loads MONET modules and filters the full edge list,
-#'   saving edges that belong to each module into separate Excel sheets.
-#' - Empty or sparse modules (based on missing values) are filtered out.
-#' - Creates an 'Edges_tables' subdirectory to store output '.xlsx' files.
-#'
-#' Requires that edge files are named with a pattern like '<file_extension>_...' and MONET files with 'result-modules__<file_extension>...'.
-#'
-#' @return Integer unity (for pipeline integration).
-#'
-#' @examples
-#' Extract_edges_tables(
-#'   working_dir = "Results/Modules/",
-#'   phenotype_names = c("Night", "Day"),
-#'   phenotype_comparison = c("NightVsDay"),
-#'   files_edges_path = "Data/Edges/",
-#'   file_extension = "Total"
-#' )
-#'
-#' @import readxl stringr xlsx
-
 Extract_edges_tables <- function(
   working_dir,
   phenotype_names,

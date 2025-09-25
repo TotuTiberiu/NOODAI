@@ -22,59 +22,6 @@
 
 
 
-
-
-#' Perform integrative network construction and centrality computation
-#'
-#' This function builds integrative protein-protein interaction (PPI) or protein-small molecules networks using the input omics features for each contrast from multiple layers
-#' and integrates them with known interaction databases (BioGRID, STRING, IntAct). It maps identifiers using 
-#' UniProt and ChEBI, filters relevant organisms from BioMart and use the associated mapping service, and computes network centrality metrics in parallel.
-#'
-#' @param working_dir Path to the main working directory (Scripts location).
-#' @param Results_dir Path to the directory where network analysis outputs will be saved.
-#' @param BioGRID_data_file Optional path to the BioGRID data file. Defaults to internal 4.4.218 version database if NULL.
-#' @param STRING_data_file Optional path to the STRING data file. Defaults to internal 11.5 version database if NULL.
-#' @param IntAct_data_file Optional path to the IntAct data file. Defaults to internal 245 version database if NULL.
-#' @param file_DEA_names A vector of full path file names containing differentially expressed analysis (DEA) results.
-#' @param phenotype_names A vector of phenotype identifiers to be used in the analysis.
-#' @param phenotype_comparison A vector describing phenotype comparisons to perform.
-#' @param splicing_file_name Name of the splicing (DTU) file to be used for filtering. Must be unique.
-#' @param Use_precompiled_database Logical. If TRUE, use a precompiled interaction database.
-#' @param LookUp_table_file Optional lookup table file for mapping interactions. If NULL, defaults are used.
-#' @param BioMart_Dataset BioMart dataset name used to select species-specific gene annotations.
-#' @param BiomaRT_selected_organisms File path to the table listing allowed BioMart organisms.
-#' @param Uniprot_Ncbi_map Path to UniProt-to-NCBI mapping file.
-#' @param ChEBI_map Path to ChEBI identifier mapping file.
-#' @param weight_penalty Numeric penalty used to adjust edge weights in the network.
-#'
-#' @return This function performs computations and saves multiple files to the specified results directory.
-#' It returns 1 to be used in a Try-Catch module.
-#'
-#' @details
-#' The function detects and utilizes half of the available CPU cores to parallelize the network centrality 
-#' computation using the 'centiserve' and 'CINNA' packages.
-#'
-#' @examples
-#' Network_analysis(
-#'   working_dir = "/path/to/scripts",
-#'   Results_dir = "/path/to/scripts/Res1",
-#'   file_DEA_names = c("/path/to/scripts/Res1/tmp/DEA_1.xlsx", "/path/to/scripts/Res1/tmp/DEA_2.xlsx"),
-#'   phenotype_names = c("Tumor", "Normal"),
-#'   phenotype_comparison = c("TumorVsNormal"),
-#'   splicing_file_name = "DTU_results.xlsx",
-#'   Use_precompiled_database = TRUE,
-#'   BioMart_Dataset = "hsapiens_gene_ensembl",
-#'   BiomaRT_selected_organisms = "BiomaRT_selected_organisms.txt",
-#'   Uniprot_Ncbi_map = "Uniprot_NCBI_map.txt",
-#'   ChEBI_map = "ChEBI_map.txt",
-#'   weight_penalty = 0.1
-#' )
-#'
-#' @import readxl biomaRt centiserve CINNA igraph tidygraph stringr parallel dplyr
-
-
-
-
 Network_analysis <- function(
   working_dir,
   Results_dir,
@@ -776,9 +723,6 @@ Network_analysis <- function(
             row.names = FALSE,
             append = TRUE
           )
-		  
-		  
-		  
         
         }
         

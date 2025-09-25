@@ -17,88 +17,40 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #     Contact: tiberiu.totu@proton.me
 
-#setClass(
-#  "NOODAI",
-#  representation(
-#    token = "character",
-#    working_dir = "character",
-#    BioGRID_data_file = "ANY",
-#    STRING_data_file = "ANY",
-#    IntAct_data_file = "ANY",
-#    file_DEA_names = "character",
-#    phenotype_names = "character",
-#    phenotype_comparison = "character",
-#    Use_precompiled_database = "numeric",
-#    LookUp_table_file = "ANY",
-#    Results_index = "character",
-#    edge_file_path = "ANY",
-#    monet_path = "ANY",
-#    Monet_method_string = "character",
-#    tmp_bin_folder = "ANY",
-#    CPDB_databases = "ANY",
-#    MONET_background_file = "ANY",
-#    CPDB_database_file = "ANY",
-#    files_edges_path = "ANY",
-#    centralities_file = "ANY",
-#    TF_Database = "ANY",
-#    file_extension = "ANY",
-#    Kinome_database = "ANY",
-#    BioMart_Dataset = "character",
-#    Client_email = "ANY",
-#    weight_penalty = "numeric",
-#    circos = "list",
-#    circos_aux = "list",
-#    pathways = "list",
-#    cytoscape_modules = "list",
-#    status = "character"
-#  )
-#)
-
-
-
-#' Generate Circos Plots for Top Transcription Factors and Their Module Interactions
-#'
-#' This function creates Circos plots showing interactions between top-ranking transcription factors (TFs)
-#' and their module-associated interaction partners based on edge and centrality data. The function integrates
-#' transcription factor annotations, module centrality values, and edge relationships to highlight
-#' functional TF-target structures in PPI or protein-small molecule networks. Outputs are stored as PDF images and
-#' added to the NOODAI object.
-#'
-#' @param working_dir Character. Path to the working directory where centrality-module link files are stored (from 'Extract_CentralitiesValues').
-#' @param NOODAI_object object. The NOODAI object where the generated Circos data will be added.
-#' @param edges_dir Character. Directory path containing MONET-generated edge/module data.
-#' @param TF_Database Character. Path to a tab-separated file of transcription factor information with a column named 'Symbo'.
-#' @param file_extension Character. Pattern used to identify edge files corresponding to phenotype comparisons (e.g., '"AuraVsNoAura"').
-#' @param BioMart_Dataset Character. Name of the BioMart dataset to use (e.g., '"hsapiens_gene_ensembl"').
-#' @param BiomaRT_selected_organisms Character. Path to a table of valid BioMart organism mappings.
-#'
-#' @details
-#' The function:
-#' - Selects the top ~33% genes based on centrality scores.
-#' - Identifies transcription factors among these and their direct edge partners.
-#' - Limits to up to 7 TFs and 25 connected partners.
-#' - Creates colored Circos chord diagrams showing TF–partner links grouped by MONET modules.
-#' - Saves outputs in the 'Images' subdirectory of the working directory.
-#'
-#' Transcription factors with >15 module memberships are excluded to reduce clutter.
-#'
-#' @return A list with two elements:value of unity for Try-Catch constructions and the NOODAI object
-#'
-#' @examples
-#' result <- Cricos_plots(
-#'   working_dir = "/path/to/Results_001/Centralities_modules_links",
-#'   NOODAI_object = my_noodai_obj,
-#'   edges_dir = "/path/to/Results_001/MONET_analysis/MONET/edges",
-#'   TF_Database = "/path/to/databases/TF_Database.txt",
-#'   file_extension = "AuraVsNoAura",
-#'   BioMart_Dataset = "hsapiens_gene_ensembl",
-#'   BiomaRT_selected_organisms = "/path/to/databases/BiomaRT_selected_organisms.txt"
-#' )
-#'
-#' @import readr RColorBrewer circlize stringr ComplexHeatmap gridBase gtools biomaRt
-
-
-
+# setClass(
+#   "NOODAI",
+#   representation(
+#     token = "character",
+#     working_dir = "character",
+#     BioGRID_data_file = "ANY",
+#     STRING_data_file = "ANY",
+#     IntAct_data_file = "ANY",
+#     file_DEA_names = "character",
+#     phenotype_names = "character",
+#     phenotype_comparison = "character",
+#     Use_precompiled_database = "numeric",
+#     LookUp_table_file = "ANY",
+#     Results_index = "character",
+#     edge_file_path = "ANY",
+#     monet_path = "ANY",
+#     Monet_method_string = "character",
+#     tmp_bin_folder = "ANY",
+#     CPDB_databases = "ANY",
+#     MONET_background_file = "ANY",
+#     CPDB_database_file = "ANY",
+#     files_edges_path = "ANY",
+#     centralities_file = "ANY",
+#     TF_Database = "ANY",
+#     file_extension = "ANY",
+#     Kinome_database = "ANY",
+#     BioMart_Dataset = "character",
+#     Client_email = "ANY",
+#     weight_penalty = "numeric",
+#     circos = "list",
+#     circos_aux = "list",
+#     pathways = "list"
+#   )
+# )
 
 Cricos_plots <- function(
   working_dir,

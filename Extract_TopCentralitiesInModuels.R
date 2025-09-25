@@ -18,40 +18,7 @@
 #     Contact: tiberiu.totu@proton.me
 
 
-#' Extract Centrality Metrics and Link to Network Modules
-#'
-#' This function processes node centrality values (current-flow betweenness centrality) and associates them 
-#' with MONET decomposed modules.
-#'
-#' @param working_dir Character. The path to the working directory where MONET module results are located.
-#' @param centralities_file Character. Path to the Excel file containing centrality metrics per phenotype. 
-#'        Each sheet should correspond to a phenotype and contain at least the columns 'Symbol' and 
-#'        'Current_Flow_Betweenness_Centrality'.
-#' @param phenotype_names Character vector. Names of the phenotypes used to match the appropriate Excel sheets 
-#'        and MONET module files.
-#' @param file_extension Character. Suffix pattern used in MONET module filenames (e.g., '"AcusVsBrancus"').
-#'
-#' @details
-#' For each phenotype sheet in the Excel file, the function:
-#' - Reads and ranks genes by current-flow betweenness centrality from an Excel file (one sheet per phenotype).
-#' - Finds the module to which each gene belongs based on MONET module files.
-#' - Outputs a file listing gene-module assignments with centrality scores and a weight
-#'
-#' Output files are saved to the 'Centralities_modules_links' folder inside the working directory.
-#' Genes not present in any module are omitted from the output.
-#'
-#' @return Integer of unity.
-#'
-#' @examples
 
-#' Extract_CentralitiesValues(
-#'   working_dir = "/path/to/MONET/results",
-#'   centralities_file = "centrality_scores.xlsx",
-#'   phenotype_names = c("Acus", "Brancus"),
-#'   file_extension = "AcusVsBrancus"
-#' )
-#'
-#' @import readr stringr readxl
 
 Extract_CentralitiesValues <- function(
   working_dir,

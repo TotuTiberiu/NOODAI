@@ -17,43 +17,6 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #     Contact: tiberiu.totu@proton.me
 
-
-
-#' Generate Cytoscape Network with Centrality and Multi-Omics Annotations
-#'
-#' This function builds and visualizes a multi-omics interaction network in Cytoscape using centrality data and edge files.
-#' It applies a custom Cytoscape style, overlays omics-specific presence, scales node sizes by centrality, and saves
-#' both an image and Cytoscape session.
-#'
-#' @param Centrality_file Character. Path to the Excel file with centrality and omics presence information.
-#' @param Centrality_file_sheet Character. Sheet name in the Excel file containing the data.
-#' @param names_of_omicsDatasets Character vector. Names of omics datasets (columns in the centrality sheet).
-#' @param Edge_file Character. Path to the edge file (TXT or Excel) used to create the network.
-#' @param Edge_file_sheet Character. Optional. If using Excel for `Edge_file`, specify the sheet name.
-#' @param Cytoscape_style_file Character. Path to a '.xml' Cytoscape visual style file.
-#' @param save_name_network Character. Name for the Cytoscape network and output files.
-#'
-#' @details
-#' - Uses RCy3 to create the graph and set layouts, node sizes, and visual styles.
-#' - Node size reflects centrality; color reflects omics presence pattern.
-#' - Handles input from `.txt` (full network) or `.xlsx` (module-specific network).
-#' - Requires Cytoscape to be running with RCy3 connectivity enabled.
-#'
-#' @return Integer of unity (for pipeline integration).
-#'
-#' @examples
-#' Cytoscape_networks(
-#'   Centrality_file = "Results/centralities.xlsx",
-#'   Centrality_file_sheet = "Module1",
-#'   names_of_omicsDatasets = c(Transcriptomics", "Proteomics", "Metabolomics", "Epigenomics"),
-#'   Edge_file = "Results/module1_edges.txt",
-#'   Cytoscape_style_file = "styles/NOODAI_style.xml",
-#'   save_name_network = "Module1_Cytoscape"
-#' )
-#'
-#' @import RCy3 igraph stringr openxlsx
-
-
 Cytoscape_networks <- function(
   Centrality_file,
   Centrality_file_sheet,
@@ -261,39 +224,6 @@ Cytoscape_networks <- function(
   return(1)
   
 }
-
-
-
-
-#' Generate Legend SVG for Cytoscape Network Visualization
-#'
-#' Creates an SVG image representing the legend used for Cytoscape network visualization.
-#' Shows node size scaling (based on centrality) and color coding for different omics datasets.
-#'
-#' @param Centrality_file Character. Path to the Excel file containing the centrality and omics data.
-#' @param Centrality_file_sheet Character. Sheet name to read from the Excel file.
-#' @param names_of_omicsDatasets Character vector. Names of omics datasets represented in the legend.
-#' @param save_name Character. Path to save the resulting '.svg' legend image.
-#'
-#' @details
-#' The legend includes:
-#' - Node size gradient based on centrality values.
-#' - Colored circles labeled with corresponding omics datasets.
-#'
-#' If more than four omics datasets are passed, only the first four are included in the legend.
-#'
-#' @return Integer unity (for pipeline integration).
-#'
-#' @examples
-#' Generate_cytoscape_Legend(
-#'   Centrality_file = "Results/centralities.xlsx",
-#'   Centrality_file_sheet = "Module1",
-#'   names_of_omicsDatasets = c("Transcriptomics", "Proteomics", "Metabolomics", "Epigenomics"),
-#'   save_name = "Module1_legend.svg"
-#' )
-#'
-#' @import grid gridSVG openxlsx
-
 
 
 Generate_cytoscape_Legend <- function(
